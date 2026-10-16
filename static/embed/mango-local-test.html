@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mango Grove — embed test page</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0;
+         padding: 24px 18px 120px; background: #f6f7f9; color: #14213d; line-height: 1.6; }
+  .card { max-width: 720px; margin: 0 auto; background: #fff; padding: 22px;
+          border-radius: 14px; box-shadow: 0 8px 24px rgba(20,33,61,.08); }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: #6b7280; font-size: 14px; margin: 0 0 18px; }
+  h2 { font-size: 15px; margin: 22px 0 8px; }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Mango Grove — embed test page</h1>
+    <p class="sub">
+      A plain third-party page carrying nothing but the embed snippet, exactly as a
+      hotel would paste it into their own site. Points at the DEV server on :8012
+      (dev DB 172.16.5.32), so nothing here touches prod.
+    </p>
+
+    <h2>What to check</h2>
+    <ol>
+      <li>"Do you have a gym?" &rarr; must open with <b>Yes</b>, never "No, we do have a gym".</li>
+      <li>"Do you have a swimming pool?" &rarr; must still be a plain <b>No</b>.</li>
+      <li>"Dining options kya hain" &rarr; answered in romanized Hindi, with every time intact.</li>
+      <li>Then "Which room is bigger?" in English &rarr; must come back in <b>English</b>.</li>
+      <li>A Gurmukhi question &rarr; answered in Gurmukhi.</li>
+      <li>Submit <b>Share your booking details</b>, then tap a suggestion chip &rarr; the reply
+          must NOT tell you to tap a button that is no longer on screen.</li>
+    </ol>
+  </div>
+
+  <script src="http://127.0.0.1:8012/static/embed/kebo-widget-loader.js"
+    data-widget-id="mango_grove_chandigarh"
+    data-widget-key="wk_KkRabdHTRYylT-eZ7Nu_1RiS"
+    data-hotel-code="mango_grove_chandigarh"
+    data-phase="pre_booking"
+    data-bot-name="Mango Grove Assist"
+    data-position="right">
+  </script>
+</body>
+</html>

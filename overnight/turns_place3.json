@@ -1,0 +1,6 @@
+[
+  ["hi", null, "greeting"],
+  ["order food - 2 chicken burger and one filter coffee", null, "cart built and priced"],
+  ["yes place it", null, "MUST place on this turn: external ticket, no re-ask"],
+  ["what did i order", null, "grounded recall with prices"]
+]

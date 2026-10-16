@@ -1,0 +1,31 @@
+{
+  "deployments": {
+    "wk_kOKo8Vwt1rGBE7ZCSLhYaFeC": {
+      "hotel_code": "zone",
+      "name": "Zone by The Park Hotels",
+      "status": "active",
+      "allowed_origins": [
+        "*"
+      ],
+      "theme": {
+        "brand_color": "#f8971d",
+        "accent_color": "#f8971d",
+        "bg_color": "#FFFFFF",
+        "text_color": "#1A1A2E"
+      },
+      "size": {
+        "width": 380,
+        "height": 620
+      },
+      "position": "right",
+      "bot_name": "Zoogle",
+      "phase": "pre_booking",
+      "auto_open": true,
+      "logo_url": "",
+      "session_ttl_hours": 24,
+      "idle_timeout_minutes": 30,
+      "created_at": "2026-05-30T16:43:17.616957+00:00",
+      "updated_at": "2026-05-30T16:43:17.616957+00:00"
+    }
+  }
+}

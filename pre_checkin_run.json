@@ -1,0 +1,306 @@
+{
+  "done": true,
+  "n": 30,
+  "rows": [
+    {
+      "i": 0,
+      "u": "hi",
+      "b": "Hello! Welcome to Sarovar Portico Sriperumbudur. How can I assist you today?",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 52
+    },
+    {
+      "i": 1,
+      "u": "what time is check in",
+      "b": "Check-in is at **15:00 hrs**.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 27
+    },
+    {
+      "i": 2,
+      "u": "hi can i get a candlelight therapy massage",
+      "b": "Hi — **Aloe Spa** does offer **massage** and **Asian therapies**. I don’t have **candlelight therapy** listed, so I can’t confirm that specific treatment.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 21
+    },
+    {
+      "i": 3,
+      "u": "Yes, please",
+      "b": "Absolutely — **Aloe Spa** offers **massage** and **Asian therapies**. I don’t have **candlelight therapy** listed, so I can’t confirm that specific treatment.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 20
+    },
+    {
+      "i": 4,
+      "u": "alright can u book me a massage for 5pm",
+      "b": "I’m sorry, but I can’t book or schedule the massage here. **Aloe Spa** does offer **massage**, so once you’re checked in, the front desk or spa team can help arrange it.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 5,
+      "u": "my AC is not working",
+      "b": "I’m sorry, but I can’t handle maintenance requests here. If you’re already checked in, please contact the front desk or engineering team at the property so they can check the AC for you.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 22
+    },
+    {
+      "i": 6,
+      "u": "can i stay untill 3pm",
+      "b": "The hotel’s check-out time is **12:00 hrs**. I don’t have a confirmed late check-out time for **3pm**.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 16
+    },
+    {
+      "i": 7,
+      "u": "Yes, please",
+      "b": "I can help with the hotel and your stay, but I can’t change the booking details here. If you’d like, I can share the confirmed check-out time or help you with another hotel question.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 33
+    },
+    {
+      "i": 8,
+      "u": "someone is screaming in the hallway and banging on my door",
+      "b": "I’m sorry you’re dealing with that. Since you haven’t checked in yet, I can’t take action on an in-room disturbance here. If this is happening at the hotel when you arrive, please contact the front desk right away so the team can handle it.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 25
+    },
+    {
+      "i": 9,
+      "u": "can i get some fresh towels",
+      "b": "Of course — **fresh towels** are handled by the hotel’s housekeeping team once you’re checked in. Please contact the front desk at the property when you arrive.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 10,
+      "u": "i need extra towel and soap",
+      "b": "Of course — **extra towels and soap** are handled by housekeeping once you’re checked in. Please contact the front desk at the property when you arrive.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 25
+    },
+    {
+      "i": 11,
+      "u": "do you have a swimming pool",
+      "b": "Yes — **Sarovar Portico Sriperumbudur** has an **outdoor swimming pool**.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 12,
+      "u": "what restaurants do you have",
+      "b": "Here’s what **Sarovar Portico Sriperumbudur** has for dining: • **SPR Kitchen** — all-day multicuisine restaurant with Indian, International, and Tamil Nadu specialties. It’s open **06:30–22:30**, and breakfast is served **07:00–10:30**. • **Chola Lounge – The",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 30
+    },
+    {
+      "i": 13,
+      "u": "i need pickup to airport",
+      "b": "We offer two arrival pickup options for your convenience: • **Airport pickup** from Chennai International Airport (MAA), about 32 km away, approximately 45-60 minutes via NH716. • **Railway-station pickup** from Tiruvallur Railway Station, about 25 km away. Wh",
+      "svc": "arrival_transport",
+      "act": "dispatch_handler",
+      "form": false,
+      "tk": false,
+      "s": 19
+    },
+    {
+      "i": 14,
+      "u": "Airport pickup, please",
+      "b": "Thank you for choosing **Airport pickup** from Chennai International Airport (MAA). This service covers about **32 km** and takes approximately **45-60 minutes** via NH716. To confirm your pickup. Please fill in the details below.",
+      "svc": "arrival_transport",
+      "act": "collect_info",
+      "form": true,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 15,
+      "u": "can u cancel it my flight got cancelled",
+      "b": "I've noted your request to cancel the airport pickup, and our team will take care of it.",
+      "svc": "",
+      "act": "",
+      "form": false,
+      "tk": false,
+      "s": 13
+    },
+    {
+      "i": 16,
+      "u": "where can i smoke",
+      "b": "The hotel's smoking policy details are not explicitly listed in the available information. For specific areas where smoking is permitted, please check with the hotel directly upon arrival or at the front desk. This ensures compliance with local regulations and",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 19
+    },
+    {
+      "i": 17,
+      "u": "can i bring my dog",
+      "b": "I’m sorry, but I don’t have the pet policy listed for **Sarovar Portico Sriperumbudur**.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 26
+    },
+    {
+      "i": 18,
+      "u": "Yes, please",
+      "b": "I don’t have the pet policy listed for **Sarovar Portico Sriperumbudur**. If you’d like, I can help with any other hotel details.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 19,
+      "u": "book me a room for next week",
+      "b": "Sure — I can help with **Sarovar Portico Sriperumbudur** room options. • **Standard Room** — efficient and comfortable, best for solo travelers or professionals; **262 sq. ft.**, **2 adults max** • **Executive Room** — a bit more spacious with a work-friendly ",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 24
+    },
+    {
+      "i": 20,
+      "u": "whats the check out time",
+      "b": "Check-out is **12:00 hrs** at **Sarovar Portico Sriperumbudur**.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 23
+    },
+    {
+      "i": 21,
+      "u": "can u book me a flight to london",
+      "b": "I can help with hotel information and room booking only.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 22
+    },
+    {
+      "i": 22,
+      "u": "tell me a joke",
+      "b": "I can help with hotel information and room booking only.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 19
+    },
+    {
+      "i": 23,
+      "u": "what is 2+2",
+      "b": "I can help with hotel information and room booking only.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 19
+    },
+    {
+      "i": 24,
+      "u": "please have someone call me back",
+      "b": "I see you'd like a callback. I'll arrange for our team to get in touch with you shortly. We can assist you best. Please fill in the details below.",
+      "svc": "support_prechkin",
+      "act": "collect_info",
+      "form": true,
+      "tk": false,
+      "s": 30
+    },
+    {
+      "i": 25,
+      "u": "how far is the airport",
+      "b": "The nearest airport to Sarovar Portico Sriperumbudur is Chennai International Airport (MAA), located approximately 32 km away. It typically takes about 45 to 60 minutes to reach the hotel from the airport via NH716.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 19
+    },
+    {
+      "i": 26,
+      "u": "do you have wifi in the rooms",
+      "b": "Yes — **complimentary high-speed Wi‑Fi** is available throughout the property, including the rooms.",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 28
+    },
+    {
+      "i": 27,
+      "u": "i want to decorate the room for my wifes birthday",
+      "b": "What a wonderful occasion to celebrate! To make your wife's birthday extra special, could you please share what kind of decoration or arrangement you'd like in the room? Once you confirm, I'll open the details form for you to fill out.",
+      "svc": "special_requests",
+      "act": "collect_info",
+      "form": true,
+      "tk": false,
+      "s": 28
+    },
+    {
+      "i": 28,
+      "u": "actually cancel the decoration",
+      "b": "I've noted your request to cancel the decoration, and the team will take care of it!",
+      "svc": "",
+      "act": "",
+      "form": false,
+      "tk": false,
+      "s": 7
+    },
+    {
+      "i": 29,
+      "u": "thanks thats all",
+      "b": "You're very welcome! If you need any more assistance before your stay, just let me know. Have a wonderful day!",
+      "svc": "",
+      "act": "respond_only",
+      "form": false,
+      "tk": false,
+      "s": 21
+    }
+  ]
+}

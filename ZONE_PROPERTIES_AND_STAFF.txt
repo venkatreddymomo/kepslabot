@@ -1,0 +1,165 @@
+ZONE - PROD CONFIG                                          checked 2026-09-09
+Today 0 of 24 hotels can raise a ticket in prod.
+
+4 JOBS:   1 properties   2 departments   3 staff   4 escalation
+2 PEOPLE: Nidhi (ticket owner + L1)      Tanay (L2)
+
+
+================================================================================
+JOB 1 - PROPERTIES
+================================================================================
+
+19 exist in prod.  16 mapped, 3 need FMS->RI mapping.
+
+  BOT KEY               FMS     RI      PROD NAME
+  calangute             6117    8539    Zone Connect Calangute, Goa
+  parra                 6118    NONE    Zone Connect By The Park, Parra Goa
+  saket                 6119    8541    Zone Connect By The Park, Saket Delhi
+  kolkata               6121    7256    Zone By The Park Kolkata
+  jaipur                6123    7728    Zone by The Park Hotel, Jaipur
+  connect park cbe      6124    8490    Zone Connect Hotel, Coimbatore
+  chennai               6125    8531    Zone by The Park, Chennai
+  coimbatore            6126    8535    Zone by The Park, Coimbatore
+  jammu                 6127    8538    Zone by The Park, Jammu
+  gopalpur              6128    8557    Zone By The Park, Gopalpur
+  mussoorie             6129    8929    Zone Connect By The Park, Mussoorie
+  lansdowne             6130    NONE    Zone Connect by The Park, Lansdowne
+  dimapur / niathu      6151    9773    Zone Niathu By The Park, Dimapur
+  phalodi               6180    10135   Zone Palace By The Park, Phalodi, Rajasthan
+  pathankot             6254    8542    Zone by The Park, Pathankot
+  patna                 6279    NONE    Zone Connect By The Park, Patna
+  new market            6329    10619   Zone by The Park New Market Kolkata
+  gangtok / siniolchu   6539    10793   Zone Connect by The Park Mount Siniolchu, Gangtok
+  darjeeling            6554    10815   Zone by The Park, Darjeeling
+
+5 DO NOT EXIST in prod - must be created:
+  digha   jaisalmer   katra   port blair   udaipur
+
+  
+
+TO DO
+  [ ] Create the 5 missing hotels in prod FMS
+  [ ] Add FMS->RI mapping for 6118, 6130, 6279 + the 5 new ones
+      table: GHN_FEEDBACK_RESULTS.GHN_SURVEY_FMS_RI_ENTITY_MAPPING
+  [ ] Send me the new FMS + RI ids
+
+
+
+
+================================================================================
+JOB 2 - DEPARTMENTS
+================================================================================
+
+Zone uses 4.  Prod's list differs from dev's.
+
+  reservations       not in prod                        -> CREATE
+  complaints         not in prod                        -> CREATE
+  Food & Beverage    prod has "Food and Beverages" 39   -> use 39
+  Banquets           prod has "Banquet" 38              -> use 38
+
+
+
+TO DO
+  [ ] Create "reservations" and "complaints" in prod DEPARTMENT_MASTER
+  [ ] Send me the 2 new ids
+  [ ] prod .env  TICKETING_ALLOWED_DEPARTMENTS_JSON zone =
+      ["reservations", "complaints", "Food and Beverages", "Banquet"]
+
+
+================================================================================
+JOB 3 - STAFF          table: GHN_PROD_BAK.DEPARTMENT_STAFF_CONFIG
+================================================================================
+
+Empty in prod for every Zone hotel.  Keyed by ORG_ID = RI id.
+
+24 hotels x 4 departments = 96 rows.  Owner = NIDHI on all 4.
+
+  MANAGER = 1            <- bot only reads rows where this is 1
+  STATUS = 1
+  TICKET_PRIORITY = HIGH
+  ISAVAILABLE = 1
+  OUTLET_ID / FLOOR_NO / GROUP_ID = NULL
+
+
+================================================================================
+JOB 4 - ESCALATION     table: GHN_FF_PROD.GHN_DEPARTMENT_ALERT_MAPPINGS
+================================================================================
+
+Keyed by entity_id = FMS id.  NOT the RI id.  Different database to Job 3.
+
+24 hotels x 4 departments = 96 rows.  All identical:
+
+  escalation_1 = Nidhi     escalation_level_1 = [Nidhi]      <- L1
+  escalation_2 = Tanay     escalation_level_2 = [Tanay]      <- L2
+  escalation_3 = NULL      escalation_level_3 = NULL
+
+  sla_duration_minutes = 20
+  sla_data             = {"low":20,"high":20,"medium":20,"critical":20}
+  escalation_interval  = 5
+  before_sla_default   = 70
+  before_sla_data      = {"low":75,"high":25,"medium":50,"critical":10}
+  ticket_auto_assign   = 1      is_active = 1      
+Ticket gets 20 min.  Escalates a step every 5 min.  Priority changes nothing.
+
+
+
+
+================================================================================
+THE 2 PEOPLE
+================================================================================
+
+NIDHI - MUST BE CREATED IN PROD                       (dev id 6429)
+  USER_NAME       reservations@zonebythepark.com
+  FIRST / LAST    Nidhi / Pandey
+  DESIGNATION     Sr. Marketing Manager
+  ROLE Admin      GROUP_ROLE 1       ENABLED 1
+  MOBILE / PHONE / EMAIL fields -- ALL EMPTY IN DEV, no phone number exists
+  TICKET_NOTIFICATION 0   (every other notification flag is 0 too)
+  REVIEW_DAYS 7   ACCESS_TOKEN_TTL 3600   REFRESH_TOKEN_TTL_DAYS 30   MFA 0
+  PASSWORD        set a fresh one in prod
+  Then map her to all 24 hotels in GHN_USER_ORGANIZATION_MAPPING
+    one row per hotel:  ORGANIZATION_ID = RI id,  USER_ID = her new prod id
+
+TANAY - ALREADY IN PROD, id 6480                      (dev id 6430)
+  USER_NAME       director.operations@zonebythepark.com
+  DESIGNATION     Director Operations
+  Already mapped to all 16 existing Zone hotels.  Nothing to do.
+
+
+================================================================================
+NOTHING TO DO - prod already has this
+================================================================================
+
+  GHN_USER                       118 Zone users exist
+  GHN_USER_ORGANIZATION_MAPPING  existing hotels already mapped
+
+
+================================================================================
+SEND ME THESE 4 THINGS
+================================================================================
+
+  1. FMS ids for the 5 new hotels
+  2. RI ids for those 5, plus for 6118 / 6130 / 6279
+  3. The 2 new department ids (reservations, complaints)
+  4. Nidhi's new prod user id
+
+Then I write the 96 staff rows, the 96 escalation rows, and the prod .env JSON.
+
+
+================================================================================
+CHECK QUERY - all 24 must say "ok"
+================================================================================
+
+SELECT e.ID AS fms_id, e.Entity_Name, m.RI_Entity_Id AS ri_id,
+       COUNT(DISTINCT dsc.DEPARTMENT_ID) AS depts,
+       CASE WHEN m.RI_Entity_Id IS NULL              THEN 'NO MAPPING'
+            WHEN COUNT(DISTINCT dsc.DEPARTMENT_ID)=0 THEN 'NO STAFF'
+            ELSE 'ok' END AS verdict
+FROM GHN_FF_PROD.GHN_FF_ENTITY e
+LEFT JOIN GHN_FEEDBACK_RESULTS.GHN_SURVEY_FMS_RI_ENTITY_MAPPING m
+       ON m.FMS_Entity_Id = e.ID
+LEFT JOIN GHN_PROD_BAK.DEPARTMENT_STAFF_CONFIG dsc
+       ON dsc.ORG_ID = m.RI_Entity_Id AND dsc.MANAGER = 1
+WHERE e.Group_Name LIKE '%Zone Hotels%' OR e.Entity_Name LIKE 'Zone %'
+GROUP BY e.ID, e.Entity_Name, m.RI_Entity_Id
+ORDER BY e.ID;

@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kebo-backend",
+      "runtimeExecutable": "C:\\Users\\venky\\Desktop\\kepsla.ai\\kebo\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": ["main.py"],
+      "port": 8011,
+      "env": {
+        "APP_ENV": "production"
+      }
+    }
+  ]
+}

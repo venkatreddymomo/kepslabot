@@ -1,0 +1,108 @@
+{
+  "scenario_a": {
+    "session": "smoke-polA-34ed72ebf5",
+    "turns": [
+      {
+        "message": "tell me about zone connect park coimbatore",
+        "reply": "Here's a quick overview of Zone Connect Park Coimbatore:\n- **Zone Connect Park Coimbatore** is located on Kalapatti Road, close to Coimbatore International Airport, Kovai Medical Center and Hospital, Codissia Trade Fair Complex, and Tidel IT Park.\n- The hotel offers *wallet-friendly prices* with luxurious extras and *non-smoking rooms*.\n- Amenities include leisure zones with a wellness centre, fitness facilities like cardio machines, treadmill, weights, and a FunZone for kids with game spots.\n- For events, the **Townhall** venue can accommodate *up to 150 guests*, suitable for social or corporate gatherings.",
+        "meta": {
+          "orchestration_action": "respond_only",
+          "target_service_id": "",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "tell me about the connect room",
+        "reply": "Of course \u2014 here's what we've got for the Connect Room at Zone Connect Park Coimbatore:\n- **Connect Room** offers a *cozy 210 sq. ft.* space with a queen size bed, perfect for a comfortable stay.\n- Amenities include *neat storage spaces*, HD and 42\u201d televisions, hi-speed Wi-Fi, in-room mini bar, safe for belongings, RO water, hair dryer, and an in-house tea & coffee maker.\n- The bathroom features a shower and toiletries for your convenience.\nCurrent offers:\n\u2b50 Book Direct and Save 20% \u2014 save 20% on all room bookings made directly through our website with benefits like early check-in & late check-out (subject to availability).\n\u2b50 AMEX Stay Offer \u2014 20% off on Best Available Room Rate and 25% off on Suite for American Express Card members, with terms applying.\nIs there a particular room type you'd like to know more about?",
+        "meta": {
+          "orchestration_action": "dispatch_handler",
+          "target_service_id": "room_booking_request",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "book this room",
+        "reply": "Great choice! You can complete your booking on our website with the Book Direct and Save 20% offer for exclusive savings and flexible booking options.",
+        "meta": {
+          "orchestration_action": "dispatch_handler",
+          "target_service_id": "room_booking_request",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "do you have venues at coimbatore",
+        "reply": "Sure! Here's the venue we have at Zone Connect Park Coimbatore:\n- **Townhall** is an ideal venue for social or corporate events, with a capacity of *up to 150 guests*.\n- Would you like our team to reach out to assist you with this?",
+        "meta": {
+          "orchestration_action": "respond_only",
+          "target_service_id": "",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "book it",
+        "reply": "Please review the details below and submit so our team can assist.",
+        "meta": {
+          "orchestration_action": "collect_info",
+          "target_service_id": "support_request",
+          "render_type": null,
+          "form_trigger": true,
+          "missing_fields": [],
+          "pending_action": "collect_form_details"
+        }
+      }
+    ]
+  },
+  "scenario_b": {
+    "session": "smoke-cleanB-d7f0a47798",
+    "turns": [
+      {
+        "message": "tell me about the townhall at zone connect park coimbatore",
+        "reply": "Here's what you need to know about the Townhall at Zone Connect Park Coimbatore:\n- **Townhall** seats *up to 150 guests* and is an ideal venue for social or corporate events.",
+        "meta": {
+          "orchestration_action": "respond_only",
+          "target_service_id": "",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "book the townhall",
+        "reply": "- I can't book that through the chat directly.\n- **Townhall** seats *up to 150 guests* and is an ideal venue for social or corporate events.\n- Would you like our team to reach out to assist you with this?",
+        "meta": {
+          "orchestration_action": "respond_only",
+          "target_service_id": "",
+          "render_type": null,
+          "form_trigger": null,
+          "missing_fields": [],
+          "pending_action": null
+        }
+      },
+      {
+        "message": "yes",
+        "reply": "Please review the details below and submit so our team can assist.",
+        "meta": {
+          "orchestration_action": "collect_info",
+          "target_service_id": "support_request",
+          "render_type": null,
+          "form_trigger": true,
+          "missing_fields": [],
+          "pending_action": "collect_form_details"
+        }
+      }
+    ]
+  }
+}

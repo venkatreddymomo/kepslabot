@@ -1,0 +1,6 @@
+[
+  ["hi", null, "greeting"],
+  ["whats my name and room number", null, "Venkat / 1400"],
+  ["whats my phone number", null, "THE TEST: must give the guest's OWN number, not the hotel's, not a refusal"],
+  ["whats the hotel's phone number", null, "must give the HOTEL's number, clearly distinct"]
+]

@@ -1,0 +1,14 @@
+[
+  ["hi", null, "greeting"],
+  ["order food - 1 chicken burger", null, "cart"],
+  ["yes place it", null, "FOOD ticket raised - the clock on its 5-min edit window starts here"],
+  ["whats the checkout time", null, "filler, burning the food order's edit window"],
+  ["do you allow pets", null, "filler"],
+  ["whats the wifi password", null, "filler"],
+  ["is there a gym", null, "filler"],
+  ["what are the spa timings", null, "filler"],
+  ["tell me about the pool", null, "filler - by now the food order is past its window and LOCKED"],
+  ["book a table at spr kitchen for 4 at 8pm tonight", "submit", "TABLE ticket raised"],
+  ["actually make it 9pm", null, "THE TEST: this is the TABLE booking. Must update that ticket - must NOT answer 'that order is already being prepared'"],
+  ["what did i order", null, "the food order must be untouched by all of the above"]
+]

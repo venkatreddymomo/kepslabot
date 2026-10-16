@@ -1,0 +1,39 @@
+{
+  "business": {
+    "id": "t24",
+    "code": "t24",
+    "name": "T24 Hospitality",
+    "type": "hotel",
+    "city": "Mumbai",
+    "location": "",
+    "address": "",
+    "timezone": "Asia/Kolkata",
+    "currency": "INR",
+    "language": "en",
+    "timestamp_format": "12h",
+    "bot_name": "Trisha",
+    "welcome_message": "Hi! I'm Trisha from T24 Hospitality. Looking to book a stay or need more info? I'm here to help!",
+    "contact_email": "reservation@t-24.in",
+    "contact_phone": "+91 7045593059",
+    "website": "https://www.t-24.in/",
+    "channels": {
+      "web_widget": true,
+      "whatsapp": false
+    }
+  },
+  "capabilities": {},
+  "services": [],
+  "faq_bank": [],
+  "tools": [],
+  "intents": [],
+  "escalation": {},
+  "prompts": {},
+  "knowledge_base": {
+    "sources": [
+      "db://kb_files/576",
+      "db://kb_files/577"
+    ],
+    "notes": "",
+    "expected_property_count": 2
+  }
+}

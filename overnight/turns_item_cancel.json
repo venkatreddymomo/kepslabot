@@ -1,0 +1,10 @@
+[
+  ["hi", null, "greeting"],
+  ["Add Chicken Burger to my order", null, "one item in the cart - wording should say CART, not 'your order'"],
+  ["Add Tiramisu to my order", null, "second item, running total"],
+  ["What is in my cart?", null, "cart recap, still not placed"],
+  ["Yes, place the order", null, "NOW it becomes an order - external ticket"],
+  ["Cancel Tiramisu from my order", null, "ONE item off a PLACED order - ticket must keep the Chicken Burger"],
+  ["What did I order?", null, "THE BUG: must say Chicken Burger with price, NOT 'I'm not seeing your order details'"],
+  ["what is in my cart now", null, "must agree with the ticket"]
+]

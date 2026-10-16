@@ -1,0 +1,12 @@
+[
+  ["hi", null, "greeting"],
+  ["order food - 2 chicken burger", null, "cart"],
+  ["yes place it", null, "FOOD ticket 1"],
+  ["the AC in my room is not cooling properly", null, "another team"],
+  ["yes", null, "Engineering ticket"],
+  ["yes lets continue", null, "THE TEST: must NOT claim a food order was placed, must NOT raise a 2nd AC ticket"],
+  ["what did i order", null, "only the real food order, prices present"],
+  ["book a table at spr kitchen for 4 at 8pm tonight", "submit", "table ticket"],
+  ["change it back to spr", null, "THE TEST: must edit the TABLE booking, not answer 'order already being prepared'"],
+  ["what did i order", null, "food order still intact"]
+]

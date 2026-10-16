@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zone — widget test page</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0;
+         padding: 24px 18px 120px; background: #f6f7f9; color: #14213d; line-height: 1.6; }
+  .card { max-width: 720px; margin: 0 auto; background: #fff; padding: 22px;
+          border-radius: 14px; box-shadow: 0 8px 24px rgba(20,33,61,.08); }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: #6b7280; font-size: 14px; margin: 0 0 18px; }
+  h2 { font-size: 15px; margin: 22px 0 8px; }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 10px; }
+  .tag { display: inline-block; background: #f8971d; color: #fff; font-size: 12px;
+         padding: 2px 8px; border-radius: 99px; vertical-align: middle; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Zone — widget test page <span class="tag">live</span></h1>
+    <p class="sub">Points at the deployed bot on bot.kepsla.ai. Tap the orange launcher in the bottom-right corner.</p>
+
+    <h2>What to check</h2>
+    <ol>
+      <li>Fill the opening form (name, phone, email, city). <b>The Continue button should be visible without scrolling.</b></li>
+      <li>Tap a field — the keyboard should <b>not</b> cover the box you are typing in, and the page should not zoom in.</li>
+      <li>Ask: <i>"I want to book a room at Zone Connect Katra"</i>. You should get <b>Book on website</b> and, under it, <b>Get help from our team</b>.</li>
+      <li><b>Refresh the page</b> and reopen the chat — the messages, photos, <b>and both buttons</b> should all still be there.</li>
+      <li>Ask for a callback so a form opens, refresh <b>while filling it</b> — the form should come back with the details still in it.</li>
+      <li>Submit a form, then refresh — the submitted form should <b>not</b> come back.</li>
+      <li>Check nothing is cut off at the left or right edge of the screen.</li>
+    </ol>
+  </div>
+
+  <!-- ===== Zone embed snippet (exactly as given to the client) ===== -->
+  <script src="https://bot.kepsla.ai/static/embed/kebo-widget-loader.js"
+    data-widget-id="zone"
+    data-widget-key="wk_kOKo8Vwt1rGBE7ZCSLhYaFeC"
+    data-hotel-code="zone"
+    data-phase="pre_booking"
+    data-brand-color="#f8971d"
+    data-accent-color="#f8971d"
+    data-bg-color="#FFFFFF"
+    data-text-color="#1A1A2E"
+    data-bot-name="Zoogle"
+    data-position="right">
+  </script>
+</body>
+</html>

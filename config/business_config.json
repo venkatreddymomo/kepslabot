@@ -1,0 +1,1764 @@
+{
+  "business": {
+    "id": "test",
+    "name": "ICONIQA ",
+    "type": "hotel",
+    "city": "Mumbai",
+    "location": "",
+    "address": "",
+    "timezone": "Asia/Kolkata",
+    "currency": "INR",
+    "language": "en",
+    "timestamp_format": "24h",
+    "bot_name": "kai",
+    "welcome_message": "",
+    "contact_email": "",
+    "contact_phone": "",
+    "website": "",
+    "channels": {
+      "web_widget": true,
+      "whatsapp": true
+    }
+  },
+  "capabilities": {},
+  "journey_phases": [
+    {
+      "id": "pre_booking",
+      "name": "Pre Booking",
+      "description": "Guest is exploring and asking questions before reservation confirmation.",
+      "is_active": true,
+      "order": 1
+    },
+    {
+      "id": "pre_checkin",
+      "name": "Pre Checkin",
+      "description": "Guest booking is confirmed and needs support before arrival.",
+      "is_active": true,
+      "order": 2
+    },
+    {
+      "id": "during_stay",
+      "name": "During Stay",
+      "description": "Guest is in-house and needs operational or service support.",
+      "is_active": true,
+      "order": 3
+    },
+    {
+      "id": "post_checkout",
+      "name": "Post Checkout",
+      "description": "Guest has checked out and needs follow-up assistance.",
+      "is_active": true,
+      "order": 4
+    }
+  ],
+  "services": [
+    {
+      "id": "room_booking_request",
+      "name": "room booking request",
+      "type": "service",
+      "description": "Allows guests to explore detailed room options and submit a booking request to staff.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "Create a backend ticket for a room booking request when the guest confirms their selection by providing their full name, contact information, desired check-in and check-out dates, and special requests",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "room_type",
+          "label": "room type",
+          "description": "Confirm the room type before showing the form."
+        },
+        "fields": [
+          {
+            "id": "full_name",
+            "label": "Full Name",
+            "type": "text",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "phone",
+            "label": "Phone Number",
+            "type": "tel",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "checkin_date",
+            "label": "Check-in Date",
+            "type": "date",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "checkout_date",
+            "label": "Check-out Date",
+            "type": "date",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "special_requests",
+            "label": "Special Requests",
+            "type": "textarea",
+            "required": false,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": "Confirm the room type details, then show this form and collect all required fields."
+      },
+      "phase_id": "pre_booking",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for room booking request.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "pre_booking",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "Create a backend ticket for a room booking request when the guest confirms their selection by providing their full name, contact information, desired check-in and check-out dates, and special requests",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "extracted_knowledge": "=== premier_king_room ===\nTotal 134 rooms\n109 rooms are of  229–285 sq. ft. \n25 rooms are 300 - 340 sq. ft\n\nA calming palette, cloud-soft linens, and a versatile table-and-chair duo designed to flow effortlessly from work to wind-down, where essentials feel elevated.\n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== premier_twin_room ===\nTotal 48 rooms, 31 rooms are 230–310 sq. ft. 17 rooms are 310 to 380 sq. ft\n\nDesigned for comfort and versatility, our Premier Twin Room offers 231 to 380 sq. ft. of stylish space. Featuring two plush twin beds with premium linens, this room is ideal for both business and leisure travelers. \n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== lux_suite ===\nTotal 79 rooms, 15 rooms are 380-425 sq.ft with King bed. 64 rooms are 430 - 485 sq. ft with Twin bed\n\nStep into the epitome of luxury in our LUX Suite, designed for those who appreciate space and sophistication. Spanning 381 to 485 sq. ft., this suite features a sumptuous king-size bed with premium linens, a separate seating area, and floor-to-ceiling windows with panoramic city views. \n\nThe spacious bathroom is fitted with premium fixtures for a rejuvenating experience. A uniquely crafted bedside reading lamp adds a touch of thoughtful elegance, creating the perfect ambiance for relaxation. \n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== reserve_suite ===\n16 rooms, 375–415 sq. ft.\n\nA sophisticated retreat, the Reserve Suite offers 375 or 415 sq. ft. of elegant living space. A king- size bed with the finest linens linens ensures restful sleep, while the separate lounge area provides a stylish space to unwind. \n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== prestige_suite ===\n6 rooms, 485 sq. ft., includes bathtub\n\nExperience grandeur in the Prestige Suite, boasting 487 sq. ft. of luxury. This suite features a lavish king-size bed, an elegant seating area, and a spacious bathroom with premium fittings. \n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== ultimate_suite ===\n8 rooms, 603 sq. ft., \n\nOur most spacious and opulent accommodation, the Ultimate Suite, offers 603 sq. ft. of indulgence. Featuring a king-size bed, a separate living and dining area, Bedroom and floor-ceiling windows,  this suite is thoughtfully designed for longer stays and entertaining. \n\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\n=== in_room_amenities ===\nAll our rooms feature an incredible collection of amenities that are designed around you, the guest:\nIn-room smart laundry closet to iron, steam, refresh your clothes\nComplimentary well-stocked non-alcoholic minibar\nCustom created \"Bed of Dreams\" with traceable cotton linen\nEspresso Machines + coffee pods with ICONIQA's single origin coffees\nHigh-speed WiFi with unlimited device usage\nPower shower with Indian Ayurvedic influenced bath products\nSlew of thoughtful bathroom amenities that are sustainable and recyclable\t\nTea Maker with multiple flavours and options \nICONIQA's custom label water bottling plant with Still and Sparkling Water\nSmart TV's with streaming options\n=== checkin_time ===\n14:00 hrs\n=== checkout_time ===\n11:00 hrs\n=== early_checkin_policy ===\nBefore 07:00 AM → 50% of room rate, subject to availability\n=== late_checkout_policy ===\nComplimentary till 12 noon, 50% of the room rate till 4 PM,  post 4 PM full night charges are applicable , subject to availability\n=== Cancellation Policy ===\nOn BAR : 48 hrs prior to the arrival date\nAdvance Purchase : Non-refundable, Non-amendable, Non-cancellable (Same has to be charged on the same day of the received booking) \nCorporate / TA :  As per the cancellation policy mentioned in the signed contract",
+        "ticketing_conditions": "Create a backend ticket for a room booking request when the guest confirms their selection by providing their full name, contact information, desired check-in and check-out dates, and special requests"
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for the room booking request service at our hotel. Your primary role is to assist guests in exploring detailed room options and facilitate their room booking requests. You must use only the admin-configured policy and knowledge base (KB) evidence to provide accurate information. When required details are missing, ask concise clarifying questions, but do not invent fixed field schemas.\n\nYour service operates in the pre_booking phase, which means guests may not have a reservation yet. Always check the known_context for any pre-filled guest data like name, phone, or email before asking for it. If this information is present, use it directly. Only request contact information when it is genuinely needed and absent from known_context.\n\nWhen a guest expresses explicit booking intent, your task is to guide them through selecting a specific room type. Present all available room options from the KB, highlighting what makes each unique. Once the guest confirms their choice, provide a warm confirmation mentioning 1-2 key features of their selected room. Immediately after, inform them that the booking form will appear for them to fill in the necessary details. Never ask for confirmation phrases or collect form fields in conversation; the form submission itself is the confirmation.\n\nThe form-based ticketing mode requires you to signal readiness for the form only after the guest has confirmed their room type selection. The trigger field is 'room_type,' and it must have a specific value before the form is shown. If the guest provides explicit booking intent upfront, skip the browsing phase and confirm their choice directly.\n\nFor any complaints or requests for human assistance, empathize with the guest and offer help. If the service is available and ticketing is enabled, escalate via ticket. If out of phase, acknowledge the concern warmly and explain any limitations without promising immediate action.\n\nMaintain a warm, concise, and professional tone. Avoid using technical or internal jargon in guest-facing responses. Instead of terms like 'escalate' or 'ticket,' use phrases like 'I have noted this' or 'our team will look into this.' Always empathize first when addressing complaints and offer to connect the guest with our team if needed.\n\nDo not attempt to answer questions outside your scope, such as those related to other hotel services like restaurants, spa, or transport. If such questions arise, indicate that you will transfer the guest to the appropriate service and set context_switched=true.\n\nRemember, you are the sole authority on when the form renders. Ensure that the guest has all the necessary information about room options before asking them to make a selection. Use bullet points when listing multiple missing details, and never use markdown formatting in your responses.\n\nBy adhering to these guidelines, you will ensure a seamless and efficient room booking experience for our guests.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    },
+    {
+      "id": "airport_transfer",
+      "name": "airport transfer",
+      "type": "service",
+      "description": "Guests can view and book airport transfer services for pickup from the airport to the hotel.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "Create a backend ticket for airport transfer service when a guest confirms their booking by providing their flight number, arrival time, and the number of passengers.",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "terminal",
+          "label": "terminal",
+          "description": "when user confirms their terminal number"
+        },
+        "fields": [
+          {
+            "id": "flight",
+            "label": "flight number",
+            "type": "text",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "arrival",
+            "label": "arrival time",
+            "type": "time",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "number",
+            "label": "number of passengers",
+            "type": "text",
+            "required": true,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": "confirm terminal and show form"
+      },
+      "phase_id": "pre_checkin",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for airport transfer.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "pre_checkin",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "Create a backend ticket for airport transfer service when a guest confirms their booking by providing their flight number, arrival time, and the number of passengers.",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "extracted_knowledge": "=== PROPERTY SCOPE MANIFEST ===\nDetected property count: 1\nDetected properties:\n- Rohl Test Property (aliases: Rohl Test Property, Property, Test Property; sources: 1e2cdd1c_ROHL_Test_property.txt)\n\n=== PROPERTY: Rohl Test Property | ALIASES: Rohl Test Property, Property, Test Property ===\nairport_transfer\nAvailable, Toyota Innova Hycross 5 seater. ₹2000 for T1, ₹1500 for T2",
+        "ticketing_conditions": "Create a backend ticket for airport transfer service when a guest confirms their booking by providing their flight number, arrival time, and the number of passengers."
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for the airport transfer service at our hotel. Your primary role is to assist guests in viewing and booking airport transfer services from the airport to the hotel. You have access to a curated knowledge base that provides current information about available transfer options, pricing, and vehicle details. Always use this knowledge base and any admin-configured policy data to provide accurate answers. If you encounter questions outside your scope, such as those about dining, spa, or other hotel services, you must transfer the conversation back to the main orchestrator by setting context_switched=true.\n\nYour task is to facilitate the booking process for airport transfers. You must never begin collecting booking details until the guest has explicitly expressed their intent to book a transfer. When a guest asks for information, answer their questions fully and then offer to proceed with booking. Only when the guest confirms their choice should you trigger the form for collecting booking details.\n\nThis service uses a form-based ticketing system. You must never ask the guest to confirm their booking by saying \"yes confirm\" or any similar phrase. Once the guest confirms their choice of terminal, you should provide a warm confirmation and inform them that the booking form will appear. The form submission itself is the confirmation, and you should not ask for any booking details in conversation, as the form will handle this.\n\nAlways check the known_context for pre-filled guest data before asking for any information. During the pre_checkin phase, never ask for guest name, phone number, or email if these are already present in the known_context. Only request the terminal number if it is necessary for the booking and not already known.\n\nIf a guest expresses a complaint or requests to speak with a staff member, empathize with their situation and offer to connect them with our team. Use guest-friendly language and avoid technical jargon. For example, say \"I have noted this\" or \"Our team will look into this\" instead of using terms like \"escalate\" or \"ticket.\"\n\nYou must provide clear and concise responses, never using markdown formatting. When asking for multiple details, use bullet points for clarity. For instance, if additional details are needed, say: \n- Flight number\n- Arrival time\n- Number of passengers\n\nYour responses must be warm, professional, and to the point. When a guest selects an option, highlight 1-2 key features of their choice in a natural, complete sentence, and then indicate that the booking form will appear. For example, \"Great choice! The Toyota Innova Hycross is a comfortable 5-seater, perfect for your journey. Please fill in the booking details below.\"\n\nRemember, your role is to ensure a seamless booking experience for the guest by providing accurate information and facilitating the booking process efficiently.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    },
+    {
+      "id": "lost_and_found",
+      "name": "lost and found",
+      "type": "service",
+      "description": "Guests can request assistance in locating items they may have accidentally left behind during their stay.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "Create a backend ticket for lost and found service when a guest confirms they have lost an item and provides a detailed description of the item, the date of their stay, and their contact information.",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "lost_item",
+          "label": "lost item",
+          "description": "which item guest lost"
+        },
+        "fields": [
+          {
+            "id": "lost_item",
+            "label": "lost item",
+            "type": "text",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "description",
+            "label": "description of item",
+            "type": "textarea",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "last_seen",
+            "label": "last seen",
+            "type": "textarea",
+            "required": true,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": "confirm lost item before showing form"
+      },
+      "phase_id": "post_checkout",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for lost and found.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "post_checkout",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "Create a backend ticket for lost and found service when a guest confirms they have lost an item and provides a detailed description of the item, the date of their stay, and their contact information.",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "ticketing_conditions": "Create a backend ticket for lost and found service when a guest confirms they have lost an item and provides a detailed description of the item, the date of their stay, and their contact information."
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for the lost and found service at our hotel. Your primary role is to assist guests in locating items they may have accidentally left behind during their stay. You will use the admin-configured policy and knowledge base (KB) to provide accurate information and ask concise clarifying questions when necessary. You must not invent fixed field schemas or information outside the provided KB.\n\nYour service is available post-checkout, and ticketing is enabled through a form-based system. This means you must never ask guests to confirm their request with phrases like \"yes confirm.\" Instead, once a guest confirms they have lost a specific item and provides a detailed description, you will trigger the form for them to fill in the necessary details. The form submission itself acts as the confirmation.\n\nAlways check the known_context for guest information before asking for any details. During the post-checkout phase, never ask for the guest's name, room number, phone number, or email, as the hotel already has these details on file. Only collect service-specific details such as the description of the lost item and the date of the stay.\n\nWhen a guest expresses interest in a specific lost item, confirm their choice with a warm, concise message highlighting key aspects of their selection. Then, let them know that the form will appear for them to fill in the details. For example: \"Thank you for letting us know about the item. Please fill in the details below to help us locate it.\"\n\nIf a guest asks about lost items but does not explicitly confirm they have lost one, provide the necessary information and ask if they would like to proceed with reporting a lost item. Do not trigger the form until the guest has made a clear selection.\n\nFor important complaints or explicit requests for human assistance, escalate via ticketing only when in phase and enabled. If out of phase, acknowledge the concern warmly and explain the limits without promising immediate dispatch. For example: \"I’m sorry to hear about your concern. Our team will look into this, and someone will reach out to assist you.\"\n\nMaintain a professional and warm tone in all interactions. Never use technical or internal jargon in guest-facing responses. Avoid terms like \"escalate,\" \"ticket,\" \"reference number,\" or \"create a ticket.\" Instead, use phrases like \"I have noted this,\" \"our team will look into this,\" or \"let me connect you with our team.\"\n\nWhen responding to guests, ensure your replies are clear and concise, using plain text without markdown formatting. If you need to ask for multiple details, use bullet points for clarity. For example: \"Please provide the following details: - Description of the item - Date of stay - Last seen location.\"\n\nFinally, remember that your knowledge is limited to what is in the KB and PRIMARY KNOWLEDGE. If a guest asks something outside your scope, such as questions about other hotel services like restaurants or spa, inform them that you will connect them with the appropriate team, setting context_switched=true to hand control back to the orchestrator. Always strive to provide the best possible assistance within your defined role.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    },
+    {
+      "id": "spa_booking",
+      "name": "spa booking",
+      "type": "service",
+      "description": "Guests can browse available spa services and book appointments directly through the chatbot during their stay.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "Create a backend ticket for a spa booking when the guest confirms their appointment by providing date, and time of the appointment.",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "spa_treatment",
+          "label": "spa treatment",
+          "description": "Confirm the spa treatment type before showing the form."
+        },
+        "fields": [
+          {
+            "id": "preferred_time",
+            "label": "Preferred Time",
+            "type": "time",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "date",
+            "label": "date",
+            "type": "date",
+            "required": true,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": "Confirm the spa treatment type, then show this form and collect all required fields."
+      },
+      "phase_id": "during_stay",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for spa booking.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "during_stay",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "Create a backend ticket for a spa booking when the guest confirms their appointment by providing date, and time of the appointment.",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "extracted_knowledge": "=== PROPERTY: Rohl Test Property.Txt ===\n- spa_timings: 9:00 AM – 11:00 PM\n- Wellness Rooms: Traditional spa therapies are replaced ICONIQA style with candlelight therapies. Functional massages to help with jetlag or hangovers, along with foot massages by the poolside at Bombay Swim Club.",
+        "ticketing_conditions": "Create a backend ticket for a spa booking when the guest confirms their appointment by providing date, and time of the appointment."
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for spa booking at our hotel. Your role is to help guests browse available spa services and book appointments directly through the chatbot during their stay. You should use only the admin-configured policy and knowledge base (KB) evidence to provide accurate information. Always ask concise clarifying questions when required details are missing, and do not invent fixed field schemas.\n\nYour primary task is to assist guests in selecting and booking spa treatments. Use the knowledge base to present available options, and let guests choose a specific treatment before confirming and triggering the booking form. The spa services available at our property include traditional spa therapies replaced with ICONIQA style candlelight therapies, functional massages for jetlag or hangovers, and foot massages by the poolside at the Bombay Swim Club. Spa timings are from 9:00 AM to 11:00 PM.\n\nWhen a guest expresses clear intent to book a specific spa treatment, confirm their choice by highlighting key features of the treatment in a warm, concise manner. Then, signal readiness for the booking form by stating, \"Please fill in the booking details below.\" The form will automatically collect necessary details such as the preferred time and date. Never ask for these fields in conversation, as the form handles this.\n\nAlways check known_context before asking for any information. During the guest's stay, do not ask for their name, room number, phone, or email, as these are already on file. Only collect service-specific details such as the date, time, and treatment preferences.\n\nFor important complaints or explicit requests for human assistance, empathize first and offer help. If ticketing is enabled and the service is available, escalate via ticketing after confirming the guest's choice. If the service is unavailable, acknowledge the concern and explain the limits without promising immediate dispatch.\n\nMaintain a warm, professional tone in all interactions. Avoid technical or internal jargon in guest-facing responses. Use plain language and avoid terms like \"escalate,\" \"ticket,\" or \"reference number.\" Instead, say, \"I have noted this,\" \"our team will look into this,\" or \"I will make sure someone helps you with this.\"\n\nIf a guest asks about a completely different hotel service, such as restaurants, spa, or transport, inform them that you will transfer their inquiry to the appropriate service and set context_switched=true. Do not attempt to answer questions outside the spa booking scope.\n\nYour responses should be concise and professional, never using markdown markers. When asking for multiple details, use bullet points for clarity. Always provide relevant information from the knowledge base and never invent facts. If the knowledge base lacks specific information, offer to connect the guest with a staff member for further assistance.\n\nRemember, your role is to facilitate a seamless spa booking experience for guests by guiding them through the selection process and ensuring all necessary details are accurately collected through the booking form.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    },
+    {
+      "id": "dining_and_restaurant",
+      "name": "dining and restaurant",
+      "type": "service",
+      "description": "Guests can explore available restaurants, view menus, and make reservations before check-in.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "restaurant_type",
+          "label": "restaurant type",
+          "description": "which restaurant guest confirms"
+        },
+        "fields": [
+          {
+            "id": "date",
+            "label": "date",
+            "type": "date",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "time",
+            "label": "time",
+            "type": "time",
+            "required": true,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": ""
+      },
+      "phase_id": "pre_checkin",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for dining and restaurant.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "pre_checkin",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "extracted_knowledge": "=== PROPERTY: Rohl Test Property.Txt ===\n{\"data\":\"{\\\"editable\\\":{\\\"Aviator Food Menu\\\":\\\"menu_name: THE_AVIATOR_MENU\\\\nnotes:\\\\n  - \\\\\\\"Calorie counts are specified per 100 grams of the serving.\\\\\\\"\\\\n  - \\\\\\\"All prices are in INR and exclusive of taxes.\\\\\\\"\\\\nsections:\\\\n  - section_name: SNACKS\\\\n    items:\\\\n      - item_name: \\\\\\\"GOLDEN CASHEW NUTS, LEMONGRASS DUST\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"465\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"590 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Crispy Cashew, Kaffir Lime Dust\\\\\\\"\\\\n        allergen_details: \\\\\\\"Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"RUSSET POTATO CROQUETTES, TRUFFLE MORNAY\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"258 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Cheddar Cheese Stuffed Croquettes, Black Truffle Paste, Truffle Mornay\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SHRIMP KATSU, WASABI AIOLI\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"625\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"228 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Crispy Ocean Shrimp, Wasabi Aioli, Burnt Lemon\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean, Gluten, Soy, Dairy, Eggs\\\\\\\"\\\\n\\\\n  - section_name: SMALL PLATE\\\\n    items:\\\\n      - item_name: \\\\\\\"EDAMAME HUMMUS, CRISPS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"214 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Edamame Hummus, Assorted Crisps, Buttered Edamame\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CHARRED BROCCOLI, TOGARASHI & NUTS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"171 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Bincho Charred Broccoli, Yuzu Mayo, Nut Crumble\\\\\\\"\\\\n        allergen_details: \\\\\\\"Treenuts, Dairy, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CHICKEN THIGH KARAAGE, CHILLI LIME\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"585\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"212 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Japanese Fried Chicken, Chilli Lime Sauce, House Dust\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SHRIMP OKONOMIYAKI, BONITO FLAKES\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian / Non Vegetarian (Both symbols listed)\\\\\\\"\\\\n        price_inr: \\\\\\\"645 / 745\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"181 Kcal / 196 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Japanese Pancake, Yuzu Mayo, Bonito Flakes\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Crustacean, Soy, Gluten, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"MALAYSIAN FRIED SQUID, CURRY LEAF GARLIC\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"695\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"211 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Crisp Fried Squid, Garlic Pepper Sauce, Crispy Curry Leaf\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Soy, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TIGER PRAWNS, THAI RED CURRY GLAZE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"163 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Grilled Tiger Prawns, Coconut Curry, Chilli Oil\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean, Gluten, Soy, Dairy\\\\\\\"\\\\n\\\\n  - section_name: DIM SUM\\\\n    items:\\\\n      - item_name: \\\\\\\"EDAMAME & WATER CHESTNUT, SPRING ONION & SESAME DIP\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"149 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Edamame & Water Chestnut Dumpling, Beetroot Skin, Herb Dip\\\\\\\"\\\\n        allergen_details: \\\\\\\"Diary, Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CHICKEN & CHIVES, CRISPY CHILLI SAUCE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"595\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"168 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chicken Steam Dumpling, Crispy Chilli, Chives\\\\\\\"\\\\n        allergen_details: \\\\\\\"Soy, Gluten\\\\\\\"\\\\n\\\\n  - section_name: SLIDER\\\\n    items:\\\\n      - item_name: \\\\\\\"KOREAN CAULIFLOWER, GOCHUJANG & SHALLOTS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"211 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Crispy Fried Cauliflower, Gochujang Cream, Burnt Shallots, Brioche\\\\\\\"\\\\n        allergen_details: \\\\\\\"Diary, Soy, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PULLED PORK, COCONUT & LIME\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"585\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"243 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Slow-Cooked Pulled Pork, Lime Mayo, Burnt Shallots, Brioche\\\\\\\"\\\\n        allergen_details: \\\\\\\"Diary, Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"GROUND LAMB & CHEDDAR, CARAMELISED ONIONS\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"585\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"271 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Herb Lamb Patty, Cheddar Cheese, Caramelized Onions, Brioche\\\\\\\"\\\\n        allergen_details: \\\\\\\"Diary, Gluten, Soy\\\\\\\"\\\\n\\\\n  - section_name: BOWLS\\\\n    items:\\\\n      - item_name: \\\\\\\"RAW PAPAYA & PEANUT SALAD, JAGGERY GLAZE\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian and Non Vegetarian options available\\\\\\\"\\\\n        price_inr: \\\\\\\"495 (Veg) / 565 (Shrimp)\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"122 kcal (Veg) / 128 kcal (Shrimp)\\\\\\\"\\\\n        ingredients: \\\\\\\"Raw Papaya, Peanuts, Jaggery Glaze, Lime, Chili\\\\\\\"\\\\n        allergen_details: \\\\\\\"CrustaceanCrustacean, Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PORCINI & KING OYSTER MUSHROOM RICE\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"615\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"137 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Short Grain Rice, Pepper Sauce, Flamed Porcini & King Oyster Mushrooms\\\\\\\"\\\\n        allergen_details: \\\\\\\"Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CHARRED LEEK CONGEE, CORIANDER OIL\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian and Non Vegetarian options available\\\\\\\"\\\\n        price_inr: \\\\\\\"615\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"125 kcal (Veg) | 143 kcal (Non-Veg)\\\\\\\"\\\\n        ingredients: \\\\\\\"Rice Porridge, Charred Leeks, Fresh Herbs, Coriander Oil, 63 degree Egg\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Eggs, Soy, Peanut\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"LAKSA CHICKEN NOODLE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"645\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"168 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Spicy Coconut Curry, Noodles, Crumb-Fried Chicken, 63 degree Egg\\\\\\\"\\\\n        allergen_details: \\\\\\\"Eggs, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PAD KRA PAO\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"665\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"186 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Thai Basil Minced Pork, Sticky Rice, Sunny-Side-Up Egg\\\\\\\"\\\\n        allergen_details: \\\\\\\"Eggs, Soy, Crustacean\\\\\\\"\\\\n\\\\n  - section_name: SWEET\\\\n    items:\\\\n      - item_name: \\\\\\\"DARSAAN, VANILLA BEAN ICE CREAM\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"465\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"287 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Honey-Glazed Wonton, Vanilla Pod Ice Cream, Candied Nuts\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Gluten, Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"55% CHOCOLATE MOUSSE, CRANBERRIES\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"465\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"312 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Silky Chocolate Mousse, 55% Dark Chocolate, Tart Cranberries\\\\\\\"\\\\n        allergen_details: \\\\\\\"Eggs, Dairy\\\\\\\"\\\\n\\\\n \\\",\\\"Bombay Swim Club Menu\\\":\\\"menu_name: BOMBAY SWIM CLUB MENU\\\\n\\\\nsections:\\\\n  - section_name: SMALL PLATES\\\\n    items:\\\\n      - item_name: \\\\\\\"RUSSET ROCKETS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"635 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Cheddar Cheese Croquettes, Black Truffle Paste, Truffle Mornay\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"GREEN ROOM DIP\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"625\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"370 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Edamame Hummus, Assorted Crisps, Spiced Edamame\\\\\\\"\\\\n        allergen_details: \\\\\\\"Sesame, Treenuts, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SHRIMP POP STAR\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"745 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Crispy Shrimp, Chipotle Aioli\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean, Gluten, Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SPICE MINE CROQUETTE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"540 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Pork Chorizo, Salsa Tatemada\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"YUCATÁN POPPER\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"620 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Pulled Lamb Croquette, Achiote-Naranja Salsa\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TOKYO HOT BITE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"745\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"490 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Japanese Style Fried Chicken, Chilli Lime Sauce, Caviar\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"LAMB SLAM SLIDE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"585 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Herb Lamb Patty, Cheddar, Caramelized Onions, Brioche\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Dairy, Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TINGA STREET CRUNCH\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"745\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"500 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chicken, Adobo Chili, Cheddar\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Dairy\\\\\\\"\\\\n\\\\n  - section_name: TACOS\\\\n    items:\\\\n      - item_name: \\\\\\\"SQUASH & BEAN TACO\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"625\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"430 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chile Pasilla, Avocado Cream, Fire-Roasted Squash\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PULLED PORK\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"565 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Slow-Cooked Pork, Lime Mayo, Burnt Shallots\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CHARRED CHICKEN TACO\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"745\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"505 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Avocado Cream, Salsa De Tomate, Pickled Onion\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"LAMB BARBACOA\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"490 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Salsa Roja, Shaved Radish, Cilantro\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy\\\\\\\"\\\\n\\\\n  - section_name: DIM SUM (VEGETARIAN)\\\\n    items:\\\\n      - item_name: \\\\\\\"JADE DUMPLING\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"550\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"230 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Edamame, Lemongrass, Water Chestnut, Sesame\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Sesame, Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PORCINI SILK BLOOM\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"550\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"270 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Porcini, White Mushroom, Crème Cheese, Truffle\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Dairy, Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PEPPER BLOSSOM\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"550\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"215 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Pak Choi, Sichuan Pepper, Bamboo Shoot\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TANGRA STREET WONTONS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"550\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"210 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Broccoli, Mustard Leaf, Soy-Ginger, Green Chili Oil\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"GOLDEN SPRING DIM SUM\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"550\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"210 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Asparagus, Sweet Corn, Fresh Coriander, Light Soy\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Treenuts\\\\\\\"\\\\n\\\\n  - section_name: DIM SUM (NON-VEGETARIAN)\\\\n    items:\\\\n      - item_name: \\\\\\\"THE DRAGON’S BREATH\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"750\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"295 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Norwegian Salmon, Escabeche Pepper, Black Vinegar\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Gluten, Soy, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"THE CHAIRMAN’S DUMPLING\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"650\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"255 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chicken, Smoked Chilli, Fermented Bean\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SHAOXING CHILLI PRAWNS\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"750\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"260 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Sea Prawns, Chilli-Garlic, Sesame Oil\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean, Gluten, Soy, Molluscus, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"FOREST FLOOR CHICKEN\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"650\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"265 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Shiitake, Cracked Pepper, Garlic-Sesame\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Treenuts, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"BANGKOK PRISM DUMPLING\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"650\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"250 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chicken, Chili Lemongrass Paste\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Treenuts\\\\\\\"\\\\n\\\\n  - section_name: CEVICHE & SUSHI\\\\n    items:\\\\n      - item_name: \\\\\\\"GREEN LINE ROLL\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"695\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"260 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Avocado, Cucumber, Wasabi Soy Cream\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"YUZU ZEN ROLL\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"695\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"270 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Radish, Cucumber, Avocado, Yuzu Kosho Cream\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Gluten, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CITRUS CURRENT\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"190 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Citrus Tuna Ceviche, Cucumber, Yuzu, Lemon\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"MONSOON TIDE\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"240 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Prawn & Green Mango Ceviche, Coconut-Lime Tigre\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean, Gluten, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TROPIC VEIL\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"200 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Cold-Smoked Hamachi Tiradito, Watermelon & Chili Oil\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SPICY TUNA ROLL\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"350 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Wasabi Mayo, Avocado, Cucumber\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"YELLOWTAIL JALAPEÑO\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"320 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Yuzu-Soy Glaze, Avocado, Pickled Jalapeño\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Gluten, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TEMPURA SHRIMP\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"390 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Tamarind Unagi Gel, Avocado, Cucumber\\\\\\\"\\\\n        allergen_details: \\\\\\\"Molluscus, Crustacean, Gluten, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"TORCHED SALMON ROLL\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"360 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Charred Salmon, Pickled Ginger Cream, Avocado\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Dairy, Eggs, Sesame\\\\\\\"\\\\n\\\\n  - section_name: ROBATA (FIRE)\\\\n    items:\\\\n      - item_name: \\\\\\\"BROCCO-LIT\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"230 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Charred Broccoli, Yuzu Mayo, Nut Crumble\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Eggs, Soy, Treenuts\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"THE SIRLOIN OF THE FOREST\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"210 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Shimeji & Portobello, Miso-Brown Butter\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"GRILL & CHILL\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"230 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Green Asparagus, Iceberg, Tare, Citrus\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"STONE HEART TARO\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"795\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"220 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Smoked Honey, Togarashi, White Miso, Chili-Coconut\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SALMON PAVÉ\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"390 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Dalle Khusrani, Citrus, Caviar\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"HACHI HEAT\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"210 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Baby Lobster, Yuzu Kosho Citrus, Charred Allium\\\\\\\"\\\\n        allergen_details: \\\\\\\"Crustacean\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"ONI FLAME COLLAR\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"370 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Queen Fish Collar, Bone Butter, Black Garlic\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Fish\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PIÑA VOLTAGE\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"370 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Charred Lamb Loin Skewers, Pineapple Salsa\\\\\\\"\\\\n        allergen_details: \\\\\\\"(None listed on menu)\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SHISO VERDE\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"490 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Pork Belly Skewers, Salsa Verde\\\\\\\"\\\\n        allergen_details: \\\\\\\"(None listed on menu)\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"CITRUS LACQUER\\\\\\\"\\\\n        categorization: \\\\\\\"Non-Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"320 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Chicken Skewers, Salsa Taquera\\\\\\\"\\\\n        allergen_details: \\\\\\\"(None listed on menu)\\\\\\\"\\\\n\\\\n  - section_name: BOWLS\\\\n    items:\\\\n      - item_name: \\\\\\\"TOFU UMAMI\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"420 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Charred Tofu, Edamame, Pak Choi, Sticky Rice\\\\\\\"\\\\n        allergen_details: \\\\\\\"Soy, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"MUSHROOM MAFIA\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"335 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Short Grain Rice, Porcini, Morels, King Oyster\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"PAD THAI\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"895\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"440 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Flat Rice Noodles, Tamarind-Chili, Asparagus, Edamame\\\\\\\"\\\\n        allergen_details: \\\\\\\"Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SALMON SUNSET\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"615 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Citrus Salmon, Furikake Rice, Wasabi Mayo\\\\\\\"\\\\n        allergen_details: \\\\\\\"Fish, Eggs, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"LAKSA CHICKEN NOODLE\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"620 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Coconut Curry, Fried Chicken, 63° Egg\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"BANGKOK STREET\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"630 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Thai Basil Pork, Sticky Rice, Sunny Egg\\\\\\\"\\\\n        allergen_details: \\\\\\\"Eggs, Soy\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"BAD BOY LAMB CHOP\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"995\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"500 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Salt & Pepper Lamb, Jacket Potato, Chili–Chocolate Jus\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy\\\\\\\"\\\\n\\\\n  - section_name: DESSERT\\\\n    items:\\\\n      - item_name: \\\\\\\"MISO DOI\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"300 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Baked Mishti Doi, Miso Caramel, Sesame Crumble\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Sesame\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"WTF WASABI\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"390 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Wasabi Ice Cream, Macadamia, Matcha Cone\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Eggs, Treenuts, Gluten\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"MILK MONEY\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"410 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Tres Leches, Whipped Cream, Burnt Caramel\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Eggs\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"SAN SEBASTIÁN SIN\\\\\\\"\\\\n        categorization: \\\\\\\"Non Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"545\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"420 kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Basque Cheesecake\\\\\\\"\\\\n        allergen_details: \\\\\\\"Dairy, Eggs\\\\\\\"\\\\n\\\\n \\\\n \\\",\\\"Midnight selections - IN-ROOM_DINING (IRD)\\\":\\\"menu_name: \\\\\\\"Midnight selections - IN-ROOM DINING (IRD)\\\\\\\"\\\\nnotes:\\\\n  - \\\\\\\"All calorie counts listed are per 100 grams of the serving as per the menu footer.\\\\\\\"\\\\nsections:\\\\n\\\\n  - section_name: \\\\\\\"24 HOURS BREAD\\\\\\\"\\\\n    items:\\\\n      - item_name: \\\\\\\"6. BOMBAY TOASTIE\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"575\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"91 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Brioche, Potato Mash, Cheese\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Milk, Mustard\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"7. GRILLED VEGGIE\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"575\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"150 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Shokupan Sando, Boursin\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Milk\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"8. TAMARI TOFU\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"575\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"134 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Bao, Mesclun\\\\\\\"\\\\n        allergen_details: \\\\\\\"Gluten, Soybeans\\\\\\\"\\\\n\\\\n      - item_name: \\\\\\\"9. UFO BURGER WITH MUSHROOMS\\\\\\\"\\\\n        categorization: \\\\\\\"Vegetarian\\\\\\\"\\\\n        price_inr: \\\\\\\"575\\\\\\\"\\\\n        calorie_count_per_100g: \\\\\\\"133 Kcal\\\\\\\"\\\\n        ingredients: \\\\\\\"Sautéed Mushroom, Sliced Tomato, Caramelised Onion, Cheese\\\\\\\"\\\\n        allergen_details: \\\\\\\"Milk, Gluten\\\\\\\"\\\\n\\\\"
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for dining and restaurant services at our hotel. Your primary role is to assist guests in exploring available restaurants, viewing menus, and making reservations before they check in. You have access to a comprehensive knowledge base that includes detailed menu information, restaurant options, and allergen details. Use this data to provide accurate and helpful responses to guest inquiries.\n\nYour knowledge is limited to the information in the knowledge base and any admin-configured policies. You must not invent details or speculate on information not present in the KB. If a guest asks about a service outside your scope, such as spa treatments or transportation, you should inform them that you will connect them with the appropriate team and set context_switched=true.\n\nWhen handling dietary or allergen questions, derive answers from the allergen and ingredient data in the KB. For instance, if a dish does not list wheat/gluten as an allergen, it can be considered gluten-free. Always ensure your responses are based on available data.\n\nFor booking or order intents, follow a structured process. Do not begin collecting booking details until the guest has expressed clear, explicit intent to make a reservation. Informational questions should be answered fully without triggering any booking process. When a guest shows intent to book, present the available restaurant options from the KB, let them choose a specific option, and confirm their choice before triggering the form.\n\nYou operate in a form-based ticketing mode, which means you should never ask the guest to confirm with phrases like \"yes confirm\" or collect form fields in conversation. Once a guest confirms their choice, provide a warm confirmation highlighting key features of their selection, and then signal readiness for the form by saying something like, \"Please fill in the booking details below.\" The form submission itself is the confirmation.\n\nAlways check known_context for guest information before asking for any details. During the pre_checkin phase, never ask for name, phone, or email if they are already in known_context. Only request contact information when genuinely needed and absent from known_context.\n\nFor important complaints or explicit requests for human assistance, escalate via ticket only when in phase and enabled. If out of phase, acknowledge the concern warmly and explain any limitations without promising immediate action.\n\nMaintain a warm, concise, and professional tone in all interactions. Avoid using technical or internal jargon in guest-facing responses. Use plain language and bullet points for clarity when asking for multiple details. For complaints, empathize first and then offer help. Provide contact information for staff assistance when requested, without creating backend processes unless explicitly asked by the guest.\n\nIn food and dining services, when a guest mentions a dish, verify its existence in the KB. If it is not listed, suggest similar items. After acknowledging each item, ask if there is anything else they would like to add, as guests often order multiple items. Keep a running tally of the order and confirm when the guest signals they are done ordering. Only then proceed to the form for final confirmation.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    },
+    {
+      "id": "in_room_dining",
+      "name": "in room dining",
+      "type": "service",
+      "description": "Guests can browse the in-room dining menu and place orders directly through the chatbot.",
+      "is_active": true,
+      "is_builtin": false,
+      "ticketing_enabled": true,
+      "ticketing_policy": "",
+      "ticketing_mode": "form",
+      "form_config": {
+        "trigger_field": {
+          "id": "confirm",
+          "label": "confirm message",
+          "description": "when guest confirms to proceed with order"
+        },
+        "fields": [
+          {
+            "id": "dish",
+            "label": "dish name with quantity",
+            "type": "textarea",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "deliverytime",
+            "label": "delivery time",
+            "type": "time",
+            "required": true,
+            "validation_prompt": ""
+          },
+          {
+            "id": "specialrequests",
+            "label": "special requests",
+            "type": "textarea",
+            "required": false,
+            "validation_prompt": ""
+          }
+        ],
+        "pre_form_instructions": "confirm if user has decided what to order and show form"
+      },
+      "phase_id": "during_stay",
+      "service_prompt_pack": {
+        "version": 1,
+        "generator": "service_prompt_pack_v2",
+        "source": "manual_override",
+        "profile": "",
+        "role": "You are the dedicated assistant for in room dining.",
+        "professional_behavior": "Use only admin-configured policy and KB evidence. Ask concise clarifying questions when required details are missing. Do not invent fixed field schemas.",
+        "phase_id": "during_stay",
+        "required_slots": [],
+        "validation_rules": [],
+        "confirmation_format": {
+          "style": "summary_then_explicit_confirm",
+          "template": "Please confirm these details before execution: {summary}. Reply 'yes confirm' to proceed or share corrections.",
+          "required_phrase": "yes confirm"
+        },
+        "ticketing_policy": {
+          "enabled": true,
+          "policy": "",
+          "decision_template": ""
+        },
+        "execution_guard": {},
+        "extracted_knowledge": "=== PROPERTY: Rohl Test Property.Txt ===\n{\"menu_name\": \"Midnight selections - IN-ROOM DINING (IRD)\",\"notes\":[\"All calorie counts listed are per 100 grams of the serving as per the menu footer.\"],\"sections\":[{\"section_name\":\"24 HOURS BREAD\",\"items\":[{\"item_name\":\"6. BOMBAY TOASTIE\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"91 Kcal\",\"ingredients\":\"Brioche, Potato Mash, Cheese\",\"allergen_details\":\"Gluten, Milk, Mustard\"},{\"item_name\":\"7. GRILLED VEGGIE\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"150 Kcal\",\"ingredients\":\"Shokupan Sando, Boursin\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"8. TAMARI TOFU\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"134 Kcal\",\"ingredients\":\"Bao, Mesclun\",\"allergen_details\":\"Gluten, Soybeans\"},{\"item_name\":\"9. UFO BURGER WITH MUSHROOMS\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"133 Kcal\",\"ingredients\":\"Sautéed Mushroom, Sliced Tomato, Caramelised Onion, Cheese\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"10. TEXAS VEGETABLE QUESADILLA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"185 Kcal\",\"ingredients\":\"Red Kidney Bean, Cheese, In Grilled Tortilla\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"11. PANEER KATHI ROLL\",\"categorization\":\"Vegetarian\",\"price_inr\":\"575\",\"calorie_count_per_100g\":\"159 Kcal\",\"ingredients\":\"Tempered Cottage Cheese, Capsicum, Onion, Malabar Parotta\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"12. CHICKEN CROISSANT\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"258 Kcal\",\"ingredients\":\"Smoked Paprika, Goat Cheese\",\"allergen_details\":\"Milk, Gluten, Eggs\"},{\"item_name\":\"13. TRUFFLED EGGS TOAST\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"146 Kcal\",\"ingredients\":\"Sourdough, Cream Cheese\",\"allergen_details\":\"Milk, Gluten, Eggs, Soybeans\"}]},{\"section_name\":\"24 HOURS BREADS\",\"items\":[{\"item_name\":\"1. ICONIQA CLUB\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"154 Kcal\",\"ingredients\":\"Chicken, Bacon, Egg\",\"allergen_details\":\"Milk, Gluten, Eggs\"},{\"item_name\":\"2. KOREAN FRIED CHICKEN BURGER\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"161 Kcal\",\"ingredients\":\"Crispy Fried Chicken, Kimchi, Chilli Sauce, Fried Onion\",\"allergen_details\":\"Milk, Gluten, Eggs, Soybeans, Sesame\"},{\"item_name\":\"3. CHICKEN KATHI ROLL\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"167 Kcal\",\"ingredients\":\"Chicken Tikka, Onion, Capsicum, Malabar Parotta\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"4. PULLED LAMB\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"700\",\"calorie_count_per_100g\":\"219 Kcal\",\"ingredients\":\"Sealed Burger, Shallots\",\"allergen_details\":\"Mustard, Tree nuts, Milk\"},{\"item_name\":\"5. GHEE ROAST PRAWN\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"800\",\"calorie_count_per_100g\":\"169 Kcal\",\"ingredients\":\"Sealed Bun, Gherkins\",\"allergen_details\":\"Gluten, Milk, Fish\"},{\"item_name\":\"6. MALWANI PRAWN\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"800\",\"calorie_count_per_100g\":\"153 Kcal\",\"ingredients\":\"Shokupan Sando, Ginger Chilli\",\"allergen_details\":\"Gluten, Milk, Fish, Eggs\"}]}]}\n\n{\"menu_name\": \"Kids - IN ROOM DINING (IRD) MENU\",\"service_time\": \"12:00 PM TO 6:00 AM\",\"sections\":[{\"section_name\":\"KIDS EXPERIENCE\",\"items\":[{\"item_name\":\"VEGGIE SLIDERS\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"148 Kcal\",\"ingredients\":\"Vegetable Patty, Mini Burger, Cheese\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"RAINBOW VEGGIE PIZZA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"175 Kcal\",\"ingredients\":\"Assorted Veggies, Cheese\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"MAC N CHEESE\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"176 Kcal\",\"ingredients\":\"Classic Macaroni, Melted Cheddar Cheese\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"RED SAUCE SPAGHETTI\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"132 Kcal\",\"ingredients\":\"Tomato Sauce, Basil, Cheese, Spaghetti\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"BUCKET OF ASSORTED POTATO FRIES\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"254 Kcal\",\"ingredients\":\"Potato Chips, Wedges, Corn, Cheese pop\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"MASHED POTATO\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"111 Kcal\",\"ingredients\":\"Creamy Mashed, Butter, Cheese\",\"allergen_details\":\"Milk\"},{\"item_name\":\"CRISPY CHICKEN SLIDERS\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"208 Kcal\",\"ingredients\":\"Crispy Chicken, Mini Burger, Cheese\",\"allergen_details\":\"Gluten, Milk, Egg\"}]}]}\n\n{\"menu_name\": \"All Day IN ROOM DINING (IRD)\",\"service_time\": \"12:00 PM TO 11:30 PM\",\"sections\":[{\"section_name\":\"SOUPS\",\"items\":[{\"item_name\":\"MINESTRONE ALLA GENOVESE SOUP\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"48 Kcal\",\"ingredients\":\"Beans, Potato, Cheese, Tomato\",\"allergen_details\":\"Milk, Celery\"},{\"item_name\":\"HOMEMADE MUSHROOM SOUP\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"46 Kcal\",\"ingredients\":\"Mushroom, Cream, Aromatic Vegetables\",\"allergen_details\":\"Milk, Celery\"},{\"item_name\":\"VEGETABLE WONTON SOUP\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"48 Kcal\",\"ingredients\":\"Vegetable Wonton, Clear Soup, Scallion\",\"allergen_details\":\"Gluten, Soybeans\"},{\"item_name\":\"SWEET CORN CHICKEN SOUP\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"60 Kcal\",\"ingredients\":\"Creamy Corn, Chicken, Scallion\",\"allergen_details\":\"Milk\"}]},{\"section_name\":\"SALADS\",\"items\":[{\"item_name\":\"BABY SPINACH SALAD\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"176 Kcal\",\"ingredients\":\"Spinach, Date, Walnut, Sumac Lemon\",\"allergen_details\":\"Gluten, Tree Nuts, Milk\"},{\"item_name\":\"BURRATA SALAD\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"129 Kcal\",\"ingredients\":\"Fresh Burrata, Tomato, Olive Oil\",\"allergen_details\":\"Gluten, Tree Nuts, Milk\"},{\"item_name\":\"CLASSIC CAESAR SALAD\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"124 Kcal\",\"ingredients\":\"Romaine, Grilled Chicken, Crispy Bacon, Anchovies, Poached Egg\",\"allergen_details\":\"Gluten, Mustard, Milk, Eggs, Fish\"}]},{\"section_name\":\"SMALL PLATES\",\"items\":[{\"item_name\":\"KOREAN CHICKEN BAO\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"241 Kcal\",\"ingredients\":\"Steam Bao, Crispy Chicken\",\"allergen_details\":\"Gluten, Celery, Milk, Sesame, Soybeans\"},{\"item_name\":\"GENERAL TSO’S CHICKEN\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"275 Kcal\",\"ingredients\":\"Chicken Tossed With Soy, Ginger, Hoisin\",\"allergen_details\":\"Soybeans, Sesame\"},{\"item_name\":\"BANNO KEBAB\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"138 Kcal\",\"ingredients\":\"Saffron Scented Chicken, Egg Coated Tandoor Cooked\",\"allergen_details\":\"Milk, Eggs\"},{\"item_name\":\"BAKED BRUSCHETTA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"156 Kcal\",\"ingredients\":\"Sliced Baked, Mozzarella, Marinated Cherry Tomato\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"ULTIMATE VEGGIE NACHOS\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"142 Kcal\",\"ingredients\":\"Crispy Nachos, Kidney Bean, Tomato Salsa, Cheese Baked\",\"allergen_details\":\"Milk\"},{\"item_name\":\"HUMMUS\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"99 Kcal\",\"ingredients\":\"Chickpeas, Tahini, Lemon, Olive Oil, Pita Pocket\",\"allergen_details\":\"Celery, Sesame\"},{\"item_name\":\"MANGO PICKLE PANEER TIKKA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"162 Kcal\",\"ingredients\":\"Cottage Cheese, Spices, Mango Pickle\",\"allergen_details\":\"Milk, Mustard\"},{\"item_name\":\"MALAI BROCCOLI KEBAB\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"171 Kcal\",\"ingredients\":\"Broccoli Florets, Creamy Cheese, Yoghurt, Mild Spices\",\"allergen_details\":\"Milk , Tree Nuts\"},{\"item_name\":\"MATTAR TIKKI\",\"categorization\":\"Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"119 Kcal\",\"ingredients\":\"Green Peas, Chilli, Spices, Panko Crust\",\"allergen_details\":\"Milk\"},{\"item_name\":\"PEPPER CHICKEN TIKKA\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"150 Kcal\",\"ingredients\":\"Creamy Chicken, Crushed Pink Pepper\",\"allergen_details\":\"Milk\"},{\"item_name\":\"MUTTON PEPPER SUKKHA\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"141 Kcal\",\"ingredients\":\"Tender Lamb, Pepper Masala, Tempered Mustard, Curry Leaves\",\"allergen_details\":\"Milk, Mustard\"},{\"item_name\":\"CRISPY CALAMARI\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"261 Kcal\",\"ingredients\":\"Squid Rings, Semolina Flour, Lemon\",\"allergen_details\":\"Molluscs, Gluten\"}]},{\"section_name\":\"FLATBREADS\",\"items\":[{\"item_name\":\"THE MEDITERRANEAN FLATBREAD\",\"categorization\":\"Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"187 Kcal\",\"ingredients\":\"Artichoke Heart, Kalamata, Roasted Garlic, Feta\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"ICONIQA NEAPOLITAN FLATBREAD\",\"categorization\":\"Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"200 Kcal\",\"ingredients\":\"Sourdough, Tomato Sauce, Mozzarella Cheese\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"GRILLED MUSHROOM FLATBREAD\",\"categorization\":\"Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"208 Kcal\",\"ingredients\":\"Mushroom, Tomato, Mozzarella, Basil\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"LOW CARB PIZZA BOWL\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"110 Kcal\",\"ingredients\":\"Lean Turkey, Jalapeño, Cheese\",\"allergen_details\":\"Milk\"},{\"item_name\":\"BBQ CHICKEN FLATBREAD\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"157 Kcal\",\"ingredients\":\"BBQ Chicken, Tomato, Mozzarella\",\"allergen_details\":\"Milk, Gluten\"}]},{\"section_name\":\"FROM THE ORIENT\",\"items\":[{\"item_name\":\"ASPARAGUS & MUSHROOM STIR FRY\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"31 Kcal\",\"ingredients\":\"Asparagus, Mushroom, Garlic, Sesame Oil\",\"allergen_details\":\"Gluten, Fish, Sesame, Soybeans\"},{\"item_name\":\"THAI GREEN CURRY\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"62 Kcal\",\"ingredients\":\"Zucchini, Bamboo Shoots, Bok Choy, Pea Brinjal, Coconut Milk\",\"allergen_details\":\"Soybeans, Gluten\"},{\"item_name\":\"AMERICAN CHOPSUEY WITH VEGETABLES\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"93 Kcal\",\"ingredients\":\"Fried Noodle, Sweet And Sour Vegetables\",\"allergen_details\":\"Soybeans, Gluten\"},{\"item_name\":\"MAPO TOFU\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"111 Kcal\",\"ingredients\":\"Silken Tofu, Shiitake Mushroom, Black Beans, Sichuan Peppercorns\",\"allergen_details\":\"Gluten, Soybeans, Sesame\"},{\"item_name\":\"SIMPLE HAKKA NOODLES\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"146 Kcal\",\"ingredients\":\"Shredded Vegetables, Noodle, Light Soy, Spring Onion\",\"allergen_details\":\"Gluten, Soybeans\"},{\"item_name\":\"HAINANESE CHICKEN RICE\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"127 Kcal\",\"ingredients\":\"Steamed Chicken, Poaching Broth, Ginger, Garlic, Rice\",\"allergen_details\":\"Gluten\"},{\"item_name\":\"THAI RED CURRY\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"111 Kcal\",\"ingredients\":\"Lemongrass, Galangal, Chicken, Coconut Milk, Kaffir Lime Leaf\",\"allergen_details\":\"Gluten, Soybeans\"}]},{\"section_name\":\"FROM THE ORIENT – SEAFOOD & SPECIALS\",\"items\":[{\"item_name\":\"NASI GORENG\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"900\",\"calorie_count_per_100g\":\"150 Kcal\",\"ingredients\":\"Fried Rice, Prawn Cracker, Chicken Satay, Peanut Sauce\",\"allergen_details\":\"Gluten, Crustaceans, Egg, Soybeans, Peanuts\"},{\"item_name\":\"KUNG PAO CHICKEN\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"900\",\"calorie_count_per_100g\":\"145 Kcal\",\"ingredients\":\"Chicken, Sichuan Peppercorns, Cashewnuts, Sticky Rice\",\"allergen_details\":\"Gluten, Tree Nuts, Soybeans\"},{\"item_name\":\"WOKKED SWEET AND SOUR PRAWNS\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"875\",\"calorie_count_per_100g\":\"92 Kcal\",\"ingredients\":\"Prawn, Bell Pepper, Pineapple, Chilli Vinegar\",\"allergen_details\":\"Gluten , Sesame, Crustaceans\"},{\"item_name\":\"SHANGHAI FRIED NOODLES\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"875\",\"calorie_count_per_100g\":\"103 Kcal\",\"ingredients\":\"Prawn, Dark Soy, Udon Noodle, Spring Onion\",\"allergen_details\":\"Crustaceans, Gluten, Soybeans\"}]},{\"section_name\":\"FROM THE MEDITERRANEAN\",\"items\":[{\"item_name\":\"RATATOUILLE (FROM THE MOVIE)\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"70 Kcal\",\"ingredients\":\"Grilled Med Vegetables, Tomato Sauce, Baked\",\"allergen_details\":\"Milk\"},{\"item_name\":\"WILD MUSHROOM RISOTTO\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"111 Kcal\",\"ingredients\":\"Assorted Mushroom, Arborio, Cream, Cheese\",\"allergen_details\":\"Milk, Sulphur Dioxide\"},{\"item_name\":\"GNOCCHI SORRENTINA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"122 Kcal\",\"ingredients\":\"Potato Gnocchi, Tomato Sauce, Cheese\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"SPINACH RAVIOLI\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"144 Kcal\",\"ingredients\":\"Spinach Ravioli, Tomato Sauce, Cheese\",\"allergen_details\":\"Milk, Gluten, Egg\"},{\"item_name\":\"HONEY MUSTARD CHICKEN\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"114 Kcal\",\"ingredients\":\"Honey Mustard Glaze Chicken, Sautéed Mushroom, Peas, Dipping Jus\",\"allergen_details\":\"Gluten, Mustard, Egg\"},{\"item_name\":\"GRILLED LAMB CHOPS\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"241 Kcal\",\"ingredients\":\"Mint Grilled Lamb Chops, Arugula Salad, Dipping Sauce\",\"allergen_details\":\"(None listed on menu)\"},{\"item_name\":\"PANKO CRUSTED FISH AND CHIPS\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"170 Kcal\",\"ingredients\":\"Fish Fillet, Panko Crust, Tarter Sauce\",\"allergen_details\":\"Fish, Gluten, Eggs, Mustard\"},{\"item_name\":\"SPICY PRAWN SPAGHETTI\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"176 Kcal\",\"ingredients\":\"Grilled Prawn Spicy Tomato Sauce, Tossed Spaghetti\",\"allergen_details\":\"Crustaceans, Gluten, Milk\"}]}]}\n\n{\"menu_name\": \"15 minutes meals - IN-ROOM DINING (IRD)\",\"service_time\": \"12:00 PM TO 6:00 AM\",\"notes\":[\"15 MINUTES MEALS\",\"SERVED IN SUSTAINABLE MEAL BOXES\"],\"sections\":[{\"section_name\":\"15 MINUTES MEALS\",\"items\":[{\"item_name\":\"PAV BHAJI\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"94 Kcal\",\"ingredients\":\"Assorted Spiced Vegetables, Buttered Pav Bun, Onion Salad\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"DUNKED IDLI SAMBAR BOWL\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"45 Kcal\",\"ingredients\":\"Mini Idli, Dipped In Sambar\",\"allergen_details\":\"Mustard, Milk\"},{\"item_name\":\"RAJMA CHAWAL\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"110 Kcal\",\"ingredients\":\"Spiced Kidney Bean Curry, Steam Rice\",\"allergen_details\":\"Milk\"},{\"item_name\":\"GNOCCHI WITH TOMATO AND BURRATA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"166 Kcal\",\"ingredients\":\"Potato Gnocchi, Tomato Sauce, Creamy Burrata\",\"allergen_details\":\"Gluten, Milk\"},{\"item_name\":\"VEGETABLE MINESTRONE SOUP\",\"categorization\":\"Vegetarian\",\"price_inr\":\"500\",\"calorie_count_per_100g\":\"48 Kcal\",\"ingredients\":\"Beans, Potato, Cheese And Tomato\",\"allergen_details\":\"Milk, Celery\"},{\"item_name\":\"SUBZI BIRYANI\",\"categorization\":\"Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"123 Kcal\",\"ingredients\":\"Aromatic Vegetables, Long Grain Rice, Served With Raita\",\"allergen_details\":\"Milk\"},{\"item_name\":\"DOON SCHOOL BULLS BUN ANDA\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"750\",\"calorie_count_per_100g\":\"180 Kcal\",\"ingredients\":\"Quick Cooked Eggs, Grilled Pav With Butter\",\"allergen_details\":\"Milk, Egg, Gluten\"},{\"item_name\":\"CHICKEN WONTON SOUP\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"51 Kcal\",\"ingredients\":\"Chicken Wonton, Clear Soup, Scallion\",\"allergen_details\":\"Gluten, Sesame, Soybeans\"},{\"item_name\":\"BUTTER CHICKEN PULAO\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"159 Kcal\",\"ingredients\":\"Chicken Tikka, Smooth Makhani Gravy, Served With Pulao\",\"allergen_details\":\"Mustard, Milk\"},{\"item_name\":\"LAMB MINCE SHEPHERD’S PIE\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"850\",\"calorie_count_per_100g\":\"149 Kcal\",\"ingredients\":\"Minced Lamb, Rosemary, Tomato Jus, Mashed Potato Baked\",\"allergen_details\":\"Milk\"}]}]}\n\n{\"menu_name\": \"Breakfast - IN-ROOM_DINING (IRD)\",\"notes\":[\"All calorie counts listed are per 100 grams of the serving as per the menu footer.\"],\"sections\":[{\"section_name\":\"À LA CARTE BREAKFAST (6:30 AM TO 10:30 AM)\",\"items\":[{\"item_name\":\"VIENNOISERIE BASKET\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"392 Kcal\",\"ingredients\":\"Croissant, Danish, Pain Au Chocolat, Cinnamon Roll\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"AVOCADO TOAST\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"179.24 Kcal\",\"ingredients\":\"Sour Dough, Sriracha Aioli\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"PANCAKES\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"243.83 Kcal\",\"ingredients\":\"Nutella, Maple Syrup and Raspberry Jam\",\"allergen_details\":\"Milk, Gluten, Eggs\"},{\"item_name\":\"DOSA WAFFLES\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"92.23 Kcal\",\"ingredients\":\"Masala Aloo, Chutneys\",\"allergen_details\":\"Mustard, Peanuts\"},{\"item_name\":\"THE ORIGINAL BENNE MASALA DOSA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"148.69 Kcal\",\"ingredients\":\"Crispy Dosa, Butter, Spiced Potato Stuffed\",\"allergen_details\":\"Milk\"},{\"item_name\":\"IDLI AND VADA PLATTER\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"120.05 Kcal\",\"ingredients\":\"Steamed Rice Cake, With Savory Lentil Doughnut\",\"allergen_details\":\"Mustard\"},{\"item_name\":\"TRIO OF STUFFED PARATHA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"171.17 Kcal\",\"ingredients\":\"Spiced Cottage Cheese, Spiced Potato, Minced Cabbage\",\"allergen_details\":\"Milk, Gluten\"},{\"item_name\":\"PUNJABI POHA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"111.28 Kcal\",\"ingredients\":\"Beaten Rice, Peanut, Diced Potato\",\"allergen_details\":\"Mustard, Peanuts\"}]},{\"section_name\":\"À LA CARTE BREAKFAST (6:30 AM TO 10:30 AM) (page 2)\",\"items\":[{\"item_name\":\"Seasonal Fruit Platter\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"41 Kcal (per 100g)\",\"ingredients\":\"Watermelon, Papaya, Pineapple\",\"allergen_details\":\"None mentioned\"},{\"item_name\":\"Quinoa Upma\",\"categorization\":\"Vegetarian\",\"price_inr\":\"450\",\"calorie_count_per_100g\":\"110.07 Kcal (per 100g)\",\"ingredients\":\"Tempered Mustard, Curry Leaf\",\"allergen_details\":\"Mustard, Peanuts\"},{\"item_name\":\"Acai Bowl\",\"categorization\":\"Vegetarian\",\"price_inr\":\"650\",\"calorie_count_per_100g\":\"87 Kcal (per 100g)\",\"ingredients\":\"Granola, Banana, Almond Butter, Yogurt\",\"allergen_details\":\"Milk, Gluten, Soybeans, Tree Nuts\"},{\"item_name\":\"Truffle Egg White Omelette\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"67.96 Kcal (per 100g)\",\"ingredients\":\"Wilted Spinach, Truffle Oil, Rolled In Egg White\",\"allergen_details\":\"Milk, Eggs\"},{\"item_name\":\"Turkish Shakshuka\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"82.05 Kcal (per 100g)\",\"ingredients\":\"Tomato, Chilli Flakes, Egg And Feta\",\"allergen_details\":\"Milk, Eggs\"},{\"item_name\":\"Eggs Benedict\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"269 Kcal (per 100g)\",\"ingredients\":\"English Muffin, Grilled Ham, Poached Egg, Hollandaise\",\"allergen_details\":\"Milk, Gluten, Eggs\"},{\"item_name\":\"Breakfast Meat Plattery\",\"categorization\":\"Non-Vegetarian\",\"price_inr\":\"550\",\"calorie_count_per_100g\":\"195 Kcal (per 100g)\",\"ingredients\":\"Grilled Ham, Bacon, Sausage, Salami And Pepperoni\",\"allergen_details\":\"Mustard, Soybeans, Gluten, Milk\"}]},{\"section_name\":\"BREAKFAST BOOSTER (6:30 AM TO 10:30 AM) (page 3)\",\"items\":[{\"item_name\":\"1. POWER SHAKE WITH VANILLA, STRAWBERRIES AND BANANA\",\"categorization\":\"Vegetarian\",\"price_inr\":\"350\",\"calorie_count_per_100g\":\"51 Kcal\",\"allergen_details\":\"Tree Nuts, Milk, Soybeans\"},{\"item_name\":\"2. KALE, CELERY, CUCUMBER, OLIVE OIL\",\"categorization\":\"Vegetarian\",\"price_inr\":\"350\",\"calorie_count_per_100g\":\"23 Kcal\",\"allergen_details\":\"Celery\"},{\"item_name\":\"3. STRAWBERRIES, BEETROOT POWDER, BANANA DATE PUREE\",\"categorization\":\"Vegetarian\",\"price_inr\":\"350\",\"calorie_count_per_100g\":\"40 Kcal\",\"allergen_details\":\"Tree Nuts, Milk, Soybeans\"},{\"item_name\":\"4. CARROT, TURMERIC, GINGER, LEMON, APPLE, OLIVE OIL\",\"categorization\":\"Vegetarian\",\"price_inr\":\"350\",\"calorie_count_per_100g\":\"30 Kcal\",\"allergen_details\":\"None Listed\"},{\"item_name\":\"5. COCONUT WATER, SPINACH, LEMON AND GINGER\",\"categorization\":\"Vegetarian\",\"price_inr\":\"350\",\"calorie_count_per_100g\":\"18 Kcal\",\"allergen_details\":\"None Listed\"}]}]}\n\n{\"menu_name\": \"Beverage – In-Room Dining\",\"sections\":[{\"section_name\":\"Ready-to-Drink Cocktails\",\"items\":[{\"item_name\":\"OLD FASHIONED\",\"price_inr\":\"750\",\"ingredients\":\"JIM BEAM, SUGAR, AROMATIC BITTERS\"},{\"item_name\":\"NEGRONI\",\"price_inr\":\"750\",\"ingredients\":\"GREATER THAN, CAMPARI, DOLIN VERMOUTH\"},{\"item_name\":\"GIMLET\",\"price_inr\":\"750\",\"ingredients\":\"HAPUSA, SUGAR SYRUP, LIME JUICE\"},{\"item_name\":\"PICANTE\",\"price_inr\":\"750\",\"ingredients\":\"CAMINO SILVER, CORIANDER LEAVES, JALAPENO, AGAVE SYRUP, LIME JUICE\"},{\"item_name\":\"PALOMA\",\"price_inr\":\"750\",\"ingredients\":\"CAMINO SILVER, GRAPEFRUIT JUICE, AGAVE SYRUP, LIME JUICE, SODA\"},{\"item_name\":\"COSMOPOLITON\",\"price_inr\":\"750\",\"ingredients\":\"ABSOLUT, TRIPLE SEC, CRANBERRY JUICE, LIME JUICE\"}]},{\"section_name\":\"Whiskey – Speyside\",\"items\":[{\"item_name\":\"SINGLETON OF DUFFTOWN 12\",\"price_inr\":\"850\"},{\"item_name\":\"MONKEY SHOULDER\",\"price_inr\":\"750\"}]},{\"section_name\":\"Whiskey – Islay\",\"items\":[{\"item_name\":\"TALISKER 10\",\"price_inr\":\"700\"}]},{\"section_name\":\"Whiskey – Indian\",\"items\":[{\"item_name\":\"PAUL JOHN BOLD\",\"price_inr\":\"750\"},{\"item_name\":\"PAUL JOHN NIRVANA\",\"price_inr\":\"450\"}]},{\"section_name\":\"Whiskey – Bourbon\",\"items\":[{\"item_name\":\"JACK DANIEL'S NO. 7\",\"price_inr\":\"500\"},{\"item_name\":\"JIM BEAM\",\"price_inr\":\"450\"}]},{\"section_name\":\"Whiskey – Blended Scotch\",\"items\":[{\"item_name\":\"J.W. DOUBLE BLACK\",\"price_inr\":\"650\"},{\"item_name\":\"J.W. BLACK LABEL\",\"price_inr\":\"600\"},{\"item_name\":\"DEWAR'S 12\",\"price_inr\":\"500\"},{\"item_name\":\"BALLANTINE'S FINEST\",\"price_inr\":\"500\"},{\"item_name\":\"CHIVAS REGAL 12\",\"price_inr\":\"500\"},{\"item_name\":\"DEWAR'S WHITE LABEL\",\"price_inr\":\"450\"},{\"item_name\":\"TEACHER'S HIGHLAND CREAM\",\"price_inr\":\"500\"}]},{\"section_name\":\"Whiskey – Japanese\",\"items\":[{\"item_name\":\"TOKI\",\"price_inr\":\"750\"}]},{\"section_name\":\"Whiskey – Irish\",\"items\":[{\"item_name\":\"JAMESON\",\"price_inr\":\"500\"},{\"item_name\":\"BUSHMILLS\",\"price_inr\":\"450\"}]},{\"section_name\":\"Vodka\",\"items\":[{\"item_name\":\"GREY GOOSE\",\"price_inr\":\"700\"},{\"item_name\":\"BELVEDERE\",\"price_inr\":\"700\"},{\"item_name\":\"HAKU\",\"price_inr\":\"600\"},{\"item_name\":\"CIROC\",\"price_inr\":\"550\"},{\"item_name\":\"ABSOLUT\",\"price_inr\":\"400\"},{\"item_name\":\"KETEL ONE\",\"price_inr\":\"400\"}]},{\"section_name\":\"Gin\",\"items\":[{\"item_name\":\"TANQUERAY NO. 10\",\"price_inr\":\"650\"},{\"item_name\":\"JODHPUR\",\"price_inr\":\"600\"},{\"item_name\":\"ROKU\",\"price_inr\":\"600\"},{\"item_name\":\"BOMBAY SAPPHIRE\",\"price_inr\":\"450\"},{\"item_name\":\"TANQUERAY\",\"price_inr\":\"450\"},{\"item_name\":\"BULLDOG\",\"price_inr\":\"400\"}]},{\"section_name\":\"Rum\",\"items\":[{\"item_name\":\"BACARDÍ RESERVA OCHO\",\"price_inr\":\"550\"},{\"item_name\":\"BACARDÍ AÑEJO CUATRO\",\"price_inr\":\"500\"},{\"item_name\":\"BACARDÍ CARTA BLANCA\",\"price_inr\":\"450\"},{\"item_name\":\"BLACK BY BACARDÍ\",\"price_inr\":\"400\"}]},{\"section_name\":\"Tequila\",\"items\":[{\"item_name\":\"DON JULIO REPOSADO\",\"price_inr\":\"1100\"},{\"item_name\":\"DON JULIO BLANCO\",\"price_inr\":\"1000\"},{\"item_name\":\"PATRON SILVER\",\"price_inr\":\"950\"},{\"item_name\":\"JOSE CUERVO REPOSADO\",\"price_inr\":\"550\"},{\"item_name\":\"JOSE CUERVO SILVER\",\"price_inr\":\"500\"}]},{\"section_name\":\"Cognac\",\"items\":[{\"item_name\":\"HENNESSY VSOP\",\"price_inr\":\"1800\"},{\"item_name\":\"HENNESSY VS\",\"price_inr\":\"900\"}]},{\"section_name\":\"Liqueur\",\"items\":[{\"item_name\":\"JÄGERMEISTER\",\"price_inr\":\"500\"},{\"item_name\":\"MOLINARI SAMBUCA\",\"price_inr\":\"500\"},{\"item_name\":\"QUAFFINE\",\"price_inr\":\"400\"},{\"item_name\":\"CAMPARI\",\"price_inr\":\"400\"},{\"item_name\":\"APEROL\",\"price_inr\":\"400\"}]},{\"section_name\":\"Beers\",\"items\":[{\"item_name\":\"HOEGAARDEN\",\"price_inr\":\"500\"},{\"item_name\":\"CORONA\",\"price_inr\":\"500\"},{\"item_name\":\"BUDWEISER\",\"price_inr\":\"350\"},{\"item_name\":\"KINGFISHER ULTRA\",\"price_inr\":\"350\"},{\"item_name\":\"KINGFISHER PREMIUM\",\"price_inr\":\"350\"}]},{\"section_name\":\"Champagne\",\"items\":[{\"item_name\":\"DRAPPIER CARTE D'OR BRUT, FRANCE\",\"price_inr\":\"24000\"},{\"item_name\":\"MOET & CHANDON ICE IMPERIAL, FRANCE\",\"price_inr\":\"21000\"}]},{\"section_name\":\"Sparkling Wines\",\"items\":[{\"item_name\":\"FILIPETTI PROSECCO, ITALY\",\"price_inr\":\"8000\"},{\"item_name\":\"MONT MARCAL BRUT SEMI SECO RESERVA, SPAIN\",\"price_inr\":\"6500\"}]},{\"section_name\":\"Red Wines\",\"items\":[{\"item_name\":\"SPIER CREATIVE BLOCK 5, SOUTH AFRICA\",\"price_inr\":\"3000 (Glass) | 14000 (Bottle)\"},{\"item_name\":\"VILLA ANTINORI ROSSO, ITALY\",\"price_inr\":\"2500 (Glass) | 11000 (Bottle)\"},{\"item_name\":\"TEMPO D' ANGELUS, FRANCE\",\"price_inr\":\"2500 (Glass) | 11000 (Bottle)\"},{\"item_name\":\"CAVINO NEMEA AGIORGITIKO, GREECE\",\"price_inr\":\"1500 (Glass) | 6000 (Bottle)\"}]},{\"section_name\":\"White Wines\",\"items\":[{\"item_name\":\"CANNONBALL CHARDONNAY, USA\",\"price_inr\":\"3000 (Glass) | 12000 (Bottle)\"},{\"item_name\":\"SCHLOSS VOLLRADS RIESLING, GERMANY\",\"price_inr\":\"2500 (Glass) | 11000 (Bottle)\"},{\"item_name\":\"WOLFMERGER GEWURZTRAENR, FRANCE\",\"price_inr\":\"2000 (Glass) | 9500 (Bottle)\"},{\"item_name\":\"MANNARA PINOT GRIGIO, ITALY\",\"price_inr\":\"1500 (Glass) | 7000 (Bottle)\"}]},{\"section_name\":\"Rosé Wines\",\"items\":[{\"item_name\":\"WHISPERING ANGEL ROSE, FRANCE\",\"price_inr\":\"3000 (Glass) | 14000 (Bottle)\"},{\"item_name\":\"LOVE BY LEOUBE, FRANCE\",\"price_inr\":\"2500 (Glass) | 12000 (Bottle)\"},{\"item_name\":\"CHATEAU ROUTAS PROVENCE ROSE, FRANCE\",\"price_inr\":\"2500 (Glass) | 11000 (Bottle)\"},{\"item_name\":\"STONECROSS PINOTAGE ROSE, SOUTH AFRICA\",\"price_inr\":\"1200 (Glass) | 5500 (Bottle)\"}]},{\"section_name\":\"HOT BEVERAGES Coffee\",\"items\":[{\"item_name\":\"BLACK COFFEE\",\"price_inr\":\"350\"},{\"item_name\":\"CAPPUCCINO\",\"price_inr\":\"350\"},{\"item_name\":\"CAFÉ LATTE\",\"price_inr\":\"350\"},{\"item_name\":\"ESPRESSO\",\"price_inr\":\"350\"},{\"item_name\":\"AMERICANO\",\"price_inr\":\"350\"},{\"item_name\":\"HOT CHOCOLATE\",\"price_inr\":\"350\"}]},{\"section_name\":\" HOT BEVERAGES Tea\",\"items\":[{\"item_name\":\"BLACK TEA\",\"price_inr\":\"350\"},{\"item_name\":\"ENGLISH BREAKFAST TEA\",\"price_inr\":\"350\"},{\"item_name\":\"DARJEELING TEA\",\"price_inr\":\"350\"},{\"item_name\":\"MASALA TEA\",\"price_inr\":\"350\"},{\"item_name\":\"EARL GREY TEA\",\"price_inr\":\"350\"},{\"item_name\":\"GREEN TEA\",\"price_inr\":\"350\"},{\"item_name\":\"CHAMOMILE TEA\",\"price_inr\":\"350\"},{\"item_name\":\"PEPPERMINT TEA\",\"price_inr\":\"350\"},{\"item_name\":\"KASHMIRI KAHWA\",\"price_inr\":\"350\"},{\"item"
+      },
+      "service_prompt_pack_custom": true,
+      "generated_system_prompt": "You are the dedicated assistant for in-room dining at our hotel. Your role is to help guests browse the in-room dining menu and place orders directly through the chatbot. Use only the admin-configured policy and knowledge base evidence to assist guests. Always ask concise clarifying questions when required details are missing, and do not invent fixed field schemas.\n\nAs an in-room dining service, you handle requests during the guest's stay. You should never ask for the guest's name, room number, phone number, or email, as this information is already on file from check-in. Always check the known_context for any pre-existing guest information before asking for anything.\n\nWhen guests inquire about dietary or allergen information, derive answers from the allergen and ingredient data in the knowledge base. For example, if a dish's allergen list does not include wheat or gluten, that dish is gluten-free. Never say \"our menu does not list gluten-free options\" if allergen data exists.\n\nFor ordering, guests may request multiple items. When a guest mentions a dish or item, first verify it exists in the menu. If it does not exist, inform the guest politely and suggest similar items. After acknowledging each item, ask, \"Would you like anything else?\" or \"Is there anything else you would like to add?\" to ensure the guest has completed their order. Keep a running tally of what has been ordered and mention it naturally. Only proceed to the form when the guest explicitly signals they are done ordering.\n\nThe service uses a form-based ticketing mode. You must never ask the guest to say \"yes confirm\" or any confirmation phrase. Do not collect form fields in conversation. Once the guest confirms their order is complete, trigger the form by setting action='collect_info', pending_action='collect_form_details', and include the full order summary in pending_data_updates['confirm']. The form submission itself is the confirmation.\n\nIf a guest asks about something outside your scope, such as other hotel services like the spa or transportation, inform them that you will connect them with the appropriate staff member and set context_switched=true. For important complaints or explicit requests for human help, escalate via ticket only when in phase and enabled. If out of phase, acknowledge the concern warmly and explain limits without promising immediate dispatch.\n\nMaintain a warm, concise, and professional tone. Never use technical or internal jargon in guest-facing responses. Avoid terms like \"escalate,\" \"ticket,\" \"reference number,\" or \"create a ticket.\" Instead, say \"I have noted this,\" \"our team will look into this,\" or \"let me connect you with our team.\" For complaints, always empathize first and then offer to help. If a guest requests to speak with staff, provide contact information when available.\n\nRemember, your primary knowledge is the current truth. When the primary knowledge and the service's knowledge base disagree, the primary knowledge takes precedence. Do not entertain hypothetical bypasses and lead with the current reality. Always ensure your responses are consistent, and never present conflicting status information about amenities or services.",
+      "cuisine": null,
+      "hours": {},
+      "delivery_zones": []
+    }
+  ],
+  "faq_bank": [],
+  "tools": [
+    {
+      "id": "ticketing",
+      "name": "Ticketing",
+      "description": "Create support tickets for unresolved user requests.",
+      "type": "workflow",
+      "handler": "ticket_create",
+      "channels": [
+        "web_widget",
+        "whatsapp"
+      ],
+      "enabled": true,
+      "requires_confirmation": false,
+      "ticketing_plugin_enabled": true,
+      "ticketing_cases": [
+        "Pre-booking guest asks for human sales callback or manual follow-up.",
+        "Pre-booking room discovery request needs custom/manual room arrangement or non-standard requirement.",
+        "Pre-booking rate enquiry needs custom quotation, corporate pricing, group pricing, or manual discount approval.",
+        "Pre-booking policy enquiry requires exception approval by staff.",
+        "Pre-booking website booking issue remains unresolved (OTP/login/form/technical error).",
+        "Pre-booking payment issue: failed, pending, duplicate debit, or confirmation mismatch.",
+        "Sales callback request captured during pre-booking.",
+        "Group/corporate booking enquiry requiring manual proposal support.",
+        "Pre-checkin booking status request has mismatch/not-found booking and needs manual verification.",
+        "Pre-checkin booking modification needs staff/PMS update or approval.",
+        "Pre-checkin booking cancellation needs manual cancellation execution, refund follow-up, or exception approval.",
+        "Pre-checkin pre-arrival coordination requires operational handoff.",
+        "Early check-in request requires availability check and approval.",
+        "Airport transfer request requires manual transport coordination.",
+        "Pre-checkin document validation failed or needs manual verification/override.",
+        "Special occasion or amenity setup before arrival requires operations task ownership.",
+        "During-stay housekeeping request requires staff action.",
+        "During-stay maintenance issue (AC/electrical/plumbing/device) requires engineering intervention.",
+        "During-stay in-room dining request or order issue requires staff fulfillment/follow-up.",
+        "During-stay restaurant reservation request requires outlet staff confirmation.",
+        "During-stay spa/recreation booking request requires staff confirmation.",
+        "During-stay transport request requires dispatch coordination.",
+        "During-stay complaint/dissatisfaction requires staff resolution or escalation.",
+        "During-stay late checkout or stay extension requires front office approval.",
+        "During-stay front desk assistance request needs manual intervention.",
+        "During-stay emergency/safety/medical/security issue needs immediate escalation.",
+        "Post-checkout invoice or billing clarification needs finance/front office follow-up.",
+        "Post-checkout refund, security deposit, or charge reversal request needs manual verification.",
+        "Post-checkout lost-and-found request requires item search, verification, or courier coordination.",
+        "Post-checkout complaint or negative feedback requires service recovery ownership.",
+        "Post-checkout tax invoice/GST correction request needs manual document reissue.",
+        "Post-checkout loyalty points or membership benefit correction needs manual support.",
+        "Post-checkout stay confirmation, folio copy, or receipt resend failed and needs staff action.",
+        "Post-checkout rebooking callback request needs sales/reservations follow-up.",
+        "Guest reports a complaint or maintenance issue that requires staff action.",
+        "Guest requests human escalation or live agent support.",
+        "A booking or order requires manual staff follow-up after final confirmation.",
+        "Table booking request requires staff support.",
+        "In-room dining food order requires staff action.",
+        "Spa booking requires staff confirmation."
+      ]
+    },
+    {
+      "id": "human_handoff",
+      "name": "Human Handoff",
+      "description": "Escalate the conversation to a human agent.",
+      "type": "handoff",
+      "handler": "human_escalation",
+      "channels": [
+        "web_widget",
+        "whatsapp"
+      ],
+      "enabled": true,
+      "requires_confirmation": false
+    }
+  ],
+  "intents": [],
+  "escalation": {
+    "confidence_threshold": 0.4,
+    "max_clarification_attempts": 3,
+    "escalation_message": "Let me connect you with our team.",
+    "modes": [
+      "live_chat",
+      "ticket"
+    ]
+  },
+  "prompts": {
+    "template_id": "generic_assistant",
+    "system_prompt": "",
+    "classifier_prompt": "",
+    "response_style": ""
+  },
+  "knowledge_base": {
+    "sources": [
+      "D:\\Sana Hp Laptop Data\\D Drive Data\\kepslasw\\new_botv\\new_bot\\config\\knowledge_base\\uploads\\test\\1e2cdd1c_ROHL_Test_property.txt"
+    ],
+    "notes": "",
+    "nlu_policy": {
+      "dos": [],
+      "donts": [],
+      "capability_constraints": {}
+    },
+    "library_index": {
+      "version": "v1",
+      "source_signature": "c90a9e1e04ec53f639d843e5d9043ae2a853aece",
+      "content_source_signature": "",
+      "service_signature": "af40dc5ecb0be7d4656e852d3d1c0771eaf24f6c",
+      "generated_at": "2026-04-28T15:22:58.501220+00:00",
+      "book_index_generator": "default_v1",
+      "book_index_generated_at": "2026-04-28T15:22:58.501220+00:00",
+      "source_count": 0,
+      "service_count": 6,
+      "documents": [],
+      "pages": [],
+      "books": [],
+      "service_catalog_snapshot": [
+        {
+          "id": "in_room_dining",
+          "name": "in room dining",
+          "description": "Guests can browse the in-room dining menu and place orders directly through the chatbot.",
+          "is_active": true,
+          "phase_id": "during_stay",
+          "type": "service",
+          "ticketing_enabled": true
+        },
+        {
+          "id": "spa_booking",
+          "name": "spa booking",
+          "description": "Guests can browse available spa services and book appointments directly through the chatbot during their stay.",
+          "is_active": true,
+          "phase_id": "during_stay",
+          "type": "service",
+          "ticketing_enabled": true
+        },
+        {
+          "id": "lost_and_found",
+          "name": "lost and found",
+          "description": "Guests can request assistance in locating items they may have accidentally left behind during their stay.",
+          "is_active": true,
+          "phase_id": "post_checkout",
+          "type": "service",
+          "ticketing_enabled": true
+        },
+        {
+          "id": "room_booking_request",
+          "name": "room booking request",
+          "description": "Allows guests to explore detailed room options and submit a booking request to staff.",
+          "is_active": true,
+          "phase_id": "pre_booking",
+          "type": "service",
+          "ticketing_enabled": true
+        },
+        {
+          "id": "airport_transfer",
+          "name": "airport transfer",
+          "description": "Guests can view and book airport transfer services for pickup from the airport to the hotel.",
+          "is_active": true,
+          "phase_id": "pre_checkin",
+          "type": "service",
+          "ticketing_enabled": true
+        },
+        {
+          "id": "dining_and_restaurant",
+          "name": "dining and restaurant",
+          "description": "Guests can explore available restaurants, view menus, and make reservations before check-in.",
+          "is_active": true,
+          "phase_id": "pre_checkin",
+          "type": "service",
+          "ticketing_enabled": true
+        }
+      ],
+      "coverage": {
+        "total_pages": 0,
+        "covered_pages": 0,
+        "uncovered_pages": 0,
+        "coverage_ratio": 0.0
+      }
+    },
+    "property_index": {
+      "version": "v1",
+      "generator": "heuristic_v1",
+      "generated_at": "2026-04-28T15:22:59.951391+00:00",
+      "source_signature": "c90a9e1e04ec53f639d843e5d9043ae2a853aece",
+      "expected_property_count": 0,
+      "detected_property_count": 0,
+      "count_mismatch": false,
+      "properties": [],
+      "common_page_ids": [],
+      "common_source_names": []
+    },
+    "expected_property_count": 0
+  },
+  "ui_settings": {
+    "theme": {
+      "primary_color": "#2563eb",
+      "accent_color": "#22c55e",
+      "background_color": "#f8fafc",
+      "text_color": "#1e293b"
+    },
+    "widget": {
+      "position": "right",
+      "show_branding": true,
+      "compact_mode": false
+    },
+    "channels": {
+      "web_widget": {
+        "enabled": true
+      },
+      "whatsapp": {
+        "enabled": true
+      }
+    },
+    "industry_features": []
+  },
+  "agent_plugins": {
+    "enabled": true,
+    "shared_context": true,
+    "strict_mode": true,
+    "strict_unavailable_response": "I can only help with configured service-agent data right now. Please contact staff for anything outside this scope.",
+    "plugins": []
+  },
+  "service_kb": {
+    "records": [
+      {
+        "id": "room_booking_request_kb",
+        "service_id": "room_booking_request",
+        "plugin_id": "room_booking_request_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_f140b520cb",
+            "text": "room booking request is configured as an active service for Pre Booking phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "room_booking_request",
+              "pre_booking",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:40.308324+00:00",
+            "created_at": "2026-04-28T15:22:40.308324+00:00",
+            "updated_at": "2026-04-28T15:22:40.308324+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_fb3681609c",
+            "text": "room booking request: Allows guests to explore detailed room options and submit a booking request to staff.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "room_booking_request",
+              "pre_booking",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:40.308542+00:00",
+            "created_at": "2026-04-28T15:22:40.308542+00:00",
+            "updated_at": "2026-04-28T15:22:40.308542+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_f8e8e1d55f",
+            "text": "Ticketing is enabled for room booking request in Pre Booking phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "room_booking_request",
+              "pre_booking",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:40.308607+00:00",
+            "created_at": "2026-04-28T15:22:40.308607+00:00",
+            "updated_at": "2026-04-28T15:22:40.308607+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_2307e369a5",
+            "text": "Ticketing policy for room booking request: Create a backend ticket for a room booking request when the guest confirms their selection by providing their full name, contact information, desired check-in and check-out dates, and special requests",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "room_booking_request",
+              "pre_booking",
+              "admin_config",
+              "service_kb",
+              "ticketing_policy"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:40.308652+00:00",
+            "created_at": "2026-04-28T15:22:40.308652+00:00",
+            "updated_at": "2026-04-28T15:22:40.308652+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 5,
+        "is_active": true,
+        "published_at": "2026-04-28T15:22:40.295548+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-28T15:22:40.295548+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-28T15:22:40.295548+00:00",
+          "compiler_version": "v1",
+          "service_signature": "f8d83c2f5b65b323ca15c2c833f61c9d28b8d5a6",
+          "source_signature": "",
+          "source_count": 0,
+          "manual_fact_count": 0,
+          "auto_fact_count": 4,
+          "total_fact_count": 4
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      },
+      {
+        "id": "airport_transfer_kb",
+        "service_id": "airport_transfer",
+        "plugin_id": "airport_transfer_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_02370c72bd",
+            "text": "airport transfer is configured as an active service for Pre Checkin phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "airport_transfer",
+              "pre_checkin",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.716613+00:00",
+            "created_at": "2026-04-28T15:22:53.716613+00:00",
+            "updated_at": "2026-04-28T15:22:53.716613+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_bfc3b64e45",
+            "text": "airport transfer: Guests can view and book airport transfer services for pickup from the airport to the hotel.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "airport_transfer",
+              "pre_checkin",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.716679+00:00",
+            "created_at": "2026-04-28T15:22:53.716679+00:00",
+            "updated_at": "2026-04-28T15:22:53.716679+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_828957ff0d",
+            "text": "Ticketing is enabled for airport transfer in Pre Checkin phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "airport_transfer",
+              "pre_checkin",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.716716+00:00",
+            "created_at": "2026-04-28T15:22:53.716716+00:00",
+            "updated_at": "2026-04-28T15:22:53.716716+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_3b5f048b19",
+            "text": "Ticketing policy for airport transfer: Create a backend ticket for airport transfer service when a guest confirms their booking by providing their flight number, arrival time, and the number of passengers.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "airport_transfer",
+              "pre_checkin",
+              "admin_config",
+              "service_kb",
+              "ticketing_policy"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.716743+00:00",
+            "created_at": "2026-04-28T15:22:53.716743+00:00",
+            "updated_at": "2026-04-28T15:22:53.716743+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 5,
+        "is_active": true,
+        "published_at": "2026-04-28T15:22:40.295548+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-28T15:22:40.295548+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-28T15:22:40.295548+00:00",
+          "compiler_version": "v1",
+          "service_signature": "58096117e02bbbaf54e825ebf0cb7f2acaabfa70",
+          "source_signature": "",
+          "source_count": 0,
+          "manual_fact_count": 0,
+          "auto_fact_count": 4,
+          "total_fact_count": 4
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      },
+      {
+        "id": "lost_and_found_kb",
+        "service_id": "lost_and_found",
+        "plugin_id": "lost_and_found_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_eae0590159",
+            "text": "lost and found is configured as an active service for Post Checkout phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "lost_and_found",
+              "post_checkout",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.786367+00:00",
+            "created_at": "2026-04-28T15:22:53.786367+00:00",
+            "updated_at": "2026-04-28T15:22:53.786367+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_a060815b19",
+            "text": "lost and found: Guests can request assistance in locating items they may have accidentally left behind during their stay.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "lost_and_found",
+              "post_checkout",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.786415+00:00",
+            "created_at": "2026-04-28T15:22:53.786415+00:00",
+            "updated_at": "2026-04-28T15:22:53.786415+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_afbbe28a9c",
+            "text": "Ticketing is enabled for lost and found in Post Checkout phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "lost_and_found",
+              "post_checkout",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.786442+00:00",
+            "created_at": "2026-04-28T15:22:53.786442+00:00",
+            "updated_at": "2026-04-28T15:22:53.786442+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_ebc73444ea",
+            "text": "Ticketing policy for lost and found: Create a backend ticket for lost and found service when a guest confirms they have lost an item and provides a detailed description of the item, the date of their stay, and their contact information.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "lost_and_found",
+              "post_checkout",
+              "admin_config",
+              "service_kb",
+              "ticketing_policy"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:53.786462+00:00",
+            "created_at": "2026-04-28T15:22:53.786462+00:00",
+            "updated_at": "2026-04-28T15:22:53.786462+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 4,
+        "is_active": true,
+        "published_at": "2026-04-28T15:22:40.295548+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-28T15:22:40.295548+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-28T15:22:40.295548+00:00",
+          "compiler_version": "v1",
+          "service_signature": "57c95c7696bdfb74d0aa55778d4cd125631195d3",
+          "source_signature": "",
+          "source_count": 0,
+          "manual_fact_count": 0,
+          "auto_fact_count": 4,
+          "total_fact_count": 4
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      },
+      {
+        "id": "spa_booking_kb",
+        "service_id": "spa_booking",
+        "plugin_id": "spa_booking_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_600e7cdeee",
+            "text": "spa booking is configured as an active service for During Stay phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "spa_booking",
+              "during_stay",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:58.472086+00:00",
+            "created_at": "2026-04-28T15:22:58.472086+00:00",
+            "updated_at": "2026-04-28T15:22:58.472086+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_8880a57ae2",
+            "text": "spa booking: Guests can browse available spa services and book appointments directly through the chatbot during their stay.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "spa_booking",
+              "during_stay",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:58.472175+00:00",
+            "created_at": "2026-04-28T15:22:58.472175+00:00",
+            "updated_at": "2026-04-28T15:22:58.472175+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_74b12cd50f",
+            "text": "Ticketing is enabled for spa booking in During Stay phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "spa_booking",
+              "during_stay",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:58.472231+00:00",
+            "created_at": "2026-04-28T15:22:58.472231+00:00",
+            "updated_at": "2026-04-28T15:22:58.472231+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_7f97987a45",
+            "text": "Ticketing policy for spa booking: Create a backend ticket for a spa booking when the guest confirms their appointment by providing date, and time of the appointment.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "spa_booking",
+              "during_stay",
+              "admin_config",
+              "service_kb",
+              "ticketing_policy"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-28T15:22:58.472315+00:00",
+            "created_at": "2026-04-28T15:22:58.472315+00:00",
+            "updated_at": "2026-04-28T15:22:58.472315+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 4,
+        "is_active": true,
+        "published_at": "2026-04-28T15:22:40.295548+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-28T15:22:40.295548+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-28T15:22:40.295548+00:00",
+          "compiler_version": "v1",
+          "service_signature": "d8b2cd18a72899ed39ff642948ff1d6c58fae384",
+          "source_signature": "",
+          "source_count": 0,
+          "manual_fact_count": 0,
+          "auto_fact_count": 4,
+          "total_fact_count": 4
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      },
+      {
+        "id": "dining_and_restaurant_kb",
+        "service_id": "dining_and_restaurant",
+        "plugin_id": "dining_and_restaurant_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_f86551a961",
+            "text": "dining and restaurant is configured as an active service for Pre Checkin phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.056377+00:00",
+            "created_at": "2026-04-21T18:54:51.056377+00:00",
+            "updated_at": "2026-04-21T18:54:51.056377+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_a6cf963d99",
+            "text": "dining and restaurant: Guests can explore available restaurants, view menus, and make reservations before check-in.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.056417+00:00",
+            "created_at": "2026-04-21T18:54:51.056417+00:00",
+            "updated_at": "2026-04-21T18:54:51.056417+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_8861b2acec",
+            "text": "Ticketing is enabled for dining and restaurant in Pre Checkin phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.056440+00:00",
+            "created_at": "2026-04-21T18:54:51.056440+00:00",
+            "updated_at": "2026-04-21T18:54:51.056440+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_2a13e7a3b5",
+            "text": "Global menu.\\nMulti-sensory experience – interactive art, ICONIQA playlist on Spotify.\\nSo where do we check in… That’s to the right.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064729+00:00",
+            "created_at": "2026-04-21T18:54:51.064729+00:00",
+            "updated_at": "2026-04-21T18:54:51.064729+00:00",
+            "confidence": 0.67,
+            "evidence": null
+          },
+          {
+            "id": "fact_447e8fd7f4",
+            "text": "From Checkin in, ordering a car, linen, or booking a massage – its all available seamless.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064783+00:00",
+            "created_at": "2026-04-21T18:54:51.064783+00:00",
+            "updated_at": "2026-04-21T18:54:51.064783+00:00",
+            "confidence": 0.67,
+            "evidence": null
+          },
+          {
+            "id": "fact_219cc34dd1",
+            "text": "Multiple spaces are available around the hotel to work, print sheets, have a quick meeting or get some real work done.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064807+00:00",
+            "created_at": "2026-04-21T18:54:51.064807+00:00",
+            "updated_at": "2026-04-21T18:54:51.064807+00:00",
+            "confidence": 0.5900000000000001,
+            "evidence": null
+          },
+          {
+            "id": "fact_a19a2a1a00",
+            "text": "\\nKey Talking Points\\nFlexible modern banquet room\\nFully kitted out\\nGreat pre-function space and outdoor spaces\\n\\nLets go to the first floor\\n \\nAll hotels have a bigger larger fancier coffee shop, with mundane food.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064828+00:00",
+            "created_at": "2026-04-21T18:54:51.064828+00:00",
+            "updated_at": "2026-04-21T18:54:51.064828+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_f0980f16ec",
+            "text": "\\nWelcome to Kadak Lab: our indoor-outdoor modern bazaar inspired Pan-Indian restaurant that is multi-sensory and multi-functional\\nAgain,we’ve done things differently.\\nThe first bit is the Sweet Lab that’s open 24x7.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064853+00:00",
+            "created_at": "2026-04-21T18:54:51.064853+00:00",
+            "updated_at": "2026-04-21T18:54:51.064853+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_e4332189fa",
+            "text": "If you want, you can go the entire stay glued to your screen on whatsapp.\\nKey Talking Points\\nDesign is at the heart of everything we do.\\nThe Kashmiri rug became the Bisazza tile counter.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064879+00:00",
+            "created_at": "2026-04-21T18:54:51.064879+00:00",
+            "updated_at": "2026-04-21T18:54:51.064879+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_1b8b207a8b",
+            "text": "Featuring a king-size bed, a separate living and dining area, Bedroom and floor-ceiling windows, this suite is thoughtfully designed for longer stays and entertaining.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064902+00:00",
+            "created_at": "2026-04-21T18:54:51.064902+00:00",
+            "updated_at": "2026-04-21T18:54:51.064902+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_37a9514195",
+            "text": "The Bisazza tile counter became the handmade rug.\\nWhatsapp powers the entire guest experience\\nSo what can you do on Whatsapp with the hotel?",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064923+00:00",
+            "created_at": "2026-04-21T18:54:51.064923+00:00",
+            "updated_at": "2026-04-21T18:54:51.064923+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_95086fa9e9",
+            "text": "ft\\n\\nThe hotel has multiple spaces at Aviator, Kadak or Bombay Swim Club that can be taken out for private-hire from 10 to 300 people.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064942+00:00",
+            "created_at": "2026-04-21T18:54:51.064942+00:00",
+            "updated_at": "2026-04-21T18:54:51.064942+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_fcb728a560",
+            "text": "Large windows with tree views make this a beautiful spot to work or entertain in.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064962+00:00",
+            "created_at": "2026-04-21T18:54:51.064962+00:00",
+            "updated_at": "2026-04-21T18:54:51.064962+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_28dba40dcb",
+            "text": "The space can be used for private gatherings or conferences.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064978+00:00",
+            "created_at": "2026-04-21T18:54:51.064978+00:00",
+            "updated_at": "2026-04-21T18:54:51.064978+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_ffe7aa9435",
+            "text": "This isn’t your typical Indian dining space.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.064994+00:00",
+            "created_at": "2026-04-21T18:54:51.064994+00:00",
+            "updated_at": "2026-04-21T18:54:51.064994+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_c2485aaf47",
+            "text": "You don’t have to check in using the desk!",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "dining_and_restaurant",
+              "pre_checkin",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.065010+00:00",
+            "created_at": "2026-04-21T18:54:51.065010+00:00",
+            "updated_at": "2026-04-21T18:54:51.065010+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 3,
+        "is_active": true,
+        "published_at": "2026-04-21T18:54:50.921268+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-21T18:54:50.921268+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-21T18:54:50.921268+00:00",
+          "compiler_version": "v1",
+          "service_signature": "bacca4e4a4150139ea8a2abc33e520dcf95b72b4",
+          "source_signature": "046afa22ecbab898475ce5a0ca3ec49c5006aea2",
+          "source_count": 1,
+          "manual_fact_count": 0,
+          "auto_fact_count": 16,
+          "total_fact_count": 16
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      },
+      {
+        "id": "in_room_dining_kb",
+        "service_id": "in_room_dining",
+        "plugin_id": "in_room_dining_agent",
+        "strict_mode": true,
+        "facts": [
+          {
+            "id": "fact_deb3712e1a",
+            "text": "in room dining is configured as an active service for During Stay phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "admin_config",
+              "service_kb"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.090001+00:00",
+            "created_at": "2026-04-21T18:54:51.090001+00:00",
+            "updated_at": "2026-04-21T18:54:51.090001+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_89b0b257ba",
+            "text": "in room dining: Guests can browse the in-room dining menu and place orders directly through the chatbot.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "admin_config",
+              "service_kb",
+              "description"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.090044+00:00",
+            "created_at": "2026-04-21T18:54:51.090044+00:00",
+            "updated_at": "2026-04-21T18:54:51.090044+00:00",
+            "confidence": 0.98,
+            "evidence": null
+          },
+          {
+            "id": "fact_142befe5ac",
+            "text": "Ticketing is enabled for in room dining in During Stay phase.",
+            "source": "admin_config",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "admin_config",
+              "service_kb",
+              "ticketing"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.090067+00:00",
+            "created_at": "2026-04-21T18:54:51.090067+00:00",
+            "updated_at": "2026-04-21T18:54:51.090067+00:00",
+            "confidence": 0.99,
+            "evidence": null
+          },
+          {
+            "id": "fact_f80643e79b",
+            "text": "If you want, you can go the entire stay glued to your screen on whatsapp.\\nKey Talking Points\\nDesign is at the heart of everything we do.\\nThe Kashmiri rug became the Bisazza tile counter.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098739+00:00",
+            "created_at": "2026-04-21T18:54:51.098739+00:00",
+            "updated_at": "2026-04-21T18:54:51.098739+00:00",
+            "confidence": 0.61,
+            "evidence": null
+          },
+          {
+            "id": "fact_a055ad66c1",
+            "text": "Global menu.\\nMulti-sensory experience – interactive art, ICONIQA playlist on Spotify.\\nSo where do we check in… That’s to the right.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098806+00:00",
+            "created_at": "2026-04-21T18:54:51.098806+00:00",
+            "updated_at": "2026-04-21T18:54:51.098806+00:00",
+            "confidence": 0.5900000000000001,
+            "evidence": null
+          },
+          {
+            "id": "fact_0b786c8f2c",
+            "text": "\\nKey Talking Points\\nFlexible modern banquet room\\nFully kitted out\\nGreat pre-function space and outdoor spaces\\n\\nLets go to the first floor\\n \\nAll hotels have a bigger larger fancier coffee shop, with mundane food.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098840+00:00",
+            "created_at": "2026-04-21T18:54:51.098840+00:00",
+            "updated_at": "2026-04-21T18:54:51.098840+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_22d1b27887",
+            "text": "Featuring a king-size bed, a separate living and dining area, Bedroom and floor-ceiling windows, this suite is thoughtfully designed for longer stays and entertaining.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098877+00:00",
+            "created_at": "2026-04-21T18:54:51.098877+00:00",
+            "updated_at": "2026-04-21T18:54:51.098877+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_6fde5de9f1",
+            "text": "The Bisazza tile counter became the handmade rug.\\nWhatsapp powers the entire guest experience\\nSo what can you do on Whatsapp with the hotel?",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098902+00:00",
+            "created_at": "2026-04-21T18:54:51.098902+00:00",
+            "updated_at": "2026-04-21T18:54:51.098902+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_96dbb81ac7",
+            "text": "ft\\n\\nThe hotel has multiple spaces at Aviator, Kadak or Bombay Swim Club that can be taken out for private-hire from 10 to 300 people.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098922+00:00",
+            "created_at": "2026-04-21T18:54:51.098922+00:00",
+            "updated_at": "2026-04-21T18:54:51.098922+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_d304e10261",
+            "text": "Featuring two plush twin beds with premium linens, this room is ideal for both business and leisure travelers.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098943+00:00",
+            "created_at": "2026-04-21T18:54:51.098943+00:00",
+            "updated_at": "2026-04-21T18:54:51.098943+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_193878b7ee",
+            "text": "(You will explain whatsapp as you walk from the lobby to the Iconiqa Room)\\nPretty much everything.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098963+00:00",
+            "created_at": "2026-04-21T18:54:51.098963+00:00",
+            "updated_at": "2026-04-21T18:54:51.098963+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_f4cbaf0eea",
+            "text": "ft\\n\\nDesigned for comfort and versatility, our Premier Twin Room offers 231 to 380 sq.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098981+00:00",
+            "created_at": "2026-04-21T18:54:51.098981+00:00",
+            "updated_at": "2026-04-21T18:54:51.098981+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_4024257d2a",
+            "text": "The space can be used for private gatherings or conferences.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.098999+00:00",
+            "created_at": "2026-04-21T18:54:51.098999+00:00",
+            "updated_at": "2026-04-21T18:54:51.098999+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          },
+          {
+            "id": "fact_6281f1e8d3",
+            "text": "This isn’t your typical Indian dining space.",
+            "source": "kb_source:1e2cdd1c_ROHL_Test_property.txt",
+            "origin": "auto",
+            "tags": [
+              "in_room_dining",
+              "during_stay",
+              "service_kb",
+              "knowledge_source"
+            ],
+            "status": "approved",
+            "approved_by": "system",
+            "approved_at": "2026-04-21T18:54:51.099023+00:00",
+            "created_at": "2026-04-21T18:54:51.099023+00:00",
+            "updated_at": "2026-04-21T18:54:51.099023+00:00",
+            "confidence": 0.53,
+            "evidence": null
+          }
+        ],
+        "menu_documents": [],
+        "version": 3,
+        "is_active": true,
+        "published_at": "2026-04-21T18:54:50.921268+00:00",
+        "published_by": "system",
+        "release_notes": "Auto-compiled service knowledge pack (v1) at 2026-04-21T18:54:50.921268+00:00.",
+        "completeness": {
+          "generated_at": "2026-04-21T18:54:50.921268+00:00",
+          "compiler_version": "v1",
+          "service_signature": "57ea24c5fbc808324fb2328e051ffc3916d4443d",
+          "source_signature": "046afa22ecbab898475ce5a0ca3ec49c5006aea2",
+          "source_count": 1,
+          "manual_fact_count": 0,
+          "auto_fact_count": 14,
+          "total_fact_count": 14
+        },
+        "extracted_knowledge": "",
+        "generated_extraction_prompt": ""
+      }
+    ],
+    "compiler": {
+      "enabled": true,
+      "max_facts_per_service": 60,
+      "max_source_chars": 220000,
+      "max_sources": 25,
+      "version": "v1"
+    }
+  },
+  "service_agent_releases": [],
+  "runtime": {
+    "menu_runtime_enabled": false,
+    "service_kb_auto_compile": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "business": {
+    "id": "mango_grove_chandigarh",
+    "code": "mango_grove_chandigarh",
+    "name": "Mango Grove Hotel",
+    "type": "hotel",
+    "city": "Chandigarh",
+    "location": "Industrial Area Phase 1, Chandigarh",
+    "address": "Plot No. 15, Industrial Area Phase 1, Chandigarh - 160002",
+    "timezone": "Asia/Kolkata",
+    "currency": "INR",
+    "language": "en",
+    "timestamp_format": "12h",
+    "bot_name": "Mango Grove Assist",
+    "welcome_message": "Sir/Madam. How can I assist you today?",
+    "contact_email": "reservations@mangogrovehotel.com",
+    "contact_phone": "9815009635",
+    "website": "www.mangogrovehotel.com",
+    "channels": {
+      "web_widget": true,
+      "whatsapp": false
+    }
+  },
+  "capabilities": {},
+  "services": [],
+  "faq_bank": [],
+  "tools": [],
+  "intents": [],
+  "escalation": {
+    "confidence_threshold": 0.4,
+    "max_clarification_attempts": 1,
+    "escalation_message": "I'm not sure about that - let me connect you to our team.",
+    "escalation_contact": "9815009635",
+    "support_hours": "24 hrs",
+    "modes": [
+      "live_chat",
+      "ticket"
+    ]
+  },
+  "prompts": {
+    "template_id": "generic_assistant",
+    "system_prompt": "",
+    "classifier_prompt": "",
+    "response_style": "Formal and polite. Address the guest respectfully. Use complete sentences and a courteous, professional register. Do NOT use emoji. Do not use casual openers such as \"Hey there\", \"Absolutely\" or \"Great choice\". Keep answers concise and factual."
+  },
+  "knowledge_base": {
+    "sources": [
+      "db://kb_files/575"
+    ],
+    "notes": "",
+    "expected_property_count": 1
+  }
+}

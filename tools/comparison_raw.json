@@ -1,0 +1,1158 @@
+[
+  {
+    "turn": 1,
+    "question": "tell me about your properties",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 49866.9,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- **Fort JadhavGADH** \u2014 *Maharashtra's only heritage luxury fort hotel* offering an authentic Maratha-era experience blended with modern comfort; located about 25 kilometers from Pune city.\n- **Lotus Eco Beach Resort Konark** \u2014 *Eco-friendly beach resort* near Ramachandi Temple and Ramchandi Beach in Konark, Odisha, focusing on sustainable practices.\n- **IRA by Orchid Bhubaneswar** \u2014 *Comfortable hotel* near railway station and airport in Bhubaneswar, ideal for business and leisure with premium rooms and banquet halls.\n- **IRA by Orchid Hyderabad** \u2014 *Business and leisure hotel* in Madhapur, Hyderabad, near HITEC City with modern rooms and business facilities.\n- **The Orchid Hotel Shimla** \u2014 *Luxury eco-friendly hotel* with panoramic views of Shimla's valleys, suited for family vacations and business travel.\n- **The Orchid Hotel Jamnagar** \u2014 *5-star luxury hotel* near Jamnagar Airport, catering to business and leisure travelers with modern amenities.\n- **The Orchid Hotel Panchgani** \u2014 *Eco-friendly luxury resort* with scenic Sahyadri Hills views, ideal for couples, families, and corporate retreats.\n- **The Orchid Rishivan Rishikesh** \u2014 *Luxury eco resort* offering serene Himalayan views and wellness retreats near the Ganga River.\n- **IRA by Orchid Mumbai** \u2014 Hotel in Mumbai offering premium rooms and a multi-cuisine restaurant with 24/7 service.\n- **Orchid Passaros Goa South Goa** \u2014 Resort with open-air grill house and handcrafted cocktails near Benaulim Beach.\n- **Orchid Hotel Manali** \u2014 Luxury hotel in Manali with dining and wellness amenities.\n- **IRA by Orchid Noida** \u2014 Hotel with deluxe rooms and business amenities in Noida.\n- **IRA by Orchid Nashik** \u2014 Hotel offering executive rooms and business services in Nashik.\n- **IRA by Orchid Porvorim** \u2014 Hotel in Porvorim with premium suites suitable for families and business travelers.\n- **IRA by Orchid Ayodhya** \u2014 Hotel in Ayodhya with comfortable accommodations.\n- **Orchid Hotels Puri** \u2014 Hotel near Puri with heritage deluxe rooms and sea views.\n- **Orchid Hotel Lonavala** \u2014 Resort in Lonavala with meeting and event facilities.\n- **Toyam Wellness Retreat Center Pune** \u2014 Wellness retreat center in Pune.\n- **Orchid Hotel Mumbai** \u2014 Luxury hotel in Mumbai with meeting rooms and dining options.\n- **Orchid Hotel Chandigarh** \u2014 Hotel in Chandigarh with banquet and meeting facilities.\n- **Orchid Hotel Pune** \u2014 Hotel in Pune with banquet halls and business amenities.\n- **Lotus Eco Beach Resort Murud Dapoli** \u2014 Eco-friendly beach resort in Murud Dapoli with sea breeze suites and garden views.\nWhich one sounds right? Want details on a specific one?",
+        "display_message": "- **Fort JadhavGADH** \u2014 *Maharashtra's only heritage luxury fort hotel* offering an authentic Maratha-era experience blended with modern comfort; located about 25 kilometers from Pune city.\n- **Lotus Eco Beach Resort Konark** \u2014 *Eco-friendly beach resort* near Ramachandi Temple and Ramchandi Beach in Konark, Odisha, focusing on sustainable practices.\n- **IRA by Orchid Bhubaneswar** \u2014 *Comfortable hotel* near railway station and airport in Bhubaneswar, ideal for business and leisure with premium rooms and banquet halls.\n- **IRA by Orchid Hyderabad** \u2014 *Business and leisure hotel* in Madhapur, Hyderabad, near HITEC City with modern rooms and business facilities.\n- **The Orchid Hotel Shimla** \u2014 *Luxury eco-friendly hotel* with panoramic views of Shimla's valleys, suited for family vacations and business travel.\n- **The Orchid Hotel Jamnagar** \u2014 *5-star luxury hotel* near Jamnagar Airport, catering to business and leisure travelers with modern amenities.\n- **The Orchid Hotel Panchgani** \u2014 *Eco-friendly luxury resort* with scenic Sahyadri Hills views, ideal for couples, families, and corporate retreats.\n- **The Orchid Rishivan Rishikesh** \u2014 *Luxury eco resort* offering serene Himalayan views and wellness retreats near the Ganga River.\n- **IRA by Orchid Mumbai** \u2014 Hotel in Mumbai offering premium rooms and a multi-cuisine restaurant with 24/7 service.\n- **Orchid Passaros Goa South Goa** \u2014 Resort with open-air grill house and handcrafted cocktails near Benaulim Beach.\n- **Orchid Hotel Manali** \u2014 Luxury hotel in Manali with dining and wellness amenities.\n- **IRA by Orchid Noida** \u2014 Hotel with deluxe rooms and business amenities in Noida.\n- **IRA by Orchid Nashik** \u2014 Hotel offering executive rooms and business services in Nashik.\n- **IRA by Orchid Porvorim** \u2014 Hotel in Porvorim with premium suites suitable for families and business travelers.\n- **IRA by Orchid Ayodhya** \u2014 Hotel in Ayodhya with comfortable accommodations.\n- **Orchid Hotels Puri** \u2014 Hotel near Puri with heritage deluxe rooms and sea views.\n- **Orchid Hotel Lonavala** \u2014 Resort in Lonavala with meeting and event facilities.\n- **Toyam Wellness Retreat Center Pune** \u2014 Wellness retreat center in Pune.\n- **Orchid Hotel Mumbai** \u2014 Luxury hotel in Mumbai with meeting rooms and dining options.\n- **Orchid Hotel Chandigarh** \u2014 Hotel in Chandigarh with banquet and meeting facilities.\n- **Orchid Hotel Pune** \u2014 Hotel in Pune with banquet halls and business amenities.\n- **Lotus Eco Beach Resort Murud Dapoli** \u2014 Eco-friendly beach resort in Murud Dapoli with sea breeze suites and garden views.\nWhich one sounds right? Want details on a specific one?",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.3,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 2,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "orchid_hotel_jamnagar",
+                "orchid_passaros_goa_south_goa",
+                "ira_orchid_noida",
+                "orchid"
+              ],
+              "active_property_names": [
+                "Orchid Hotel Jamnagar",
+                "Orchid Passaros Goa South Goa",
+                "Ira Orchid Noida",
+                "Orchid Hotel Shimla"
+              ],
+              "selected_property_scope_id": "orchid_hotel_jamnagar",
+              "selected_property_scope_ids": [
+                "orchid_hotel_jamnagar",
+                "orchid_passaros_goa_south_goa",
+                "ira_orchid_noida",
+                "orchid"
+              ],
+              "selected_property_scope_name": "Orchid Hotel Jamnagar"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.3,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.3,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "",
+          "memory_facts": {},
+          "memory_recent_changes": [],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- **Fort JadhavGADH** \u2014 *Maharashtra's only heritage luxury fort hotel* offering an authentic Maratha-era experience blended with modern comfort; located about 25 kilometers from Pune city.\n- **Lotus Eco Beach Resort Konark** \u2014 *Eco-friendly beach resort* near Ramachandi Temple and Ramchandi Beach in Konark, Odisha, focusing on sustainable practices.\n- **IRA by Orchid Bhubaneswar** \u2014 *Comfortable hotel* near railway station and airport in Bhubaneswar, ideal for business and leisure with premium rooms and banquet halls.\n- **IRA by Orchid Hyderabad** \u2014 *Business and leisure hotel* in Madhapur, Hyderabad, near HITEC City with modern rooms and business facilities.\n- **The Orchid Hotel Shimla** \u2014 *Luxury eco-friendly hotel* with panoramic views of Shimla's valleys, suited for family vacations and business travel.\n- **The Orchid Hotel Jamnagar** \u2014 *5-star luxury hotel* near Jamnagar Airport, catering to business and leisure travelers with modern amenities.\n- **The Orchid Hotel Panchgani** \u2014 *Eco-friendly luxury resort* with scenic Sahyadri Hills views, ideal for couples, families, and corporate retreats.\n- **The Orchid Rishivan Rishikesh** \u2014 *Luxury eco resort* offering serene Himalayan views and wellness retreats near the Ganga River.\n- **IRA by Orchid Mumbai** \u2014 Hotel in Mumbai offering premium rooms and a multi-cuisine restaurant with 24/7 service.\n- **Orchid Passaros Goa South Goa** \u2014 Resort with open-air grill house and handcrafted cocktails near Benaulim Beach.\n- **Orchid Hotel Manali** \u2014 Luxury hotel in Manali with dining and wellness amenities.\n- **IRA by Orchid Noida** \u2014 Hotel with deluxe rooms and business amenities in Noida.\n- **IRA by Orchid Nashik** \u2014 Hotel offering executive rooms and business services in Nashik.\n- **IRA by Orchid Porvorim** \u2014 Hotel in Porvorim with premium suites suitable for families and business travelers.\n- **IRA by Orchid Ayodhya** \u2014 Hotel in Ayodhya with comfortable accommodations.\n- **Orchid Hotels Puri** \u2014 Hotel near Puri with heritage deluxe rooms and sea views.\n- **Orchid Hotel Lonavala** \u2014 Resort in Lonavala with meeting and event facilities.\n- **Toyam Wellness Retreat Center Pune** \u2014 Wellness retreat center in Pune.\n- **Orchid Hotel Mumbai** \u2014 Luxury hotel in Mumbai with meeting rooms and dining options.\n- **Orchid Hotel Chandigarh** \u2014 Hotel in Chandigarh with banquet and meeting facilities.\n- **Orchid Hotel Pune** \u2014 Hotel in Pune with banquet halls and business amenities.\n- **Lotus Eco Beach Resort Murud Dapoli** \u2014 Eco-friendly beach resort in Murud Dapoli with sea breeze suites and garden views.\nWhich one sounds right? Want details on a specific one?",
+          "canonical_message": "- **Fort JadhavGADH** \u2014 *Maharashtra's only heritage luxury fort hotel* offering an authentic Maratha-era experience blended with modern comfort; located about 25 kilometers from Pune city.\n- **Lotus Eco Beach Resort Konark** \u2014 *Eco-friendly beach resort* near Ramachandi Temple and Ramchandi Beach in Konark, Odisha, focusing on sustainable practices.\n- **IRA by Orchid Bhubaneswar** \u2014 *Comfortable hotel* near railway station and airport in Bhubaneswar, ideal for business and leisure with premium rooms and banquet halls.\n- **IRA by Orchid Hyderabad** \u2014 *Business and leisure hotel* in Madhapur, Hyderabad, near HITEC City with modern rooms and business facilities.\n- **The Orchid Hotel Shimla** \u2014 *Luxury eco-friendly hotel* with panoramic views of Shimla's valleys, suited for family vacations and business travel.\n- **The Orchid Hotel Jamnagar** \u2014 *5-star luxury hotel* near Jamnagar Airport, catering to business and leisure travelers with modern amenities.\n- **The Orchid Hotel Panchgani** \u2014 *Eco-friendly luxury resort* with scenic Sahyadri Hills views, ideal for couples, families, and corporate retreats.\n- **The Orchid Rishivan Rishikesh** \u2014 *Luxury eco resort* offering serene Himalayan views and wellness retreats near the Ganga River.\n- **IRA by Orchid Mumbai** \u2014 Hotel in Mumbai offering premium rooms and a multi-cuisine restaurant with 24/7 service.\n- **Orchid Passaros Goa South Goa** \u2014 Resort with open-air grill house and handcrafted cocktails near Benaulim Beach.\n- **Orchid Hotel Manali** \u2014 Luxury hotel in Manali with dining and wellness amenities.\n- **IRA by Orchid Noida** \u2014 Hotel with deluxe rooms and business amenities in Noida.\n- **IRA by Orchid Nashik** \u2014 Hotel offering executive rooms and business services in Nashik.\n- **IRA by Orchid Porvorim** \u2014 Hotel in Porvorim with premium suites suitable for families and business travelers.\n- **IRA by Orchid Ayodhya** \u2014 Hotel in Ayodhya with comfortable accommodations.\n- **Orchid Hotels Puri** \u2014 Hotel near Puri with heritage deluxe rooms and sea views.\n- **Orchid Hotel Lonavala** \u2014 Resort in Lonavala with meeting and event facilities.\n- **Toyam Wellness Retreat Center Pune** \u2014 Wellness retreat center in Pune.\n- **Orchid Hotel Mumbai** \u2014 Luxury hotel in Mumbai with meeting rooms and dining options.\n- **Orchid Hotel Chandigarh** \u2014 Hotel in Chandigarh with banquet and meeting facilities.\n- **Orchid Hotel Pune** \u2014 Hotel in Pune with banquet halls and business amenities.\n- **Lotus Eco Beach Resort Murud Dapoli** \u2014 Eco-friendly beach resort in Murud Dapoli with sea breeze suites and garden views.\nWhich one sounds right? Want details on a specific one?",
+          "smart_image_active_property_id": null,
+          "smart_image_active_property_hint": "",
+          "smart_image_active_property_hint_source": "assistant_text_fallback_multi",
+          "smart_image_active_property_ids": [
+            211,
+            212,
+            214,
+            215,
+            216,
+            217,
+            218,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233
+          ],
+          "smart_image_tool_timeout": true,
+          "smart_image_selection_reason": "attach_timeout",
+          "trace_id": "trc-07b12b4d23284c4b",
+          "turn_trace_id": "turn-53ea9027f947"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 51147.2,
+      "data": {
+        "message": "- Orchid Hotel Jamnagar: Known for its serene environment and modern amenities.\n- Orchid Passaros Goa South Goa: Offers a vibrant beachside experience.\n- Ira Orchid Noida: Ideal for business travelers with excellent conference facilities.\n- Orchid Hotel Shimla: Perfect for a peaceful mountain retreat.\n- Orchid Rishivan Rishikesh: Offers a spiritual and wellness-focused stay.\n- Ira Orchid Nashik: Located in the heart of wine country, great for wine enthusiasts.\n- Ira Orchid Mumbai: Centrally located, perfect for exploring the city.\n- Orchid Hotel Manali: Offers stunning views of the Himalayas.\n- Ira Orchid Ayodhya: Known for its cultural and historical significance.\n- Lotus Eco Beach Resort Murud Dapoli: Eco-friendly resort with beach access.\n- Fort Jadhavgadh: A heritage hotel offering a royal experience.\n- Ira Orchid Hyderabad: Offers luxury and comfort in the city.\n- Lotus Eco Beach Resort Konark: Close to the famous Sun Temple.\n- Ira Orchid Bhubaneshwar: Ideal for exploring the cultural heritage of Odisha.\n- Orchid Hotel Lonavala: Perfect for a quick getaway from the city.\n- Orchid Hotels Puri: Offers easy access to the Jagannath Temple.\n- Ira Orchid Porvorim: Located in the vibrant area of Goa.\n- Ira Orchid Sambhajinagar: Offers a blend of modern amenities and cultural experiences.\n- Toyam Wellness Retreat Center Pune: Focuses on wellness and relaxation.\n- Orchid Hotel Panchgani: Known for its scenic views and tranquility.\n- Orchid Hotel Mumbai: Offers luxury and convenience in the heart of the city.\n- Orchid Hotel Chandigarh: Known for its modern architecture and amenities.\n- Orchid Hotel Pune: Offers a blend of comfort and luxury in Pune.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "question": "tell me about goa properties",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 31851.3,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "**Orchid Passaros Goa South Goa**\n- A *luxury adults-only resort* located just 270 meters from Benaulim Beach in South Goa, ideal for couples and honeymooners seeking a romantic seaside retreat.\n- Offers bird-themed rooms such as Sunbird Haven, Kingfisher Haven, Bulbul Haven, Bee Eater Haven, and Treepie Haven, all with amenities like private balconies, bathtubs or jacuzzis, free Wi-Fi, air conditioning, and romantic setups.\n- Dining options include Tipsy Sparrow (Goan, Indian, seafood, international cuisine with candlelit dinners), Splash Poolbar (poolside bar with cocktails and craft beers), and Falcon Bar & Grills (open-air grill house with wood-fired flavors).\n- Amenities include a spa with the Feather Touch Couple Spa offering synchronized massages, an outdoor pool, free parking, and a peaceful adults-only environment.\n- The Hornbill Banquet hall accommodates 25-60 guests, suitable for weddings, receptions, and corporate events, with AV equipment, catering, and beach proximity.\n**Ira Orchid Porvorim**\n- Centrally located in North Goa at Porvorim, offering clean, modern rooms and suites suitable for families, couples, and business travelers.\n- Known for a quieter environment ideal for long stays, with easy access to popular beaches and attractions in Goa.\n- Check-in and check-out times are 14:00 and 12:00 respectively.\n- Contact available via phone +91 8652 636363 and email reservations@orchidhotel.com.\nWhich one sounds right? I can share rooms, dining, or anything else once you pick.",
+        "display_message": "**Orchid Passaros Goa South Goa**\n- A *luxury adults-only resort* located just 270 meters from Benaulim Beach in South Goa, ideal for couples and honeymooners seeking a romantic seaside retreat.\n- Offers bird-themed rooms such as Sunbird Haven, Kingfisher Haven, Bulbul Haven, Bee Eater Haven, and Treepie Haven, all with amenities like private balconies, bathtubs or jacuzzis, free Wi-Fi, air conditioning, and romantic setups.\n- Dining options include Tipsy Sparrow (Goan, Indian, seafood, international cuisine with candlelit dinners), Splash Poolbar (poolside bar with cocktails and craft beers), and Falcon Bar & Grills (open-air grill house with wood-fired flavors).\n- Amenities include a spa with the Feather Touch Couple Spa offering synchronized massages, an outdoor pool, free parking, and a peaceful adults-only environment.\n- The Hornbill Banquet hall accommodates 25-60 guests, suitable for weddings, receptions, and corporate events, with AV equipment, catering, and beach proximity.\n**Ira Orchid Porvorim**\n- Centrally located in North Goa at Porvorim, offering clean, modern rooms and suites suitable for families, couples, and business travelers.\n- Known for a quieter environment ideal for long stays, with easy access to popular beaches and attractions in Goa.\n- Check-in and check-out times are 14:00 and 12:00 respectively.\n- Contact available via phone +91 8652 636363 and email reservations@orchidhotel.com.\nWhich one sounds right? I can share rooms, dining, or anything else once you pick.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 4,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "orchid_passaros_goa_south_goa",
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Orchid Passaros Goa South Goa",
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "orchid_passaros_goa_south_goa",
+              "selected_property_scope_ids": [
+                "orchid_passaros_goa_south_goa",
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Orchid Passaros Goa South Goa"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "",
+          "memory_facts": {},
+          "memory_recent_changes": [],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "**Orchid Passaros Goa South Goa**\n- A *luxury adults-only resort* located just 270 meters from Benaulim Beach in South Goa, ideal for couples and honeymooners seeking a romantic seaside retreat.\n- Offers bird-themed rooms such as Sunbird Haven, Kingfisher Haven, Bulbul Haven, Bee Eater Haven, and Treepie Haven, all with amenities like private balconies, bathtubs or jacuzzis, free Wi-Fi, air conditioning, and romantic setups.\n- Dining options include Tipsy Sparrow (Goan, Indian, seafood, international cuisine with candlelit dinners), Splash Poolbar (poolside bar with cocktails and craft beers), and Falcon Bar & Grills (open-air grill house with wood-fired flavors).\n- Amenities include a spa with the Feather Touch Couple Spa offering synchronized massages, an outdoor pool, free parking, and a peaceful adults-only environment.\n- The Hornbill Banquet hall accommodates 25-60 guests, suitable for weddings, receptions, and corporate events, with AV equipment, catering, and beach proximity.\n**Ira Orchid Porvorim**\n- Centrally located in North Goa at Porvorim, offering clean, modern rooms and suites suitable for families, couples, and business travelers.\n- Known for a quieter environment ideal for long stays, with easy access to popular beaches and attractions in Goa.\n- Check-in and check-out times are 14:00 and 12:00 respectively.\n- Contact available via phone +91 8652 636363 and email reservations@orchidhotel.com.\nWhich one sounds right? I can share rooms, dining, or anything else once you pick.",
+          "canonical_message": "**Orchid Passaros Goa South Goa**\n- A *luxury adults-only resort* located just 270 meters from Benaulim Beach in South Goa, ideal for couples and honeymooners seeking a romantic seaside retreat.\n- Offers bird-themed rooms such as Sunbird Haven, Kingfisher Haven, Bulbul Haven, Bee Eater Haven, and Treepie Haven, all with amenities like private balconies, bathtubs or jacuzzis, free Wi-Fi, air conditioning, and romantic setups.\n- Dining options include Tipsy Sparrow (Goan, Indian, seafood, international cuisine with candlelit dinners), Splash Poolbar (poolside bar with cocktails and craft beers), and Falcon Bar & Grills (open-air grill house with wood-fired flavors).\n- Amenities include a spa with the Feather Touch Couple Spa offering synchronized massages, an outdoor pool, free parking, and a peaceful adults-only environment.\n- The Hornbill Banquet hall accommodates 25-60 guests, suitable for weddings, receptions, and corporate events, with AV equipment, catering, and beach proximity.\n**Ira Orchid Porvorim**\n- Centrally located in North Goa at Porvorim, offering clean, modern rooms and suites suitable for families, couples, and business travelers.\n- Known for a quieter environment ideal for long stays, with easy access to popular beaches and attractions in Goa.\n- Check-in and check-out times are 14:00 and 12:00 respectively.\n- Contact available via phone +91 8652 636363 and email reservations@orchidhotel.com.\nWhich one sounds right? I can share rooms, dining, or anything else once you pick.",
+          "smart_image_active_property_id": null,
+          "smart_image_active_property_hint": "",
+          "smart_image_active_property_hint_source": "assistant_text_fallback_multi",
+          "smart_image_active_property_ids": [
+            218,
+            231
+          ],
+          "images": [
+            {
+              "id": 1239,
+              "title": "Benaulim Beach",
+              "description": "Benaulim Beach image from hotel gallery.",
+              "url": "https://orchidresortgoa.com/assets/images/goa/Palolem%20Beach.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 231,
+              "property_name": "Orchid Passaros Goa South Goa"
+            },
+            {
+              "id": 782,
+              "title": "pool",
+              "description": "pool image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/pool.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            }
+          ],
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "title_mention_match_fast",
+          "smart_image_candidate_count": 2,
+          "trace_id": "trc-1c6d3fad7645475c",
+          "turn_trace_id": "turn-8542bcc93b51"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 39678.1,
+      "data": {
+        "message": "**Orchid Passaros Goa South Goa**\n- Positioned as a *luxury adults-only resort* and a romantic seaside retreat for couples and honeymooners.\n- Located just *270 meters from Benaulim Beach*, offering bird-themed rooms, a spa, and pool bar.\n- Room options include *Sunbird Haven, Kingfisher Haven, Bulbul Haven, Bee Eater Haven,* and *Treepie Haven*, all ideal for couples with amenities like bathtubs, private balconies, free Wi-Fi, and romantic setups.\n- Dining venues include *Tipsy Sparrow* (Goan, Indian, seafood, international cuisine with candlelit dinners), *Splash Poolbar* (poolside bar with cocktails and craft beers), and *Falcon Bar & Grills* (open-air grill house with wood-fired flavors).\n- Spa feature: *Feather Touch Couple Spa* with side-by-side treatment rooms and signature synchronized massages.\n- Amenities include *free Wi-Fi, outdoor pool, spa, restaurant, free parking*, and it is *adults only*.\n**Ira Orchid Porvorim**\n- Centrally located in North Goa, offering *clean, modern rooms and suites* suitable for families, couples, and business travelers.\n- Known for a *quieter environment* ideal for long-stay guests.\n- Address: Kadamba Depot Rd, Defence Colony, Salvador do Mundo, Porvorim, Goa.\n- Close to popular beaches and attractions like Panjim, Calangute, Baga, Candolim, Fort Aguada, and Anjuna Flea Market.\n- Offers easy access to beaches, markets, malls, casinos, and cultural hotspots.\nWhich one sounds right? Want details on rooms, dining, or anything else?",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "question": "tell me about ira porvorim",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 20538.8,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "**Ira Orchid Porvorim**\n- Located centrally in North Goa at Kadamba Depot Rd, Defence Colony, Salvador do Mundo, Porvorim, offering *easy access to popular beaches and attractions*.\n- Known for *clean, modern rooms and suites* suitable for families, couples, and business travelers, with a quieter environment ideal for long stays.\n- Amenities include an *outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall, wedding venue, spa, gym, free Wi-Fi, room service,* and *free parking*.\n- The banquet hall is air-conditioned, with Wi-Fi, and can accommodate up to *500 attendees* for weddings, receptions, and corporate events.",
+        "display_message": "**Ira Orchid Porvorim**\n- Located centrally in North Goa at Kadamba Depot Rd, Defence Colony, Salvador do Mundo, Porvorim, offering *easy access to popular beaches and attractions*.\n- Known for *clean, modern rooms and suites* suitable for families, couples, and business travelers, with a quieter environment ideal for long stays.\n- Amenities include an *outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall, wedding venue, spa, gym, free Wi-Fi, room service,* and *free parking*.\n- The banquet hall is air-conditioned, with Wi-Fi, and can accommodate up to *500 attendees* for weddings, receptions, and corporate events.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 1.0,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 6,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 1.0,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 1.0,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "",
+          "memory_facts": {},
+          "memory_recent_changes": [],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "**Ira Orchid Porvorim**\n- Located centrally in North Goa at Kadamba Depot Rd, Defence Colony, Salvador do Mundo, Porvorim, offering *easy access to popular beaches and attractions*.\n- Known for *clean, modern rooms and suites* suitable for families, couples, and business travelers, with a quieter environment ideal for long stays.\n- Amenities include an *outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall, wedding venue, spa, gym, free Wi-Fi, room service,* and *free parking*.\n- The banquet hall is air-conditioned, with Wi-Fi, and can accommodate up to *500 attendees* for weddings, receptions, and corporate events.",
+          "canonical_message": "**Ira Orchid Porvorim**\n- Located centrally in North Goa at Kadamba Depot Rd, Defence Colony, Salvador do Mundo, Porvorim, offering *easy access to popular beaches and attractions*.\n- Known for *clean, modern rooms and suites* suitable for families, couples, and business travelers, with a quieter environment ideal for long stays.\n- Amenities include an *outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall, wedding venue, spa, gym, free Wi-Fi, room service,* and *free parking*.\n- The banquet hall is air-conditioned, with Wi-Fi, and can accommodate up to *500 attendees* for weddings, receptions, and corporate events.",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "images": [
+            {
+              "id": 782,
+              "title": "pool",
+              "description": "pool image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/pool.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            },
+            {
+              "id": 784,
+              "title": "gym",
+              "description": "gym image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/gym.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            }
+          ],
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "title_mention_match_fast",
+          "smart_image_candidate_count": 2,
+          "trace_id": "trc-cf6348142d514723",
+          "turn_trace_id": "turn-fc371a160594"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 21205.0,
+      "data": {
+        "message": "**Ira Orchid Porvorim**\n- Centrally located in North Goa, offering *easy access to popular beaches and attractions* like Candolim, Calangute, Baga, and Fort Aguada.\n- Known for *clean, modern rooms and suites* suitable for families, couples, and business travelers, with a quieter environment ideal for long stays.\n- Amenities include an *outdoor swimming pool, spa, gym, banquet hall, wedding venue, restaurant, bar & lounge,* and *free parking*.\n- The banquet hall accommodates up to *500 attendees* and is air-conditioned with Wi-Fi for events and celebrations.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "question": "does porvorim have a pool",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 15064.2,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- **Ira Orchid Porvorim** has an *outdoor swimming pool* among its amenities.",
+        "display_message": "- **Ira Orchid Porvorim** has an *outdoor swimming pool* among its amenities.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 1.0,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 8,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 1.0,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 1.0,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are interested in Goa properties, specifically the Ira Orchid Porvorim hotel. It is centrally located in North Goa with easy access to beaches and attractions. The hotel offers clean, modern rooms and suites suitable for families, couples, and business travelers, with a quiet environment ideal for long stays. Amenities include an outdoor pool, restaurant, caf\u00e9, bar & lounge, banquet hall (accommodating up to 500 guests), wedding venue, spa, gym, free Wi-Fi, room service, and free parking. Check-in is at 14:00 and check-out at 12:00. You have not yet requested details on rooms, dining, or other specific services at Ira Orchid Porvorim.",
+          "memory_facts": {},
+          "memory_recent_changes": [],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- **Ira Orchid Porvorim** has an *outdoor swimming pool* among its amenities.",
+          "canonical_message": "- **Ira Orchid Porvorim** has an *outdoor swimming pool* among its amenities.",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "images": [
+            {
+              "id": 782,
+              "title": "pool",
+              "description": "pool image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/pool.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            }
+          ],
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "title_mention_match_fast",
+          "smart_image_candidate_count": 1,
+          "trace_id": "trc-8165d1b38d374215",
+          "turn_trace_id": "turn-b38a25327726"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 16554.8,
+      "data": {
+        "message": "- **Ira Orchid Porvorim** has an *outdoor swimming pool* among its amenities.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "question": "what amenities does it have",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 14826.2,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- **Ira Orchid Porvorim** offers a range of amenities including *free Wi-Fi*, an *outdoor swimming pool*, a *restaurant*, *caf\u00e9*, and a *bar & lounge*.\n- The hotel features a *banquet hall* and a *wedding venue* suitable for events.\n- Wellness and fitness facilities include a *spa* and a *gym*.\n- Additional conveniences are *room service*, *free parking*, a *24-hour front desk*, *breakfast*, and *airport pick-up*.",
+        "display_message": "- **Ira Orchid Porvorim** offers a range of amenities including *free Wi-Fi*, an *outdoor swimming pool*, a *restaurant*, *caf\u00e9*, and a *bar & lounge*.\n- The hotel features a *banquet hall* and a *wedding venue* suitable for events.\n- Wellness and fitness facilities include a *spa* and a *gym*.\n- Additional conveniences are *room service*, *free parking*, a *24-hour front desk*, *breakfast*, and *airport pick-up*.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 10,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are interested in Goa properties, specifically the Ira Orchid Porvorim hotel. It is centrally located in North Goa with easy access to beaches and attractions. The hotel offers clean, modern rooms and suites suitable for families, couples, and business travelers, with a quiet environment ideal for long stays. Amenities include an outdoor pool, restaurant, caf\u00e9, bar & lounge, banquet hall (accommodating up to 500 guests), wedding venue, spa, gym, free Wi-Fi, room service, and free parking. Check-in is at 14:00 and check-out at 12:00. You have not yet requested details on rooms, dining, or other specific services at Ira Orchid Porvorim.",
+          "memory_facts": {
+            "last_user_topic": "room_service"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- **Ira Orchid Porvorim** offers a range of amenities including *free Wi-Fi*, an *outdoor swimming pool*, a *restaurant*, *caf\u00e9*, and a *bar & lounge*.\n- The hotel features a *banquet hall* and a *wedding venue* suitable for events.\n- Wellness and fitness facilities include a *spa* and a *gym*.\n- Additional conveniences are *room service*, *free parking*, a *24-hour front desk*, *breakfast*, and *airport pick-up*.",
+          "canonical_message": "- **Ira Orchid Porvorim** offers a range of amenities including *free Wi-Fi*, an *outdoor swimming pool*, a *restaurant*, *caf\u00e9*, and a *bar & lounge*.\n- The hotel features a *banquet hall* and a *wedding venue* suitable for events.\n- Wellness and fitness facilities include a *spa* and a *gym*.\n- Additional conveniences are *room service*, *free parking*, a *24-hour front desk*, *breakfast*, and *airport pick-up*.",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "images": [
+            {
+              "id": 782,
+              "title": "pool",
+              "description": "pool image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/pool.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            },
+            {
+              "id": 784,
+              "title": "gym",
+              "description": "gym image from hotel gallery.",
+              "url": "https://irahotels.com/assets/img/gallery/goa/gym.webp",
+              "category": "",
+              "tags": [],
+              "property_id": 218,
+              "property_name": "Ira Orchid Porvorim"
+            }
+          ],
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "title_mention_match_fast",
+          "smart_image_candidate_count": 2,
+          "trace_id": "trc-7865e0b9e6554540",
+          "turn_trace_id": "turn-8f45dbcc9f11"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 15357.9,
+      "data": {
+        "message": "- **Ira Orchid Porvorim** offers a range of amenities including *free Wi-Fi, an outdoor swimming pool, spa, gym, and room service*.\n- The property features a *restaurant, caf\u00e9, bar & lounge*, and a banquet hall suitable for events and weddings.\n- Additional facilities include *free parking, 24-hour front desk service*, and airport pick-up.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 6,
+    "question": "what room types are there",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 21171.7,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- **Premium Room** \u2014 offers *King Bed or Twin Beds*, suitable for families, with amenities like free Wi-Fi, air conditioning, room service, television, safe, mini-bar, coffee/tea maker, and a room size of 312 sq. ft.\n- **Premium Suite** \u2014 features a *King Bed* and balcony, suitable for families, couples, and business travelers, with similar amenities as the Premium Room.\n- **Junior Suite** \u2014 includes a *King Bed* and balcony, designed for families, couples, and business travelers, with modern furnishings and standard in-room amenities.\n- **Executive Room** \u2014 provides *King Bed or Twin Bed* options with a balcony, suitable for families, couples, and business travelers, equipped with free Wi-Fi, air conditioning, room service, and other conveniences.",
+        "display_message": "- **Premium Room** \u2014 offers *King Bed or Twin Beds*, suitable for families, with amenities like free Wi-Fi, air conditioning, room service, television, safe, mini-bar, coffee/tea maker, and a room size of 312 sq. ft.\n- **Premium Suite** \u2014 features a *King Bed* and balcony, suitable for families, couples, and business travelers, with similar amenities as the Premium Room.\n- **Junior Suite** \u2014 includes a *King Bed* and balcony, designed for families, couples, and business travelers, with modern furnishings and standard in-room amenities.\n- **Executive Room** \u2014 provides *King Bed or Twin Bed* options with a balcony, suitable for families, couples, and business travelers, equipped with free Wi-Fi, air conditioning, room service, and other conveniences.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 12,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are interested in Goa properties, specifically the Ira Orchid Porvorim hotel. It is centrally located in North Goa with easy access to beaches and attractions. The hotel offers clean, modern rooms and suites suitable for families, couples, and business travelers, with a quiet environment ideal for long stays. Amenities include an outdoor pool, restaurant, caf\u00e9, bar & lounge, banquet hall (accommodating up to 500 guests), wedding venue, spa, gym, free Wi-Fi, room service, and free parking. Check-in is at 14:00 and check-out at 12:00. You have not yet requested details on rooms, dining, or other specific services at Ira Orchid Porvorim.",
+          "memory_facts": {
+            "last_user_topic": "room_service"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- **Premium Room** \u2014 offers *King Bed or Twin Beds*, suitable for families, with amenities like free Wi-Fi, air conditioning, room service, television, safe, mini-bar, coffee/tea maker, and a room size of 312 sq. ft.\n- **Premium Suite** \u2014 features a *King Bed* and balcony, suitable for families, couples, and business travelers, with similar amenities as the Premium Room.\n- **Junior Suite** \u2014 includes a *King Bed* and balcony, designed for families, couples, and business travelers, with modern furnishings and standard in-room amenities.\n- **Executive Room** \u2014 provides *King Bed or Twin Bed* options with a balcony, suitable for families, couples, and business travelers, equipped with free Wi-Fi, air conditioning, room service, and other conveniences.",
+          "canonical_message": "- **Premium Room** \u2014 offers *King Bed or Twin Beds*, suitable for families, with amenities like free Wi-Fi, air conditioning, room service, television, safe, mini-bar, coffee/tea maker, and a room size of 312 sq. ft.\n- **Premium Suite** \u2014 features a *King Bed* and balcony, suitable for families, couples, and business travelers, with similar amenities as the Premium Room.\n- **Junior Suite** \u2014 includes a *King Bed* and balcony, designed for families, couples, and business travelers, with modern furnishings and standard in-room amenities.\n- **Executive Room** \u2014 provides *King Bed or Twin Bed* options with a balcony, suitable for families, couples, and business travelers, equipped with free Wi-Fi, air conditioning, room service, and other conveniences.",
+          "smart_image_active_property_id": null,
+          "smart_image_active_property_hint": "",
+          "smart_image_active_property_hint_source": "",
+          "smart_image_active_property_ids": null,
+          "smart_image_tool_timeout": true,
+          "smart_image_selection_reason": "attach_timeout",
+          "trace_id": "trc-23fe7726bdf946de",
+          "turn_trace_id": "turn-c6aaac266350"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 18101.0,
+      "data": {
+        "message": "- **Premium Room** \u2014 offers *King Bed or Twin Beds*, suitable for families, with modern furnishings and amenities including free Wi-Fi, air conditioning, television, safe, mini-bar, coffee/tea maker, and room service; room size is 312 sq. ft.\n- **Premium Suite** \u2014 features a *King Bed*, suitable for families, couples, and business travelers, with a balcony and similar amenities as the Premium Room.\n- **Junior Suite** \u2014 includes a *King Bed* and balcony, suitable for families, couples, and business travelers, with modern amenities and room service.\n- **Executive Room** \u2014 provides *King Bed or Twin Bed* options, balcony, and is suitable for families, couples, and business travelers, with the same in-room amenities as other room types.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 7,
+    "question": "tell me about heritage property",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 27172.6,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- We don't have a heritage property at this location or under the name Ira Orchid Porvorim.",
+        "display_message": "- We don't have a heritage property at this location or under the name Ira Orchid Porvorim.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 14,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are focused on Ira Orchid Porvorim in North Goa, seeking details about its amenities and room types. The hotel offers clean, modern accommodations with Premium Rooms, Premium Suites, Junior Suites, and Executive Rooms, all featuring king or twin beds, balconies (except Premium Room), free Wi-Fi, air conditioning, room service, and other comforts. Amenities include an outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall (up to 500 guests), wedding venue, spa, gym, free parking, 24-hour front desk, breakfast, and airport pick-up. Check-in is at 14:00 and check-out at 12:00. Your latest inquiry concerns room service and specific room details, which have been provided. No unresolved asks remain currently.",
+          "memory_facts": {
+            "last_user_topic": "room_service"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- We don't have a heritage property at this location or under the name Ira Orchid Porvorim.",
+          "canonical_message": "- We don't have a heritage property at this location or under the name Ira Orchid Porvorim.",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "no_title_mentions_in_assistant_response",
+          "smart_image_candidate_count": 33,
+          "trace_id": "trc-56790fdbaaa041f7",
+          "turn_trace_id": "turn-d0bc3bc04a23"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 14674.2,
+      "data": {
+        "message": "- We don't have a **heritage property** listed in our Orchid Hotels information.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 8,
+    "question": "do you have venues for wedding",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 11955.8,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- **Ira Orchid Porvorim** has a *wedding venue* and an *air-conditioned banquet hall* suitable for weddings, receptions, corporate events, and celebrations.\n- The banquet hall can accommodate up to *500 attendees* and includes amenities like *air conditioning* and *Wi-Fi*.",
+        "display_message": "- **Ira Orchid Porvorim** has a *wedding venue* and an *air-conditioned banquet hall* suitable for weddings, receptions, corporate events, and celebrations.\n- The banquet hall can accommodate up to *500 attendees* and includes amenities like *air conditioning* and *Wi-Fi*.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 16,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are focused on Ira Orchid Porvorim in North Goa, seeking details about its amenities and room types. The hotel offers clean, modern accommodations with Premium Rooms, Premium Suites, Junior Suites, and Executive Rooms, all featuring king or twin beds, balconies (except Premium Room), free Wi-Fi, air conditioning, room service, and other comforts. Amenities include an outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall (up to 500 guests), wedding venue, spa, gym, free parking, 24-hour front desk, breakfast, and airport pick-up. Check-in is at 14:00 and check-out at 12:00. Your latest inquiry concerns room service and specific room details, which have been provided. No unresolved asks remain currently.",
+          "memory_facts": {
+            "last_user_topic": "room_service"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- **Ira Orchid Porvorim** has a *wedding venue* and an *air-conditioned banquet hall* suitable for weddings, receptions, corporate events, and celebrations.\n- The banquet hall can accommodate up to *500 attendees* and includes amenities like *air conditioning* and *Wi-Fi*.",
+          "canonical_message": "- **Ira Orchid Porvorim** has a *wedding venue* and an *air-conditioned banquet hall* suitable for weddings, receptions, corporate events, and celebrations.\n- The banquet hall can accommodate up to *500 attendees* and includes amenities like *air conditioning* and *Wi-Fi*.",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "no_title_mentions_in_assistant_response",
+          "smart_image_candidate_count": 33,
+          "trace_id": "trc-83280f1ceea14bbb",
+          "turn_trace_id": "turn-b6da57fe8ddb"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 15769.0,
+      "data": {
+        "message": "- **Ira Orchid Porvorim** has a *wedding venue* with an air-conditioned banquet hall and lawn suitable for weddings, receptions, corporate events, and celebrations.\n- The banquet hall can accommodate up to *500 attendees* and includes amenities like air conditioning and Wi-Fi.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 9,
+    "question": "i want to book a banquet hall",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 11885.5,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- I can't book that through the chat directly.\n- **Banquet Hall** at Ira Orchid Porvorim accommodates up to *500 attendees*, is air-conditioned, and equipped with Wi-Fi.\n- Would you like our team to reach out to assist you with this?",
+        "display_message": "- I can't book that through the chat directly.\n- **Banquet Hall** at Ira Orchid Porvorim accommodates up to *500 attendees*, is air-conditioned, and equipped with Wi-Fi.\n- Would you like our team to reach out to assist you with this?",
+        "service_llm_label": "main",
+        "service_llm_confidence": 0.95,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 18,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 0.95,
+          "routing_path": "simple",
+          "routing_score": 0.0,
+          "routing_signals": [],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 0.95,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are focused on Ira Orchid Porvorim in North Goa, seeking details about its amenities and room types. The hotel offers clean, modern accommodations with Premium Rooms, Premium Suites, Junior Suites, and Executive Rooms, all featuring king or twin beds, balconies (except Premium Room), free Wi-Fi, air conditioning, room service, and other comforts. Amenities include an outdoor swimming pool, restaurant, caf\u00e9, bar & lounge, banquet hall (up to 500 guests), wedding venue, spa, gym, free parking, 24-hour front desk, breakfast, and airport pick-up. Check-in is at 14:00 and check-out at 12:00. Your latest inquiry concerns room service and specific room details, which have been provided. No unresolved asks remain currently.",
+          "memory_facts": {
+            "last_user_topic": "reservation"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            },
+            {
+              "key": "last_user_topic",
+              "old_value": "room_service",
+              "new_value": "reservation",
+              "change_type": "set",
+              "source_message": "i want to book a banquet hall",
+              "timestamp": "2026-05-21T09:09:32.514978+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- I can't book that through the chat directly.\n- **Banquet Hall** at Ira Orchid Porvorim accommodates up to *500 attendees*, is air-conditioned, and equipped with Wi-Fi.\n- Would you like our team to reach out to assist you with this?",
+          "canonical_message": "- I can't book that through the chat directly.\n- **Banquet Hall** at Ira Orchid Porvorim accommodates up to *500 attendees*, is air-conditioned, and equipped with Wi-Fi.\n- Would you like our team to reach out to assist you with this?",
+          "smart_image_active_property_id": 218,
+          "smart_image_active_property_hint": "Ira Orchid Porvorim",
+          "smart_image_active_property_hint_source": "assistant_text_fallback",
+          "smart_image_active_property_ids": null,
+          "smart_image_tool_used": true,
+          "smart_image_selection_reason": "no_title_mentions_in_assistant_response",
+          "smart_image_candidate_count": 33,
+          "trace_id": "trc-190212df34a4411f",
+          "turn_trace_id": "turn-affe1d4aaf5e"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 15056.2,
+      "data": {
+        "message": "- I can't book that through the chat directly.\n- **Banquet Hall** at Ira Orchid Porvorim seats *up to 500 attendees*, is air-conditioned, and includes Wi-Fi.\n- Would you like our team to reach out to assist you with this?",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  },
+  {
+    "turn": 10,
+    "question": "yes please",
+    "kepsla": {
+      "status": 200,
+      "elapsed_ms": 17485.9,
+      "data": {
+        "session_id": "cmp-nx-7d5a63cba8af",
+        "message": "- I understand \u2014 let me get someone from our team to help right away.",
+        "display_message": "- I understand \u2014 let me get someone from our team to help right away.",
+        "service_llm_label": "main",
+        "service_llm_confidence": 1.0,
+        "state": "idle",
+        "suggested_actions": [],
+        "metadata": {
+          "message_count": 20,
+          "entities": {
+            "orchestration_action": "respond_only",
+            "target_service_id": "",
+            "missing_fields": [],
+            "pending_action": null,
+            "pending_data": {
+              "active_property_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "active_property_names": [
+                "Ira Orchid Porvorim"
+              ],
+              "selected_property_scope_id": "ira_orchid_porvorim",
+              "selected_property_scope_ids": [
+                "ira_orchid_porvorim"
+              ],
+              "selected_property_scope_name": "Ira Orchid Porvorim"
+            }
+          },
+          "classified_intent": "service_routed",
+          "classified_confidence": 1.0,
+          "routing_path": "simple",
+          "routing_score": 0.25,
+          "routing_signals": [
+            "ambiguous"
+          ],
+          "response_source": "llm_orchestration",
+          "orchestration_mode": true,
+          "service_llm_label": "main",
+          "service_llm_confidence": 1.0,
+          "orchestration_policy_blocked_reason": "",
+          "orchestration_policy_out_of_phase": false,
+          "orchestration_policy_ticket_skip_reason": "",
+          "intent_hidden_in_response": true,
+          "response_validator_applied": true,
+          "response_validator_replaced": false,
+          "response_validator_issues": [],
+          "memory_summary": "You are interested in booking the banquet hall at Ira Orchid Porvorim, a hotel in North Goa offering modern rooms and suites with amenities like free Wi-Fi, outdoor pool, restaurant, caf\u00e9, bar, spa, gym, room service, and free parking. The banquet hall is air-conditioned, Wi-Fi enabled, and can host up to 500 guests for weddings, receptions, and corporate events. Check-in is at 14:00 and check-out at 12:00. You have requested assistance with the banquet hall booking, which remains unresolved. Would you like the hotel team to contact you to proceed with the reservation?",
+          "memory_facts": {
+            "last_user_topic": "reservation"
+          },
+          "memory_recent_changes": [
+            {
+              "key": "last_user_topic",
+              "old_value": null,
+              "new_value": "room_service",
+              "change_type": "set",
+              "source_message": "what amenities does it have",
+              "timestamp": "2026-05-21T09:07:11.758846+00:00"
+            },
+            {
+              "key": "last_user_topic",
+              "old_value": "room_service",
+              "new_value": "reservation",
+              "change_type": "set",
+              "source_message": "i want to book a banquet hall",
+              "timestamp": "2026-05-21T09:09:32.514978+00:00"
+            }
+          ],
+          "llm_surface_rewrite_attempted": false,
+          "llm_surface_rewrite_applied": false,
+          "llm_surface_rewrite_validator_replaced": false,
+          "llm_surface_rewrite_validation_issues": [],
+          "llm_surface_rewrite_source": "llm_orchestration",
+          "display_message": "- I understand \u2014 let me get someone from our team to help right away.",
+          "canonical_message": "- I understand \u2014 let me get someone from our team to help right away.",
+          "smart_image_active_property_id": null,
+          "smart_image_active_property_hint": "",
+          "smart_image_active_property_hint_source": "",
+          "smart_image_active_property_ids": null,
+          "smart_image_tool_timeout": true,
+          "smart_image_selection_reason": "attach_timeout",
+          "trace_id": "trc-6cd616c9799d41a0",
+          "turn_trace_id": "turn-b451d220ac72"
+        }
+      }
+    },
+    "lumira": {
+      "status": 200,
+      "elapsed_ms": 33374.2,
+      "data": {
+        "message": "- Our team will reach out to assist you with booking the banquet hall at Ira Orchid Porvorim.\n- You can expect a follow-up soon to discuss your requirements and finalize the details.",
+        "render": null,
+        "city": "",
+        "country": "",
+        "is_ticket_intent": false,
+        "render_type": null,
+        "message_id": null,
+        "additional_data": {
+          "total_cost": 0.0,
+          "total_tokens": 0,
+          "session_id": "cmp-lm-2cc71ff56892",
+          "message_id": null,
+          "entity_id": 611,
+          "group_id": 611,
+          "sender": "bot"
+        }
+      }
+    }
+  }
+]

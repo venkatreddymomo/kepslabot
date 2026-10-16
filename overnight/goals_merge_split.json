@@ -1,0 +1,7 @@
+[
+  {"goal": "Order 2 chicken burgers. Tell it to place the order as soon as you see it. Do not accept other dish suggestions."},
+  {"goal": "You forgot something - ask it to add ONE filter coffee to that SAME order you just placed. It must go on the same order, not a new one."},
+  {"goal": "Ask what you ordered - you want to see it is ONE order with the burgers and the coffee together, with the right total."},
+  {"goal": "Now start a completely NEW SEPARATE order of 2 arrabbiata pasta, and get it placed. It must NOT include the burgers or the coffee."},
+  {"goal": "Ask how many orders you have and what is on each - they must be separate and correct."}
+]

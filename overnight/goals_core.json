@@ -1,0 +1,8 @@
+[
+  {"goal": "Say hello and see what the assistant can help with."},
+  {"goal": "Order 2 chicken burgers and a filter coffee to your room, and keep going until the assistant confirms the order has actually been placed."},
+  {"goal": "Find out exactly what you ordered and what it costs."},
+  {"goal": "Ask for extra towels for your room, and keep going until the assistant confirms it is being arranged."},
+  {"goal": "Report that the AC in your room is not cooling, and keep going until the assistant confirms engineering has been told."},
+  {"goal": "Check again what food you ordered - you want to be sure the food order is still correct after all that."}
+]

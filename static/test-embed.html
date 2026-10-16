@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kebo Widget – Production Test Page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    header .badge {
+      background: #dcfce7;
+      color: #16a34a;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: .4px;
+    }
+
+    /* ── Main layout ─────────────────────────────────────── */
+    main {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── Section cards ───────────────────────────────────── */
+    .section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .section h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .section p.desc {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── Checklist table ─────────────────────────────────── */
+    .checklist {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .checklist th {
+      text-align: left;
+      padding: 6px 10px;
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    .checklist td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    .checklist tr:last-child td { border-bottom: none; }
+    .checklist .feature-name { font-weight: 600; color: #1e293b; }
+    .checklist .instruction { color: #475569; line-height: 1.4; }
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      letter-spacing: .3px;
+      margin-right: 4px;
+    }
+    .tag.done   { background: #dcfce7; color: #16a34a; }
+    .tag.partial{ background: #fef9c3; color: #854d0e; }
+
+    /* ── Controls ────────────────────────────────────────── */
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .btn:hover { opacity: .85; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .btn-danger  { background: #ef4444; color: #fff; }
+    .btn-neutral { background: #e2e8f0; color: #1e293b; }
+
+    /* ── Status bar ──────────────────────────────────────── */
+    #status-bar {
+      position: fixed;
+      top: 16px;
+      right: 80px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+    #status-dot.connected { background: #22c55e; }
+    #status-dot.error     { background: #ef4444; }
+
+    /* ── Test log ────────────────────────────────────────── */
+    #test-log {
+      background: #0f172a;
+      border-radius: 10px;
+      padding: 16px;
+      font-family: "Cascadia Code", "Fira Mono", monospace;
+      font-size: 12px;
+      color: #94a3b8;
+      max-height: 280px;
+      overflow-y: auto;
+      line-height: 1.7;
+    }
+    #test-log .pass  { color: #4ade80; }
+    #test-log .fail  { color: #f87171; }
+    #test-log .info  { color: #60a5fa; }
+    #test-log .warn  { color: #fbbf24; }
+
+    /* ── Resize handles ─────────────────────────────────── */
+    .viewport-buttons { display: flex; gap: 8px; }
+    .vp-btn {
+      padding: 6px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .vp-btn:hover { background: #f1f5f9; }
+    .vp-btn.active { border-color: #3b82f6; color: #3b82f6; background: #eff6ff; }
+  </style>
+</head>
+<body>
+
+<!-- ── Page header ──────────────────────────────────────────── -->
+<header>
+  <h1>Kebo Chatbot — Production Test Page</h1>
+  <span class="badge">PROD TEST</span>
+</header>
+
+<!-- ── Status bar ───────────────────────────────────────────── -->
+<div id="status-bar">
+  <div id="status-dot"></div>
+  <span id="status-text">Checking server…</span>
+</div>
+
+<!-- ── Main content ─────────────────────────────────────────── -->
+<main>
+
+  <!-- Section 0 – Widget embed controls -->
+  <div class="section">
+    <h2>Widget Embed Controls</h2>
+    <p class="desc">
+      The widget is embedded below using the standard script tag with <code>data-hotel-code="khil"</code>.
+      Use these controls to manually test open/close state, branding, and other properties.
+    </p>
+    <div class="controls">
+      <button class="btn btn-primary" onclick="window.KeboWidget && window.KeboWidget.open()">Open Widget</button>
+      <button class="btn btn-neutral" onclick="window.KeboWidget && window.KeboWidget.close()">Close Widget</button>
+      <button class="btn btn-neutral" onclick="window.KeboWidget && window.KeboWidget.toggle()">Toggle Widget</button>
+      <button class="btn btn-danger"  onclick="clearChatStorage()">Clear Session (localStorage)</button>
+    </div>
+    <div class="viewport-buttons" style="margin-top:12px;">
+      <span style="font-size:12px;color:#64748b;align-self:center;margin-right:4px;">Viewport:</span>
+      <button class="vp-btn active" onclick="setViewport('desktop',this)">Desktop</button>
+      <button class="vp-btn" onclick="setViewport('tablet',this)">Tablet (768px)</button>
+      <button class="vp-btn" onclick="setViewport('mobile',this)">Mobile (390px)</button>
+    </div>
+  </div>
+
+  <!-- Section 1 – Feature checklist: Website Chat Widget -->
+  <div class="section">
+    <h2>1. Website Chat Widget</h2>
+    <p class="desc">Test each sub-feature by interacting with the widget on this page.</p>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Script integration (React/Vue/Angular/vanilla)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">The script tag below loads on this plain HTML page without any framework. Verify the chat bubble appears at bottom-right.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Async / non-blocking loader</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Page content loaded before the widget. Check DevTools → Network: main document load is not blocked by the widget script.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Widget UI rendering (bubble + window)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Click the chat bubble → chat window opens with smooth slide-up animation. Close button × closes it.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Responsive design</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Click Tablet / Mobile viewport buttons above. Resize browser to &lt;480px. Widget should fit within screen without horizontal scroll.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Branding customization</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Brand color comes from server bootstrap for the <em>khil</em> hotel. Launcher button colour matches the configured brand colour.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Logo upload &amp; display</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">If a logo was uploaded in admin → Widget Settings, it appears in the chat header. Go to <a href="/admin" target="_blank">/admin</a> → Widget → upload a logo, then reload this page.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Greeting message &amp; welcome flow</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Open widget → first message should be a welcome/greeting from the bot. Quick-action suggestion chips should appear below it.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Quick actions (Book Now, Support, etc.)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Suggestion chips visible after greeting. Click one — bot should respond to that intent directly.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">CTA button integration</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Ask the bot "Book a room" or "I need help" — CTA-styled buttons should appear in the response.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">No debug / internal texts shown</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send a few messages. Verify no system tags like [SYSTEM], [DEBUG], intent labels, or JSON blobs appear in chat bubbles.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Session handling</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send messages, close the browser tab, reopen this page → the previous conversation should reload from localStorage.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Storage handling (localStorage)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Open DevTools → Application → Local Storage → check for kebo_* keys storing session_id and messages.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Widget open/close state</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Use the Open / Close / Toggle buttons above. Also test pressing <kbd>Esc</kbd> to close. State should persist on re-open.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Performance</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Open DevTools → Performance → reload. Widget should not block main thread. Check that it uses lazy iframe loading.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Session expiry config</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Configure in <a href="/admin" target="_blank">/admin</a> → Widget Settings → Session TTL (hours). Setting is saved and shown.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Clear chat (widget UI button)</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Click the "Clear Session" button above to clear localStorage manually. <strong>Gap:</strong> there is no user-facing clear button inside the widget itself. Use the button above as workaround.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 2 – Chat Screen -->
+  <div class="section">
+    <h2>2. Chat Screen</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Chat interface polishing</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send several messages. Check: proper bubble shapes for user vs bot, timestamps, date separators, shadow/border styling.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Smooth scrolling &amp; fast rendering</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send 10+ messages back-to-back. Chat should scroll to latest automatically, smoothly, without jank.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Message state (sending / sent / delivered / error)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">After sending a message: watch for a "sending" indicator, then a "sent" tick. If server offline, an error state appears.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">WebSocket real-time messaging</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Open DevTools → Network → WS tab. Send a message. Verify WebSocket frames are exchanged (<code>/ws/chat/…</code>). Bot reply comes back within 2-3s.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Connection handling (reconnect / fallback)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Disconnect WiFi for 5s then reconnect. Widget should auto-reconnect and resume. Alternatively: DevTools → Network → "Offline" for 5s.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Event-based messaging (typing indicator)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">After sending a message, a typing indicator (…) should appear while the bot is generating a response.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 3 – Chatbot -->
+  <div class="section">
+    <h2>3. Chatbot</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Message parser (text types)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send: plain text, a question, a number. All parse correctly into bot intent flow without error responses.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Session / conversation state tracking</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Start a booking flow → stop mid-way → send an unrelated message → come back to booking. Bot should remember your previous context (e.g., room type you chose).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Human handoff trigger</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Type "I want to speak to a human" or "Connect me to staff". Bot should acknowledge escalation and create a ticket (ticketing left ON for prod test).</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 4 – FAQ Automation -->
+  <div class="section">
+    <h2>4. FAQ Automation</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">FAQ upload (doc/text/excel)</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Go to <a href="/admin" target="_blank">/admin</a> → Knowledge Base → try uploading a .txt file, then a .pdf, then a .xlsx. Log whether each format is accepted. Doc/Excel support is unclear.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Text preprocessing / RAG retrieval</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">After uploading a KB file, ask a question from its content in the widget. Bot should return an answer from the KB (not a generic LLM reply).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Fallback handling</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Ask something completely outside the hotel's KB (e.g. "What is the capital of France?"). Bot should give a polite "I don't have that info" response, not hallucinate.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 5 – Form -->
+  <div class="section">
+    <h2>5. Form</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Conversational form builder</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Admin → Forms: create a form with name, email, phone, date fields. Save. Check it appears in the form list.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Field validation (email / phone)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">When a form appears in chat, enter an invalid email (e.g. "abc") → should show validation error. Enter invalid phone → same.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Lead storage (save to DB)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Submit a completed form. Check <a href="/admin" target="_blank">/admin</a> → Leads or conversation history to see the lead was stored.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Dynamic form rendering</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Form fields appear inline in the chat. All configured fields (text, email, select, rating, etc.) render correctly without layout breaks.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Consistent UI/UX (mobile)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Switch to mobile viewport (button above) and trigger a form. Fields should be full-width, no overflow, keyboard doesn't cover input.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Structured data capture</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">After submitting form, check the server receives structured JSON (field_id → value). Visible in conversation state in admin.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Submission &amp; error handling</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Leave a required field blank and try to submit. Per-field error message shows. Fill all correctly → success confirmation appears.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Configurable next actions</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">After form submission, check if bot continues with a configured next step. <strong>Gap:</strong> post-submit flow continuation may not be wired. Observe what the bot says after "Thank you for your submission."</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Action chaining</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Configure a multi-step flow in admin (form → message → another form). Test if steps fire in sequence. <strong>Gap:</strong> no visual pipeline builder; relies on orchestration config.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 6 – Admin Flow Builder -->
+  <div class="section">
+    <h2>6. Admin Controller Flow Builder</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Flow configuration UI (phases, conditions)</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Go to <a href="/admin" target="_blank">/admin</a> → Bot Training → Phases tab. Add/edit a phase with a service and condition. Save and verify it persists.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Rule-based flow control</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Configure a phase with a specific trigger intent. Chat with bot using that intent keyword. Verify the bot follows the configured phase flow, not a generic response.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 7 – Session & Idle -->
+  <div class="section">
+    <h2>7. Session &amp; Idle Handling</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Idle timeout config</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Admin → Widget → session_ttl_hours field. Set to 1. Verify value saves. (Full idle expiry test requires waiting the TTL duration.)</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Session reset (fresh conversation on return)</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Client-side reset: use "Clear Session" button above then reload → new empty session starts. <strong>Gap:</strong> server-side enforcement of TTL not confirmed. Check if old session_id after TTL returns a new empty conversation.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Session persistence until expiry</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Send messages, close tab, reopen this page. All messages reload from DB-backed session. Context (e.g., pending booking info) should still be present.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 8 – Component Decoupling -->
+  <div class="section">
+    <h2>8. Component Decoupling</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Reusable components</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Forms, buttons, and message bubbles are independent — the same form can be triggered at different points. Verify a form configured once appears correctly in different conversation phases.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Component registry</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">No formal registry UI. Components reuse works via directory-based imports. Observe in admin if the same form can be assigned to multiple trigger points without duplication.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 9 – Device Personalization -->
+  <div class="section">
+    <h2>9. Device-Based Personalization</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Device detection</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Resize browser to mobile (390px). Widget layout should switch to mobile mode — check the chat harness uses the mobile layout variant.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Conditional rendering</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">On mobile: form fields go full-width, buttons stack vertically, font sizes adapt. On desktop: side-by-side layout maintained.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Device-specific flow logic</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Device detection and UI changes work. <strong>Gap:</strong> there is no device-specific chat flow branching (e.g., show a different form on mobile). Observe whether the same flow fires regardless of device.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 10 – Media Handling -->
+  <div class="section">
+    <h2>10. Media Handling</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">User media upload in chat</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Look inside the widget chat input for a file/image attachment button. <strong>Gap:</strong> user-facing media upload in chat is not implemented. Only logo upload exists in admin.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Media preview in chat</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">If you can upload a file, check if a preview thumbnail appears inside the chat bubble. <strong>Gap:</strong> ChatMessage interface has no media field; preview not implemented.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Media storage &amp; retrieval (S3)</td>
+        <td><span class="tag partial">PARTIAL</span></td>
+        <td class="instruction">Check admin → Widget logo upload → uploaded logo persists at <code>/static/uploads/logos/</code>. <strong>Gap:</strong> only local filesystem; no S3 integration. Files may be lost on server restart/redeploy.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 11 – Chat Page -->
+  <div class="section">
+    <h2>11. Chat Page</h2>
+    <table class="checklist">
+      <tr>
+        <th style="width:30%">Feature</th>
+        <th style="width:10%">Status</th>
+        <th>What to check</th>
+      </tr>
+      <tr>
+        <td class="feature-name">Dedicated chat page</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Open <a href="/chat?hotel_code=khil&embed=0" target="_blank">/chat?hotel_code=khil&embed=0</a> directly. Full standalone chat page should load without the widget frame.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Multi-feature integration</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">On the chat page: messages work, history loads, forms render inline, quick-action chips appear, suggestion carousel visible. All features co-exist.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Agent/user interaction</td>
+        <td><span class="tag done">DONE</span></td>
+        <td class="instruction">Trigger human handoff. Verify the conversation escalation creates a ticket (ticketing enabled). Check admin → Conversations for the escalated session.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Test log panel -->
+  <div class="section">
+    <h2>Automated Checks Log</h2>
+    <p class="desc">JavaScript checks run automatically on page load to verify key functionality.</p>
+    <pre id="test-log">Running checks…</pre>
+  </div>
+
+</main>
+
+<!-- ── Widget embed script ─────────────────────────────────── -->
+<script
+  src="http://localhost:8011/static/embed/kebo-widget-loader.js"
+  data-hotel-code="khil"
+  data-brand-color="#FF6816"
+  data-bot-name="KePSLA"
+  data-position="right"
+  async
+></script>
+
+<!-- ── Test harness ───────────────────────────────────────── -->
+<script>
+  // ── Utilities ──────────────────────────────────────────────
+  var log = document.getElementById("test-log");
+  var results = [];
+
+  function logLine(cls, msg) {
+    results.push({ cls: cls, msg: msg });
+    var line = document.createElement("span");
+    line.className = cls;
+    line.textContent = (cls === "pass" ? "✓ " : cls === "fail" ? "✗ " : cls === "warn" ? "⚠ " : "ℹ ") + msg + "\n";
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function pass(msg)  { logLine("pass", msg); }
+  function fail(msg)  { logLine("fail", msg); }
+  function info(msg)  { logLine("info", msg); }
+  function warn(msg)  { logLine("warn", msg); }
+
+  // Clear default text
+  log.textContent = "";
+
+  // ── Status bar update ──────────────────────────────────────
+  var dot  = document.getElementById("status-dot");
+  var stext = document.getElementById("status-text");
+
+  function setStatus(state, text) {
+    dot.className = state;
+    stext.textContent = text;
+  }
+
+  // ── Test 1: server reachability ────────────────────────────
+  info("--- Server Connectivity ---");
+  fetch("http://localhost:8011/health")
+    .then(function(r) {
+      if (r.ok) {
+        pass("Server is up at http://localhost:8011");
+        setStatus("connected", "Server online");
+      } else {
+        fail("Server responded with HTTP " + r.status);
+        setStatus("error", "Server error " + r.status);
+      }
+    })
+    .catch(function() {
+      fail("Server not reachable — start main.py first");
+      setStatus("error", "Server offline");
+    });
+
+  // ── Test 2: widget bootstrap API ──────────────────────────
+  info("--- Widget Bootstrap ---");
+  fetch("http://localhost:8011/api/widget/bootstrap?hotel_code=khil")
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data && (data.hotel_code || data.widget_key)) {
+        pass("Bootstrap API returned config for hotel_code=khil");
+        if (data.theme && data.theme.brand_color) pass("Theme brand_color: " + data.theme.brand_color);
+        if (data.bot_name) pass("Bot name: " + data.bot_name);
+      } else {
+        warn("Bootstrap returned data but hotel_code missing: " + JSON.stringify(data).slice(0,120));
+      }
+    })
+    .catch(function(e) { fail("Bootstrap API call failed: " + e.message); });
+
+  // ── Test 3: widget script loader ──────────────────────────
+  info("--- Widget Script Loader ---");
+  window.addEventListener("load", function() {
+    var hasRoot = !!document.querySelector("[data-kebo-widget-root]");
+    var hasLauncher = !!document.querySelector("[data-kebo-widget-launcher]");
+    var hasFrame = !!document.querySelector("[data-kebo-widget-frame]");
+    hasRoot    ? pass("Widget root element mounted in DOM") : fail("Widget root NOT found — loader may have failed");
+    hasLauncher? pass("Launcher button mounted") : fail("Launcher button NOT found");
+    hasFrame   ? pass("iframe frame container mounted") : fail("iframe frame container NOT found");
+  });
+
+  // ── Test 4: localStorage persistence ─────────────────────
+  info("--- Storage ---");
+  try {
+    localStorage.setItem("__kebo_test__", "1");
+    var val = localStorage.getItem("__kebo_test__");
+    localStorage.removeItem("__kebo_test__");
+    val === "1" ? pass("localStorage read/write works") : fail("localStorage read/write mismatch");
+  } catch(e) {
+    fail("localStorage not available: " + e.message);
+  }
+
+  // ── Test 5: script is non-blocking ────────────────────────
+  info("--- Async / Non-blocking ---");
+  var scripts = document.querySelectorAll("script[src*='kebo-widget-loader']");
+  scripts.length > 0 ? pass("Widget loader script found in DOM") : fail("Widget loader script tag not found");
+
+  // ── Test 6: WS reachability (probe only) ─────────────────
+  info("--- WebSocket ---");
+  try {
+    var wsSessionId = "test_" + Date.now();
+    var ws = new WebSocket("ws://localhost:8011/ws/chat?session_id=" + wsSessionId + "&hotel_code=khil&channel=web_widget");
+    var wsTimeout = setTimeout(function() {
+      warn("WebSocket did not open within 5s");
+      ws.close();
+    }, 5000);
+    ws.onopen = function() {
+      clearTimeout(wsTimeout);
+      pass("WebSocket connection opened successfully");
+      // Send a ping
+      ws.send(JSON.stringify({ type: "ping" }));
+    };
+    ws.onmessage = function(e) {
+      try {
+        var msg = JSON.parse(e.data);
+        if (msg.type === "pong" || msg.type === "connected") {
+          pass("WebSocket server responded: type=" + msg.type);
+        } else if (msg.type === "response") {
+          pass("WebSocket bot response received (greeting/connected)");
+        }
+      } catch(_) {}
+    };
+    ws.onerror = function() { fail("WebSocket error — check CORS or server status"); };
+  } catch(e) {
+    fail("WebSocket init failed: " + e.message);
+  }
+
+  // ── Test 7: /chat page reachable ─────────────────────────
+  info("--- Chat Page ---");
+  fetch("http://localhost:8011/chat?hotel_code=khil&embed=1")
+    .then(function(r) {
+      r.ok ? pass("/chat page returns HTTP 200") : fail("/chat returned HTTP " + r.status);
+    })
+    .catch(function(e) { fail("/chat not reachable: " + e.message); });
+
+  // ── Test 8: static widget loader served ──────────────────
+  fetch("http://localhost:8011/static/embed/kebo-widget-loader.js")
+    .then(function(r) {
+      r.ok ? pass("Widget loader JS served at /static/embed/kebo-widget-loader.js") : fail("Widget loader JS returned " + r.status);
+    })
+    .catch(function(e) { fail("Widget loader JS not served: " + e.message); });
+
+  // ── Helpers ───────────────────────────────────────────────
+  function clearChatStorage() {
+    var cleared = 0;
+    for (var k in localStorage) {
+      if (k.startsWith("kebo") || k.startsWith("kepsla") || k.startsWith("chat") || k.startsWith("session")) {
+        localStorage.removeItem(k);
+        cleared++;
+      }
+    }
+    // Also clear all keys as fallback
+    localStorage.clear();
+    cleared = "(all)";
+    info("Cleared localStorage. Reload the page to start a fresh session.");
+    alert("localStorage cleared. Reload the page for a fresh session.");
+  }
+
+  function setViewport(size, btn) {
+    document.querySelectorAll(".vp-btn").forEach(function(b) { b.classList.remove("active"); });
+    btn.classList.add("active");
+    if (size === "mobile")  document.body.style.maxWidth = "390px";
+    else if (size === "tablet") document.body.style.maxWidth = "768px";
+    else document.body.style.maxWidth = "";
+  }
+</script>
+
+</body>
+</html>

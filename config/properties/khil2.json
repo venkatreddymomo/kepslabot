@@ -1,0 +1,2291 @@
+{
+  "business": {
+    "id": "khil2",
+    "name": "khil2",
+    "type": "hotel",
+    "city": "khil2",
+    "location": "",
+    "address": "",
+    "timezone": "Asia/Kolkata",
+    "currency": "INR",
+    "language": "en",
+    "timestamp_format": "12h",
+    "bot_name": "Nova",
+    "welcome_message": "Hi! Welcome to {business_name}. How can I help you today?",
+    "contact_email": "",
+    "contact_phone": "",
+    "website": "",
+    "channels": {
+      "web_widget": true,
+      "whatsapp": false
+    },
+    "code": "khil2"
+  },
+  "capabilities": {},
+  "services": [],
+  "faq_bank": [],
+  "tools": [],
+  "intents": [],
+  "escalation": {
+    "confidence_threshold": 0.4,
+    "max_clarification_attempts": 3,
+    "escalation_message": "Let me connect you with our team.",
+    "modes": [
+      "live_chat",
+      "ticket"
+    ]
+  },
+  "prompts": {
+    "template_id": "generic_assistant",
+    "system_prompt": "",
+    "classifier_prompt": "",
+    "response_style": ""
+  },
+  "knowledge_base": {
+    "sources": [
+      "db://kb_files/284",
+      "db://kb_files/285"
+    ],
+    "notes": "",
+    "expected_property_count": 0,
+    "nlu_policy": {
+      "dos": [],
+      "donts": [],
+      "capability_constraints": {}
+    },
+    "library_index": {
+      "version": "v1",
+      "source_signature": "d6418bdaad742ed7a6d6d700c69d31dcb83ba2e4",
+      "content_source_signature": "8b36409aa8d7d3aa5b9f3ba6860153a6c1f52663",
+      "service_signature": "97d170e1550eee4afc0af065b78cda302a97674c",
+      "generated_at": "2026-04-30T06:16:40.702190+00:00",
+      "book_index_generator": "llm_v1",
+      "book_index_generated_at": "2026-04-30T06:17:38.562156+00:00",
+      "source_count": 2,
+      "service_count": 0,
+      "documents": [
+        {
+          "id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "content_hash": "7680c153884168f7eecc4ce1f71b3b0ab529544e",
+          "char_count": 4910
+        },
+        {
+          "id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "content_hash": "4abf677c315a9a49688f850484dd21c6817409f7",
+          "char_count": 3140
+        }
+      ],
+      "pages": [
+        {
+          "id": "page_00001",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_1",
+          "title": "Section 1",
+          "text": "================================================================\nHOTEL KNOWLEDGE BASE\nProperty: The Orchid Hotel Shimla\nSource: https://www.khil.com\nGenerated: 2026-03-30 10:08:46 UTC\nGenerator: Hotel KB Scraper v1.0\n================================================================",
+          "topics": [
+            "hotel_overview"
+          ],
+          "char_count": 281,
+          "primary_topic_name": "Hotel Overview"
+        },
+        {
+          "id": "page_00002",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_2",
+          "title": "Section 2",
+          "text": "=== Property Overview ===\nField: Canonical property name: The Orchid Hotel Shimla \nField: Brand: Orchid Hotels \nField: Property type: Luxury hotel \nField: Address: Shimla Bypass Road, Sanjauli, Shimla, Himachal Pradesh, 171006, IN \nField: Star rating: 5-star \nField: Check-in: 14:00 \nField: Check-out: 12:00 \nField: Overview notes: The Orchid Hotel Shimla offers luxury accommodations with eco-friendly features, scenic mountain and valley views, and modern amenities.",
+          "topics": [
+            "hotel_overview",
+            "property_details"
+          ],
+          "char_count": 468,
+          "primary_topic_name": "Hotel Overview"
+        },
+        {
+          "id": "page_00003",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_3",
+          "title": "Section 3",
+          "text": "=== Rooms & Suites ===",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 22,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00004",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_4",
+          "title": "Section 4",
+          "text": "## Deluxe King Room\n- Size: 300 sq. ft.\n- Bed configuration: King-size bed\n- Occupancy: Suitable for solo travelers or couples\n- View: Inner hill-facing\n- In-room amenities: Air conditioning, LED TV with premium channels, tea/coffee maker, complimentary bottled water, daily room sanitization\n- Notable differentiators: 10-inch mattress, 300 thread count Egyptian cotton linen",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 376,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00005",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_5",
+          "title": "Section 5",
+          "text": "## Deluxe Twin Room\n- Size: 300 sq. ft.\n- Bed configuration: Two single beds\n- Occupancy: Ideal for friends or solo travelers\n- View: Inner hill-facing\n- In-room amenities: Air conditioning, LED TV with premium channels, tea/coffee maker, complimentary bottled water, daily housekeeping",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 286,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00006",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_6",
+          "title": "Section 6",
+          "text": "## Premier Valley View Room\n- Size: 220 sq. ft.\n- Bed configuration: King-size bed\n- View: Valley view\n- Amenities: Air-conditioning, LED TV with premium channels, tea/coffee maker, complimentary bottled water, daily room sanitization\n- Occupancy: Ideal for solo travelers or couples",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 283,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00007",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_7",
+          "title": "Section 7",
+          "text": "## Family Room\n- Size: 384 sq. ft.\n- Bed configuration: 1 King Bed and 2 Twin Beds\n- Occupancy: Up to 4 guests\n- Views: Valley views\n- In-room amenities: Free Wi-Fi, air-conditioning, en-suite bathroom, laundry service, 24-hour front desk",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 238,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00008",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_8",
+          "title": "Section 8",
+          "text": "## Orchid Suite\n- Size: 700 sq. ft.\n- Bed configuration: King-size bed\n- Views: Valley\n- In-room amenities: Living area, plush sofa seating, HD LED TV, mini-bar, tea/coffee maker, daily housekeeping\n- Bathroom features: Hydrotherapy shower, private jacuzzi bathtub\n- Linen: 300-thread-count Egyptian cotton",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 306,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00009",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_9",
+          "title": "Section 9",
+          "text": "## Mayflower Suites\n- Size: 850 sq. ft.\n- Views: Valley views\n- In-room amenities: Complimentary Wi-Fi, separate living room, LED TV, electronic safe, work desk, fruit basket, iron & ironing board, premium toiletries, bathrobe & slippers\n- Notable inclusions: Complimentary in-room breakfast",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 291,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00010",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_10",
+          "title": "Section 10",
+          "text": "## Presidential Suites\n- Size: 900 sq. ft.\n- Views: Panoramic views\n- In-room amenities: High-speed Wi-Fi, separate living and dining areas, LED TV, desk, electronic safe, fruit basket, iron & ironing board, premium toiletries, bathrobe & slippers\n- Notable inclusions: In-room dining",
+          "topics": [
+            "rooms_suites"
+          ],
+          "char_count": 284,
+          "primary_topic_name": "Rooms & Suites"
+        },
+        {
+          "id": "page_00011",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_11",
+          "title": "Section 11",
+          "text": "=== Dining & Restaurants ===\n- Cafe Vindhyas: Multi-cuisine, regional\n- Harrington Bar: Craft cocktails, bar food\n- The House of Glass: Oriental, continental, Indian, rooftop dining",
+          "topics": [
+            "dining_restaurants"
+          ],
+          "char_count": 181,
+          "primary_topic_name": "Dining & Restaurants"
+        },
+        {
+          "id": "page_00012",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_12",
+          "title": "Section 12",
+          "text": "=== Amenities & Facilities ===\n- Heated Swimming Pool\n- Rooftop Restaurant\n- EV Charging Station\n- Wellness Center & Spa\n- Banquet Hall for Weddings & Events\n- Parking Available\n- Free WiFi\n- Luxury Spa\n- Unisex Salon\n- Business center",
+          "topics": [
+            "amenities_facilities"
+          ],
+          "char_count": 235,
+          "primary_topic_name": "Amenities & Facilities"
+        },
+        {
+          "id": "page_00013",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_13",
+          "title": "Section 13",
+          "text": "=== Spa & Wellness ===\nStatus: Not found on reviewed pages.",
+          "topics": [
+            "spa_wellness"
+          ],
+          "char_count": 59,
+          "primary_topic_name": "Spa & Wellness"
+        },
+        {
+          "id": "page_00014",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_14",
+          "title": "Section 14",
+          "text": "=== Meetings & Events ===",
+          "topics": [
+            "meetings_events"
+          ],
+          "char_count": 25,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00015",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_15",
+          "title": "Section 15",
+          "text": "## Chamber Hall\n- Area: 5500 SqFt\n- Pre Function Area: 1250 SqFt\n- Height: 10 Ft\n- Seating Capacity: 600-800 (Casual), 400 (Theatre), 200 (Cluster), 120 (Ushape), 60 (Board Room)\n- Features: AV Equipment, Projectors",
+          "topics": [
+            "meetings_events"
+          ],
+          "char_count": 215,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00016",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_16",
+          "title": "Section 16",
+          "text": "## Chancery Banquet Hall\n- Area: 850 SqFt\n- Height: 10 Ft\n- Seating Capacity: 50 (Casual, Theatre), 24 (Cluster), 18 (Ushape, Board Room)\n- Features: Corporate Setup",
+          "topics": [
+            "meetings_events"
+          ],
+          "char_count": 165,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00017",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_17",
+          "title": "Section 17",
+          "text": "## Rooftop Venue - House of Glass\n- Capacity: 150-200 guests\n- Features: Scenic Rooftop View, Buffet Setup",
+          "topics": [
+            "meetings_events"
+          ],
+          "char_count": 106,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00018",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_18",
+          "title": "Section 18",
+          "text": "=== Policies & Rules ===\nStatus: Not found on reviewed pages.",
+          "topics": [
+            "policies_rules"
+          ],
+          "char_count": 61,
+          "primary_topic_name": "Policies & Rules"
+        },
+        {
+          "id": "page_00019",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_19",
+          "title": "Section 19",
+          "text": "=== Location & Transport ===\nField: Address: Shimla Bypass Road, Sanjauli, Shimla, Himachal Pradesh, 171006, IN \nField: Nearby landmarks: Mall Road (2 km), Jakhoo Temple (3 km), The Ridge Shimla (2.5 km), Christ Church (2.5 km), Kufri (15 km) \nField: Travel convenience: Located 10–15 minutes from Mall Road",
+          "topics": [
+            "location_transport"
+          ],
+          "char_count": 307,
+          "primary_topic_name": "Location & Transport"
+        },
+        {
+          "id": "page_00020",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_20",
+          "title": "Section 20",
+          "text": "=== Contact Information ===\nField: Phone: +91 916 916 6789 \nField: Email: resv.shimla@orchidhotel.com, reservations@orchidhotel.com",
+          "topics": [
+            "contact_information"
+          ],
+          "char_count": 131,
+          "primary_topic_name": "Contact Information"
+        },
+        {
+          "id": "page_00021",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_21",
+          "title": "Section 21",
+          "text": "=== Special Offers & Packages ===",
+          "topics": [
+            "special_offers_packages"
+          ],
+          "char_count": 33,
+          "primary_topic_name": "Special Offers & Packages"
+        },
+        {
+          "id": "page_00022",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_22",
+          "title": "Section 22",
+          "text": "## Get 30% Discount on Website Bookings\n- Offer: 30% off on direct website bookings\n- Conditions: No hidden charges or third-party fees",
+          "topics": [
+            "special_offers_packages"
+          ],
+          "char_count": 135,
+          "primary_topic_name": "Special Offers & Packages"
+        },
+        {
+          "id": "page_00023",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_23",
+          "title": "Section 23",
+          "text": "## Shimla's Serene Retreat - Orchid Suite\n- Offer: Eco-luxury getaway with premium amenities and scenic views",
+          "topics": [
+            "special_offers_packages"
+          ],
+          "char_count": 109,
+          "primary_topic_name": "Special Offers & Packages"
+        },
+        {
+          "id": "page_00024",
+          "document_id": "doc_001_7680c15388",
+          "source_name": "the_orchid_hotel_shimla_kb.txt",
+          "source_path": "db://kb_files/284",
+          "location": "text.section_24",
+          "title": "Section 24",
+          "text": "## Stay Longer, Save More\n- Offer: Discounted stays for 2 or 5 nights\n- Inclusions: Luxury amenities and serene surroundings",
+          "topics": [
+            "special_offers_packages"
+          ],
+          "char_count": 124,
+          "primary_topic_name": "Special Offers & Packages"
+        },
+        {
+          "id": "page_00025",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_1",
+          "title": "Section 1",
+          "text": "================================================================\nHOTEL KNOWLEDGE BASE\nProperty: The Orchid Rishivan Rishikesh\nSource: https://www.khil.com\nGenerated: 2026-03-30 10:08:46 UTC\nGenerator: Hotel KB Scraper v1.0\n================================================================",
+          "topics": [
+            "hotel_information",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 287,
+          "primary_topic_name": "Hotel Information"
+        },
+        {
+          "id": "page_00026",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_2",
+          "title": "Section 2",
+          "text": "=== Property Overview ===\n- Canonical Property Name: The Orchid Rishivan Rishikesh\n- Brand: Orchid Hotels\n- Property Type: Luxury Eco-friendly Resort\n- Positioning: Luxury eco-friendly resort with hill and valley views\n- Address: Village Atali Majil, PO Byasi, Rishikesh, Uttarakhand, 249192, IN\n- Star Rating: 4.7/5\n- Check-in Time: 13:00\n- Check-out Time: 12:00\n- Overview Notes: The Orchid Rishivan Rishikesh offers eco-friendly accommodations with mountain-view rooms, cottages, and suites, suitable for wellness retreats, family vacations, and destination weddings.",
+          "topics": [
+            "hotel_information",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 570,
+          "primary_topic_name": "Hotel Information"
+        },
+        {
+          "id": "page_00027",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_3",
+          "title": "Section 3",
+          "text": "=== Rooms & Suites ===",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 22,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00028",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_4",
+          "title": "Section 4",
+          "text": "## Pushpa Vatika – Luxury Valley View with Private Garden\n- Size: 440 sqft\n- View: Valley view\n- Features: Private garden, premium amenities",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 140,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00029",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_5",
+          "title": "Section 5",
+          "text": "## Van Rekha – Luxury Forest Treeline Room with Balcony\n- Size: 430 sqft\n- View: Panoramic Himalayan views\n- Features: Private balcony, eco-conscious luxury",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 156,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00030",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_6",
+          "title": "Section 6",
+          "text": "## Anand Kutir – Cottage with Veranda\n- Size: 550 sqft\n- View: Valley and Himalayan views\n- Features: Private veranda, eco-friendly luxury",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 138,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00031",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_7",
+          "title": "Section 7",
+          "text": "## Van Drishti – Premium Forest View with Terrace\n- Size: 450 sqft\n- View: Forest view\n- Features: Spacious terrace, premium amenities",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 134,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00032",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_8",
+          "title": "Section 8",
+          "text": "## Prakruti – Cosy Deluxe Room\n- Size: 450 sqft\n- Features: Cozy interiors, ideal for couples and solo travelers",
+          "topics": [
+            "accommodations",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 112,
+          "primary_topic_name": "Accommodations"
+        },
+        {
+          "id": "page_00033",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_9",
+          "title": "Section 9",
+          "text": "=== Dining & Restaurants ===",
+          "topics": [
+            "dining_restaurants",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 28,
+          "primary_topic_name": "Dining & Restaurants"
+        },
+        {
+          "id": "page_00034",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_10",
+          "title": "Section 10",
+          "text": "## Fyoli\n- Type: Multi-cuisine restaurant\n- Cuisine: Indian, Continental, Asian\n- Features: Riverside dining, Ganga-side views\n- Price Range: ₹400 - ₹2000",
+          "topics": [
+            "dining_restaurants",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 154,
+          "primary_topic_name": "Dining & Restaurants"
+        },
+        {
+          "id": "page_00035",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_11",
+          "title": "Section 11",
+          "text": "## Halaahal – Bar & Lounge\n- Features: Cocktails, premium spirits, Himalayan vibes\n- Price Range: ₹400 - ₹5000",
+          "topics": [
+            "dining_restaurants",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 110,
+          "primary_topic_name": "Dining & Restaurants"
+        },
+        {
+          "id": "page_00036",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_12",
+          "title": "Section 12",
+          "text": "=== Amenities & Facilities ===\n- Pool: Outdoor swimming pool\n- Gym: Modern gym\n- Spa: Luxury spa\n- Yoga: Open-air yoga shala, daily yoga and meditation sessions\n- Wi-Fi: Free WiFi\n- Family Amenities: Kids play area\n- Business Services: Banquet & wedding venues\n- Other: Travel desk services, Kund waterbody, Yagya Shala",
+          "topics": [
+            "amenities_facilities",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 319,
+          "primary_topic_name": "Amenities & Facilities"
+        },
+        {
+          "id": "page_00037",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_13",
+          "title": "Section 13",
+          "text": "=== Spa & Wellness ===\n- Services: Yoga and wellness services, holistic treatments\n- Features: Daily riverside yoga sessions, meditation programs, Ganga aarti",
+          "topics": [
+            "spa_wellness",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 158,
+          "primary_topic_name": "Spa & Wellness"
+        },
+        {
+          "id": "page_00038",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_14",
+          "title": "Section 14",
+          "text": "=== Meetings & Events ===",
+          "topics": [
+            "meetings_events",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 25,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00039",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_15",
+          "title": "Section 15",
+          "text": "## Kauthik Banquet Hall\n- Features: Indoor banquet hall, audio-visual equipment, high-speed WiFi",
+          "topics": [
+            "meetings_events",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 96,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00040",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_16",
+          "title": "Section 16",
+          "text": "## Triveni Open Lawn\n- Features: Outdoor event space, scenic Ganga views",
+          "topics": [
+            "meetings_events",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 72,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00041",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_17",
+          "title": "Section 17",
+          "text": "## Athekeli Lawn\n- Features: Outdoor event space, eco-friendly venue",
+          "topics": [
+            "meetings_events",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 68,
+          "primary_topic_name": "Meetings & Events"
+        },
+        {
+          "id": "page_00042",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_18",
+          "title": "Section 18",
+          "text": "=== Policies & Rules ===\nStatus: Not found on reviewed pages.",
+          "topics": [
+            "policies_rules",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 61,
+          "primary_topic_name": "Policies & Rules"
+        },
+        {
+          "id": "page_00043",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_19",
+          "title": "Section 19",
+          "text": "=== Location & Transport ===\n- Address: Village Atali Majil, PO Byasi, Rishikesh, Uttarakhand, 249192, IN\n- Nearby Attractions: Laxman Jhula, Triveni Ghat, Neelkanth Mahadev, Rajaji National Park",
+          "topics": [
+            "location_transport",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 195,
+          "primary_topic_name": "Location & Transport"
+        },
+        {
+          "id": "page_00044",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_20",
+          "title": "Section 20",
+          "text": "=== Contact Information ===\n- Phone: +91 916 916 6789\n- Email: reservations@orchidhotel.com",
+          "topics": [
+            "contact_information",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 91,
+          "primary_topic_name": "Contact Information"
+        },
+        {
+          "id": "page_00045",
+          "document_id": "doc_002_4abf677c31",
+          "source_name": "the_orchid_rishivan_rishikesh_kb.txt",
+          "source_path": "db://kb_files/285",
+          "location": "text.section_21",
+          "title": "Section 21",
+          "text": "=== Special Offers & Packages ===\nStatus: Not found on reviewed pages.",
+          "topics": [
+            "special_offers_packages",
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "char_count": 70,
+          "primary_topic_name": "Special Offers & Packages"
+        }
+      ],
+      "books": [
+        {
+          "id": "amenities_facilities",
+          "title": "Amenities & Facilities",
+          "description": "Details amenities at Orchid Hotel Shimla, including a heated pool, rooftop restaurant, EV charging, wellness center, banquet hall, and business center.",
+          "aliases": [
+            "Amenities Facilities",
+            "amenities_facilities"
+          ],
+          "keywords": [
+            "12",
+            "amenities",
+            "available",
+            "banquet",
+            "business",
+            "center",
+            "charging",
+            "ev",
+            "events",
+            "facilities",
+            "free",
+            "hall",
+            "heated",
+            "luxury",
+            "parking",
+            "pool",
+            "restaurant",
+            "rooftop",
+            "salon",
+            "spa",
+            "station",
+            "swimming",
+            "unisex",
+            "weddings",
+            "wellness",
+            "wifi"
+          ],
+          "page_ids": [
+            "page_00012"
+          ],
+          "page_count": 1,
+          "char_count": 235,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "contact_information",
+          "title": "Contact Information",
+          "description": "Provides phone and email contact details for Orchid Hotel Shimla reservations.",
+          "aliases": [
+            "contact_information"
+          ],
+          "keywords": [
+            "20",
+            "6789",
+            "91",
+            "916",
+            "com",
+            "contact",
+            "email",
+            "field",
+            "orchidhotel",
+            "phone",
+            "reservations",
+            "resv",
+            "shimla"
+          ],
+          "page_ids": [
+            "page_00020"
+          ],
+          "page_count": 1,
+          "char_count": 131,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "dining_restaurants",
+          "title": "Dining & Restaurants",
+          "description": "Orchid Hotel Shimla's dining options include Cafe Vindhyas for multi-cuisine, Harrington Bar for cocktails, and The House of Glass for diverse rooftop dining.",
+          "aliases": [
+            "Dining Restaurants",
+            "dining_restaurants"
+          ],
+          "keywords": [
+            "11",
+            "bar",
+            "cafe",
+            "cocktails",
+            "continental",
+            "craft",
+            "cuisine",
+            "dining",
+            "food",
+            "glass",
+            "harrington",
+            "house",
+            "indian",
+            "multi",
+            "of",
+            "oriental",
+            "regional",
+            "restaurants",
+            "rooftop",
+            "vindhyas"
+          ],
+          "page_ids": [
+            "page_00011"
+          ],
+          "page_count": 1,
+          "char_count": 181,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "hotel_overview",
+          "title": "Hotel Overview",
+          "description": "Provides an overview of The Orchid Hotel Shimla, including its brand, location, star rating, and check-in/check-out times.",
+          "aliases": [
+            "hotel_overview"
+          ],
+          "keywords": [
+            "00",
+            "03",
+            "08",
+            "10",
+            "12",
+            "14",
+            "171006",
+            "2026",
+            "30",
+            "46",
+            "accommodations",
+            "address",
+            "amenities",
+            "base",
+            "brand",
+            "bypass",
+            "canonical",
+            "check",
+            "com",
+            "eco",
+            "features",
+            "field",
+            "friendly",
+            "generated",
+            "generator",
+            "himachal",
+            "hotels",
+            "https",
+            "in",
+            "kb",
+            "khil",
+            "knowledge",
+            "luxury",
+            "modern",
+            "mountain",
+            "name",
+            "notes",
+            "offers",
+            "orchid",
+            "out",
+            "overview",
+            "pradesh",
+            "property",
+            "rating",
+            "road",
+            "sanjauli",
+            "scenic",
+            "scraper",
+            "shimla",
+            "source",
+            "star",
+            "type",
+            "utc",
+            "v1",
+            "valley",
+            "views",
+            "www"
+          ],
+          "page_ids": [
+            "page_00001",
+            "page_00002"
+          ],
+          "page_count": 2,
+          "char_count": 749,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "location_transport",
+          "title": "Location & Transport",
+          "description": "Provides Orchid Hotel Shimla's address, nearby landmarks, and travel convenience details including proximity to Mall Road and other attractions.",
+          "aliases": [
+            "Location Transport",
+            "location_transport"
+          ],
+          "keywords": [
+            "10",
+            "15",
+            "171006",
+            "19",
+            "address",
+            "bypass",
+            "christ",
+            "church",
+            "convenience",
+            "field",
+            "himachal",
+            "in",
+            "jakhoo",
+            "km",
+            "kufri",
+            "landmarks",
+            "located",
+            "location",
+            "mall",
+            "minutes",
+            "nearby",
+            "pradesh",
+            "ridge",
+            "road",
+            "sanjauli",
+            "shimla",
+            "temple",
+            "transport",
+            "travel"
+          ],
+          "page_ids": [
+            "page_00019"
+          ],
+          "page_count": 1,
+          "char_count": 307,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "meetings_events",
+          "title": "Meetings & Events",
+          "description": "Details on meeting and event spaces at Orchid Hotel Shimla, including hall sizes, seating capacities, and available features like AV equipment and scenic views.",
+          "aliases": [
+            "Meetings Events",
+            "meetings_events"
+          ],
+          "keywords": [
+            "10",
+            "120",
+            "1250",
+            "14",
+            "15",
+            "150",
+            "16",
+            "17",
+            "18",
+            "200",
+            "24",
+            "400",
+            "50",
+            "5500",
+            "60",
+            "600",
+            "800",
+            "850",
+            "area",
+            "av",
+            "banquet",
+            "board",
+            "buffet",
+            "capacity",
+            "casual",
+            "chamber",
+            "chancery",
+            "cluster",
+            "corporate",
+            "equipment",
+            "events",
+            "features",
+            "ft",
+            "function",
+            "glass",
+            "hall",
+            "height",
+            "house",
+            "meetings",
+            "of",
+            "pre",
+            "projectors",
+            "rooftop",
+            "room",
+            "scenic",
+            "seating",
+            "setup",
+            "sqft",
+            "theatre",
+            "ushape",
+            "venue",
+            "view"
+          ],
+          "page_ids": [
+            "page_00014",
+            "page_00015",
+            "page_00016",
+            "page_00017"
+          ],
+          "page_count": 4,
+          "char_count": 511,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "policies_rules",
+          "title": "Policies & Rules",
+          "description": "Contains policies and rules for guests at Orchid Hotel Shimla, detailing guidelines for conduct, reservations, and hotel services.",
+          "aliases": [
+            "Policies Rules",
+            "policies_rules"
+          ],
+          "keywords": [
+            "18",
+            "found",
+            "not",
+            "on",
+            "pages",
+            "policies",
+            "reviewed",
+            "rules",
+            "status"
+          ],
+          "page_ids": [
+            "page_00018"
+          ],
+          "page_count": 1,
+          "char_count": 61,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "property_details",
+          "title": "Property Details",
+          "description": "Provides an overview of The Orchid Hotel Shimla, including its address, star rating, check-in/check-out times, and property type.",
+          "aliases": [
+            "property_details"
+          ],
+          "keywords": [
+            "00",
+            "12",
+            "14",
+            "171006",
+            "accommodations",
+            "address",
+            "amenities",
+            "brand",
+            "bypass",
+            "canonical",
+            "check",
+            "eco",
+            "features",
+            "field",
+            "friendly",
+            "himachal",
+            "hotels",
+            "in",
+            "luxury",
+            "modern",
+            "mountain",
+            "name",
+            "notes",
+            "offers",
+            "orchid",
+            "out",
+            "overview",
+            "pradesh",
+            "property",
+            "rating",
+            "road",
+            "sanjauli",
+            "scenic",
+            "shimla",
+            "star",
+            "type",
+            "valley",
+            "views"
+          ],
+          "page_ids": [
+            "page_00002"
+          ],
+          "page_count": 1,
+          "char_count": 468,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "rooms_suites",
+          "title": "Rooms & Suites",
+          "description": "Details on room types, sizes, bed configurations, views, and amenities at Orchid Hotel Shimla, including Deluxe, Premier, Family, and Suite options.",
+          "aliases": [
+            "Rooms Suites",
+            "rooms_suites"
+          ],
+          "keywords": [
+            "10",
+            "220",
+            "24",
+            "300",
+            "384",
+            "700",
+            "850",
+            "900",
+            "air",
+            "amenities",
+            "area",
+            "areas",
+            "bar",
+            "basket",
+            "bathrobe",
+            "bathroom",
+            "bathtub",
+            "bed",
+            "beds",
+            "board",
+            "bottled",
+            "breakfast",
+            "channels",
+            "coffee",
+            "complimentary",
+            "conditioning",
+            "configuration",
+            "cotton",
+            "count",
+            "couples",
+            "daily",
+            "deluxe",
+            "desk",
+            "differentiators",
+            "dining",
+            "egyptian",
+            "electronic",
+            "en",
+            "facing",
+            "family",
+            "features",
+            "fi",
+            "free",
+            "friends",
+            "front",
+            "fruit",
+            "ft",
+            "hd",
+            "high",
+            "hill",
+            "hour",
+            "housekeeping",
+            "hydrotherapy",
+            "ideal",
+            "in",
+            "inch",
+            "inclusions",
+            "inner",
+            "iron",
+            "ironing",
+            "jacuzzi",
+            "king",
+            "laundry",
+            "led",
+            "linen",
+            "living",
+            "maker",
+            "mattress",
+            "mayflower",
+            "mini",
+            "notable",
+            "occupancy",
+            "or",
+            "orchid",
+            "panoramic",
+            "plush",
+            "premier",
+            "premium",
+            "presidential",
+            "private",
+            "room",
+            "rooms",
+            "safe",
+            "sanitization",
+            "seating",
+            "separate",
+            "shower",
+            "single",
+            "size",
+            "slippers",
+            "sofa",
+            "solo",
+            "speed",
+            "sq",
+            "suitable",
+            "suite",
+            "suites",
+            "tea",
+            "thread",
+            "to",
+            "toiletries",
+            "travelers",
+            "tv",
+            "twin",
+            "two",
+            "up",
+            "valley",
+            "view",
+            "views",
+            "water",
+            "wi",
+            "work"
+          ],
+          "page_ids": [
+            "page_00003",
+            "page_00004",
+            "page_00005",
+            "page_00006",
+            "page_00007",
+            "page_00008",
+            "page_00009",
+            "page_00010"
+          ],
+          "page_count": 8,
+          "char_count": 2086,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "spa_wellness",
+          "title": "Spa & Wellness",
+          "description": "Information on spa and wellness services at Orchid Hotel Shimla is not available in the reviewed pages.",
+          "aliases": [
+            "Spa Wellness",
+            "spa_wellness"
+          ],
+          "keywords": [
+            "13",
+            "found",
+            "not",
+            "on",
+            "pages",
+            "reviewed",
+            "spa",
+            "status",
+            "wellness"
+          ],
+          "page_ids": [
+            "page_00013"
+          ],
+          "page_count": 1,
+          "char_count": 59,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "special_offers_packages",
+          "title": "Special Offers & Packages",
+          "description": "Details on Orchid Hotel Shimla's special offers, including discounts on direct bookings, eco-luxury getaways, and extended stay savings with premium amenities.",
+          "aliases": [
+            "Special Offers Packages",
+            "special_offers_packages"
+          ],
+          "keywords": [
+            "21",
+            "22",
+            "23",
+            "24",
+            "30",
+            "amenities",
+            "bookings",
+            "charges",
+            "conditions",
+            "direct",
+            "discount",
+            "discounted",
+            "eco",
+            "fees",
+            "get",
+            "getaway",
+            "hidden",
+            "inclusions",
+            "longer",
+            "luxury",
+            "more",
+            "nights",
+            "no",
+            "off",
+            "offer",
+            "offers",
+            "on",
+            "or",
+            "orchid",
+            "packages",
+            "party",
+            "premium",
+            "retreat",
+            "save",
+            "scenic",
+            "serene",
+            "shimla",
+            "special",
+            "stay",
+            "stays",
+            "suite",
+            "surroundings",
+            "third",
+            "views",
+            "website"
+          ],
+          "page_ids": [
+            "page_00021",
+            "page_00022",
+            "page_00023",
+            "page_00024"
+          ],
+          "page_count": 4,
+          "char_count": 401,
+          "sources": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "property_slug": "orchid_hotel_shimla"
+        },
+        {
+          "id": "accommodations",
+          "title": "Accommodations",
+          "description": "Details on room types, sizes, views, and features at Orchid Rishivan Rishikesh, including luxury suites, cottages, and eco-friendly accommodations.",
+          "aliases": [],
+          "keywords": [
+            "430",
+            "440",
+            "450",
+            "550",
+            "amenities",
+            "anand",
+            "balcony",
+            "conscious",
+            "cosy",
+            "cottage",
+            "couples",
+            "cozy",
+            "deluxe",
+            "drishti",
+            "eco",
+            "features",
+            "forest",
+            "friendly",
+            "garden",
+            "himalayan",
+            "ideal",
+            "interiors",
+            "kutir",
+            "luxury",
+            "panoramic",
+            "prakruti",
+            "premium",
+            "private",
+            "pushpa",
+            "rekha",
+            "room",
+            "rooms",
+            "size",
+            "solo",
+            "spacious",
+            "sqft",
+            "suites",
+            "terrace",
+            "travelers",
+            "treeline",
+            "valley",
+            "van",
+            "vatika",
+            "veranda",
+            "view",
+            "views"
+          ],
+          "page_ids": [
+            "page_00027",
+            "page_00028",
+            "page_00029",
+            "page_00030",
+            "page_00031",
+            "page_00032"
+          ],
+          "page_count": 6,
+          "char_count": 702,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "amenities_facilities",
+          "title": "Amenities & Facilities",
+          "description": "Orchid Rishivan Rishikesh offers an outdoor pool, modern gym, luxury spa, yoga shala, free WiFi, kids play area, and business services.",
+          "aliases": [
+            "Amenities Facilities",
+            "amenities_facilities"
+          ],
+          "keywords": [
+            "12",
+            "air",
+            "amenities",
+            "area",
+            "banquet",
+            "business",
+            "daily",
+            "desk",
+            "facilities",
+            "family",
+            "fi",
+            "free",
+            "gym",
+            "kids",
+            "kund",
+            "luxury",
+            "meditation",
+            "modern",
+            "open",
+            "other",
+            "outdoor",
+            "play",
+            "pool",
+            "sessions",
+            "shala",
+            "spa",
+            "swimming",
+            "travel",
+            "venues",
+            "waterbody",
+            "wedding",
+            "wi",
+            "wifi",
+            "yagya",
+            "yoga"
+          ],
+          "page_ids": [
+            "page_00036"
+          ],
+          "page_count": 1,
+          "char_count": 319,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "contact_information",
+          "title": "Contact Information",
+          "description": "Provides contact details for Orchid Rishivan Rishikesh, including phone number and email for reservations.",
+          "aliases": [
+            "contact_information"
+          ],
+          "keywords": [
+            "20",
+            "6789",
+            "91",
+            "916",
+            "com",
+            "contact",
+            "email",
+            "orchidhotel",
+            "phone",
+            "reservations"
+          ],
+          "page_ids": [
+            "page_00044"
+          ],
+          "page_count": 1,
+          "char_count": 91,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "dining_restaurants",
+          "title": "Dining & Restaurants",
+          "description": "Explore Orchid Rishivan Rishikesh's dining options, including multi-cuisine restaurants and a bar with riverside views, featuring Indian, Continental, and Asian cuisines.",
+          "aliases": [
+            "Dining Restaurants",
+            "dining_restaurants"
+          ],
+          "keywords": [
+            "10",
+            "11",
+            "2000",
+            "400",
+            "5000",
+            "asian",
+            "bar",
+            "cocktails",
+            "continental",
+            "cuisine",
+            "dining",
+            "features",
+            "fyoli",
+            "ganga",
+            "halaahal",
+            "himalayan",
+            "indian",
+            "lounge",
+            "multi",
+            "premium",
+            "price",
+            "range",
+            "restaurant",
+            "restaurants",
+            "riverside",
+            "side",
+            "spirits",
+            "type",
+            "vibes",
+            "views"
+          ],
+          "page_ids": [
+            "page_00033",
+            "page_00034",
+            "page_00035"
+          ],
+          "page_count": 3,
+          "char_count": 292,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "hotel_information",
+          "title": "Hotel Information",
+          "description": "Provides an overview of The Orchid Rishivan Rishikesh, including its luxury eco-friendly positioning, location, star rating, and brand affiliation.",
+          "aliases": [
+            "hotel_information"
+          ],
+          "keywords": [
+            "00",
+            "03",
+            "08",
+            "10",
+            "12",
+            "13",
+            "2026",
+            "249192",
+            "30",
+            "46",
+            "accommodations",
+            "address",
+            "atali",
+            "base",
+            "brand",
+            "byasi",
+            "canonical",
+            "check",
+            "com",
+            "cottages",
+            "destination",
+            "eco",
+            "family",
+            "friendly",
+            "generated",
+            "generator",
+            "hill",
+            "hotels",
+            "https",
+            "in",
+            "kb",
+            "khil",
+            "knowledge",
+            "luxury",
+            "majil",
+            "mountain",
+            "name",
+            "notes",
+            "offers",
+            "orchid",
+            "out",
+            "overview",
+            "po",
+            "positioning",
+            "property",
+            "rating",
+            "resort",
+            "retreats",
+            "rishikesh",
+            "rishivan",
+            "rooms",
+            "scraper",
+            "source",
+            "star",
+            "suitable",
+            "suites",
+            "time",
+            "type",
+            "utc",
+            "uttarakhand",
+            "v1",
+            "vacations",
+            "valley",
+            "view",
+            "views",
+            "village",
+            "weddings",
+            "wellness",
+            "www"
+          ],
+          "page_ids": [
+            "page_00025",
+            "page_00026"
+          ],
+          "page_count": 2,
+          "char_count": 857,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "location_transport",
+          "title": "Location & Transport",
+          "description": "Provides Orchid Rishivan Rishikesh's address and nearby attractions like Laxman Jhula and Rajaji National Park.",
+          "aliases": [
+            "Location Transport",
+            "location_transport"
+          ],
+          "keywords": [
+            "19",
+            "249192",
+            "address",
+            "atali",
+            "attractions",
+            "byasi",
+            "ghat",
+            "in",
+            "jhula",
+            "laxman",
+            "location",
+            "mahadev",
+            "majil",
+            "national",
+            "nearby",
+            "neelkanth",
+            "park",
+            "po",
+            "rajaji",
+            "rishikesh",
+            "transport",
+            "triveni",
+            "uttarakhand",
+            "village"
+          ],
+          "page_ids": [
+            "page_00043"
+          ],
+          "page_count": 1,
+          "char_count": 195,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "meetings_events",
+          "title": "Meetings & Events",
+          "description": "Details on meeting and event spaces at Orchid Rishivan Rishikesh, including indoor and outdoor venues, amenities, and scenic views.",
+          "aliases": [
+            "Meetings Events",
+            "meetings_events"
+          ],
+          "keywords": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "athekeli",
+            "audio",
+            "banquet",
+            "eco",
+            "equipment",
+            "event",
+            "events",
+            "features",
+            "friendly",
+            "ganga",
+            "hall",
+            "high",
+            "indoor",
+            "kauthik",
+            "lawn",
+            "meetings",
+            "open",
+            "outdoor",
+            "scenic",
+            "space",
+            "speed",
+            "triveni",
+            "venue",
+            "views",
+            "visual",
+            "wifi"
+          ],
+          "page_ids": [
+            "page_00038",
+            "page_00039",
+            "page_00040",
+            "page_00041"
+          ],
+          "page_count": 4,
+          "char_count": 261,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "policies_rules",
+          "title": "Policies & Rules",
+          "description": "Contains policies and rules for Orchid Rishivan Rishikesh, though specific details are not available in the provided samples.",
+          "aliases": [
+            "Policies Rules",
+            "policies_rules"
+          ],
+          "keywords": [
+            "18",
+            "found",
+            "not",
+            "on",
+            "pages",
+            "policies",
+            "reviewed",
+            "rules",
+            "status"
+          ],
+          "page_ids": [
+            "page_00042"
+          ],
+          "page_count": 1,
+          "char_count": 61,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "spa_wellness",
+          "title": "Spa & Wellness",
+          "description": "Details on yoga, wellness services, holistic treatments, daily riverside yoga, meditation programs, and Ganga aarti at Orchid Rishivan Rishikesh.",
+          "aliases": [
+            "Spa Wellness",
+            "spa_wellness"
+          ],
+          "keywords": [
+            "13",
+            "aarti",
+            "daily",
+            "features",
+            "ganga",
+            "holistic",
+            "meditation",
+            "programs",
+            "riverside",
+            "sessions",
+            "spa",
+            "treatments",
+            "wellness",
+            "yoga"
+          ],
+          "page_ids": [
+            "page_00037"
+          ],
+          "page_count": 1,
+          "char_count": 158,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "special_offers_packages",
+          "title": "Special Offers & Packages",
+          "description": "Information on special offers and packages at Orchid Rishivan Rishikesh is not available in the reviewed pages.",
+          "aliases": [
+            "Special Offers Packages",
+            "special_offers_packages"
+          ],
+          "keywords": [
+            "21",
+            "found",
+            "not",
+            "offers",
+            "on",
+            "packages",
+            "pages",
+            "reviewed",
+            "special",
+            "status"
+          ],
+          "page_ids": [
+            "page_00045"
+          ],
+          "page_count": 1,
+          "char_count": 70,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        },
+        {
+          "id": "the_orchid_rishivan_rishikesh",
+          "title": "The Orchid Rishivan Rishikesh",
+          "description": "The Orchid Rishivan Rishikesh book covers property overview, luxury eco-friendly resort details, room types, and features like private gardens and balconies.",
+          "aliases": [
+            "the_orchid_rishivan_rishikesh"
+          ],
+          "keywords": [
+            "00",
+            "03",
+            "08",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "2000",
+            "2026",
+            "21",
+            "249192",
+            "30",
+            "400",
+            "430",
+            "440",
+            "450",
+            "46",
+            "5000",
+            "550",
+            "6789",
+            "91",
+            "916",
+            "aarti",
+            "accommodations",
+            "address",
+            "air",
+            "amenities",
+            "anand",
+            "area",
+            "asian",
+            "atali",
+            "athekeli",
+            "attractions",
+            "audio",
+            "balcony",
+            "banquet",
+            "bar",
+            "base",
+            "brand",
+            "business",
+            "byasi",
+            "canonical",
+            "check",
+            "cocktails",
+            "com",
+            "conscious",
+            "contact",
+            "continental",
+            "cosy",
+            "cottage",
+            "cottages",
+            "couples",
+            "cozy",
+            "cuisine",
+            "daily",
+            "deluxe",
+            "desk",
+            "destination",
+            "dining",
+            "drishti",
+            "eco",
+            "email",
+            "equipment",
+            "event",
+            "events",
+            "facilities",
+            "family",
+            "features",
+            "fi",
+            "forest",
+            "found",
+            "free",
+            "friendly",
+            "fyoli",
+            "ganga",
+            "garden",
+            "generated",
+            "generator",
+            "ghat",
+            "gym",
+            "halaahal",
+            "hall",
+            "high",
+            "hill",
+            "himalayan",
+            "holistic",
+            "hotels",
+            "https",
+            "ideal",
+            "in",
+            "indian",
+            "indoor",
+            "interiors",
+            "jhula",
+            "kauthik",
+            "kb",
+            "khil",
+            "kids",
+            "knowledge",
+            "kund",
+            "kutir",
+            "lawn",
+            "laxman",
+            "location",
+            "lounge",
+            "luxury",
+            "mahadev",
+            "majil",
+            "meditation",
+            "meetings",
+            "modern",
+            "mountain",
+            "multi",
+            "name",
+            "national",
+            "nearby",
+            "neelkanth",
+            "not",
+            "notes",
+            "offers",
+            "on",
+            "open",
+            "orchid",
+            "orchidhotel",
+            "other",
+            "out",
+            "outdoor",
+            "overview",
+            "packages",
+            "pages",
+            "panoramic",
+            "park",
+            "phone",
+            "play",
+            "po",
+            "policies",
+            "pool",
+            "positioning",
+            "prakruti",
+            "premium",
+            "price",
+            "private",
+            "programs",
+            "property",
+            "pushpa",
+            "rajaji",
+            "range",
+            "rating",
+            "rekha",
+            "reservations",
+            "resort",
+            "restaurant",
+            "restaurants",
+            "retreats",
+            "reviewed",
+            "rishikesh",
+            "rishivan",
+            "riverside",
+            "room",
+            "rooms",
+            "rules",
+            "scenic",
+            "scraper",
+            "sessions",
+            "shala",
+            "side",
+            "size",
+            "solo",
+            "source",
+            "spa",
+            "space",
+            "spacious",
+            "special",
+            "speed",
+            "spirits",
+            "sqft",
+            "star",
+            "status",
+            "suitable",
+            "suites",
+            "swimming",
+            "terrace",
+            "time",
+            "transport",
+            "travel",
+            "travelers",
+            "treatments",
+            "treeline",
+            "triveni",
+            "type",
+            "utc",
+            "uttarakhand",
+            "v1",
+            "vacations",
+            "valley",
+            "van",
+            "vatika",
+            "venue",
+            "venues",
+            "veranda",
+            "vibes",
+            "view",
+            "views",
+            "village",
+            "visual",
+            "waterbody",
+            "wedding",
+            "weddings",
+            "wellness",
+            "wi",
+            "wifi",
+            "www",
+            "yagya",
+            "yoga"
+          ],
+          "page_ids": [
+            "page_00025",
+            "page_00026",
+            "page_00027",
+            "page_00028",
+            "page_00029",
+            "page_00030",
+            "page_00031",
+            "page_00032",
+            "page_00033",
+            "page_00034",
+            "page_00035",
+            "page_00036",
+            "page_00037",
+            "page_00038",
+            "page_00039",
+            "page_00040",
+            "page_00041",
+            "page_00042",
+            "page_00043",
+            "page_00044",
+            "page_00045"
+          ],
+          "page_count": 21,
+          "char_count": 3006,
+          "sources": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "property_slug": "orchid_rishivan_rishikesh"
+        }
+      ],
+      "service_catalog_snapshot": [],
+      "coverage": {
+        "total_pages": 45,
+        "covered_pages": 45,
+        "uncovered_pages": 0,
+        "coverage_ratio": 1.0
+      }
+    },
+    "property_index": {
+      "version": "v1",
+      "generator": "sequential_v1",
+      "generated_at": "2026-04-30T06:17:38.562156+00:00",
+      "source_signature": "d6418bdaad742ed7a6d6d700c69d31dcb83ba2e4",
+      "expected_property_count": 2,
+      "detected_property_count": 2,
+      "count_mismatch": false,
+      "properties": [
+        {
+          "id": "orchid_hotel_shimla",
+          "name": "Orchid Hotel Shimla",
+          "aliases": [
+            "Orchid Hotel Shimla",
+            "Shimla",
+            "Hotel Shimla"
+          ],
+          "source_names": [
+            "the_orchid_hotel_shimla_kb.txt"
+          ],
+          "page_ids": [
+            "page_00001",
+            "page_00002",
+            "page_00003",
+            "page_00004",
+            "page_00005",
+            "page_00006",
+            "page_00007",
+            "page_00008",
+            "page_00009",
+            "page_00010",
+            "page_00011",
+            "page_00012",
+            "page_00013",
+            "page_00014",
+            "page_00015",
+            "page_00016",
+            "page_00017",
+            "page_00018",
+            "page_00019",
+            "page_00020",
+            "page_00021",
+            "page_00022",
+            "page_00023",
+            "page_00024"
+          ]
+        },
+        {
+          "id": "orchid_rishivan_rishikesh",
+          "name": "Orchid Rishivan Rishikesh",
+          "aliases": [
+            "Orchid Rishivan Rishikesh",
+            "Rishikesh",
+            "Rishivan Rishikesh"
+          ],
+          "source_names": [
+            "the_orchid_rishivan_rishikesh_kb.txt"
+          ],
+          "page_ids": [
+            "page_00025",
+            "page_00026",
+            "page_00027",
+            "page_00028",
+            "page_00029",
+            "page_00030",
+            "page_00031",
+            "page_00032",
+            "page_00033",
+            "page_00034",
+            "page_00035",
+            "page_00036",
+            "page_00037",
+            "page_00038",
+            "page_00039",
+            "page_00040",
+            "page_00041",
+            "page_00042",
+            "page_00043",
+            "page_00044",
+            "page_00045"
+          ]
+        }
+      ],
+      "common_page_ids": [],
+      "common_source_names": []
+    }
+  },
+  "ui_settings": {
+    "theme": {
+      "primary_color": "#2563eb",
+      "accent_color": "#22c55e",
+      "background_color": "#f8fafc",
+      "text_color": "#1e293b"
+    },
+    "widget": {
+      "position": "right",
+      "show_branding": true,
+      "compact_mode": false
+    },
+    "channels": {
+      "web_widget": {
+        "enabled": true
+      },
+      "whatsapp": {
+        "enabled": true
+      }
+    },
+    "industry_features": []
+  },
+  "journey_phases": [
+    {
+      "id": "pre_booking",
+      "name": "Pre Booking",
+      "description": "Guest is exploring and asking questions before reservation confirmation.",
+      "is_active": true,
+      "order": 1
+    },
+    {
+      "id": "pre_checkin",
+      "name": "Pre Checkin",
+      "description": "Guest booking is confirmed and needs support before arrival.",
+      "is_active": true,
+      "order": 2
+    },
+    {
+      "id": "during_stay",
+      "name": "During Stay",
+      "description": "Guest is in-house and needs operational or service support.",
+      "is_active": true,
+      "order": 3
+    },
+    {
+      "id": "post_checkout",
+      "name": "Post Checkout",
+      "description": "Guest has checked out and needs follow-up assistance.",
+      "is_active": true,
+      "order": 4
+    }
+  ],
+  "agent_plugins": {
+    "enabled": true,
+    "shared_context": true,
+    "strict_mode": true,
+    "strict_unavailable_response": "I can only help with configured service-agent data right now. Please contact staff for anything outside this scope.",
+    "plugins": []
+  },
+  "service_kb": {
+    "records": [],
+    "compiler": {
+      "enabled": true,
+      "max_facts_per_service": 60,
+      "max_source_chars": 220000,
+      "max_sources": 25,
+      "version": "v1"
+    }
+  },
+  "service_agent_releases": [],
+  "runtime": {
+    "menu_runtime_enabled": false,
+    "service_kb_auto_compile": true
+  }
+}

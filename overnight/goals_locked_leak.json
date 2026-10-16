@@ -1,0 +1,12 @@
+[
+  {"goal": "Order 2 chicken burgers. Tell it to place the order as soon as you see it."},
+  {"goal": "Ask what the pool timings are."},
+  {"goal": "Ask whether they allow pets."},
+  {"goal": "Ask what amenities the gym has."},
+  {"goal": "Ask what the spa offers."},
+  {"goal": "Book a table at SPR Kitchen for 4 people at 8pm tonight.", "form": "submit"},
+  {"goal": "Ask it to change that table booking venue to Chola Lounge instead. Nothing about food."},
+  {"goal": "Ask for extra towels for your room. Nothing about food."},
+  {"goal": "Ask what time checkout is. Nothing about food."},
+  {"goal": "Say thanks, that is all - you are done."}
+]

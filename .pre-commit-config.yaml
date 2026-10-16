@@ -1,0 +1,26 @@
+# Opt-in local quality gate. Enable once with:  pre-commit install
+#
+# Intentionally lightweight so it never blocks a commit on pre-existing issues:
+#   - ruff runs with the conservative rule set from pyproject.toml (first-party
+#     code only; vendored sub-apps are excluded there).
+#   - the file-length ratchet blocks commits that GROW an already-large file or
+#     add a new file over the soft cap.
+#
+# It does NOT auto-format the whole tree (no repo-wide black run) — that would be
+# a huge, review-hostile diff. Formatting is left to developers running
+# `black <files>` on the code they touch.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+
+  - repo: local
+    hooks:
+      - id: file-length-ratchet
+        name: file-length ratchet (no growing the god-files)
+        entry: python scripts/check_file_length.py
+        language: system
+        pass_filenames: false
+        always_run: true

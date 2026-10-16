@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mango Grove — phantom-ticket test (:8013)</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0;
+         padding: 24px 18px 120px; background: #f6f7f9; color: #14213d; line-height: 1.6; }
+  .card { max-width: 720px; margin: 0 auto; background: #fff; padding: 22px;
+          border-radius: 14px; box-shadow: 0 8px 24px rgba(20,33,61,.08); }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: #6b7280; font-size: 14px; margin: 0 0 18px; }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Mango Grove — phantom-ticket test</h1>
+    <p class="sub">
+      Plain third-party page carrying only the embed snippet, pointed at the test
+      instance on :8013 (same PROD .env and PROD DB as :8011, new code).
+    </p>
+    <ol>
+      <li>Ask about rooms so the bot offers room chips.</li>
+      <li>Do NOT click anything — the prefetch pre-cooks every chip in the background.</li>
+      <li>No new <code>prefetch::</code> ticket may appear in <code>new_bot_tickets</code>.</li>
+      <li>Then click a room chip — exactly ONE ticket, on the real session, with dates.</li>
+    </ol>
+  </div>
+
+  <script src="http://127.0.0.1:8011/static/embed/kebo-widget-loader.js"
+    data-widget-id="mango_grove_chandigarh"
+    data-widget-key="wk_KkRabdHTRYylT-eZ7Nu_1RiS"
+    data-hotel-code="mango_grove_chandigarh"
+    data-phase="pre_booking"
+    data-bot-name="Mango Grove Assist"
+    data-position="right">
+  </script>
+</body>
+</html>

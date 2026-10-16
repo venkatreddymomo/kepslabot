@@ -1,0 +1,627 @@
+{
+  "hotel_code": "zone",
+  "phase": "pre_booking",
+  "property": "Zone Park Pathankot",
+  "session_id": "zone-chip-20-dfbeee073d",
+  "turns": [
+    {
+      "turn": 1,
+      "source_type": "typed_input",
+      "user_message": "Tell me about Zone Park Pathankot.",
+      "bot_message": "Here’s a quick overview of Zone by The Park Pathankot:\n- **Location**: Situated on the banks of the Chakki river, just 3 km from Pathankot cantt railway station and 5.6 km from the airport.\n- **Positioning**: Acts as a gateway to Jammu & Kashmir and Himachal Pradesh, blending leisure and business facilities.\n- **Amenities**: Fitness centre with cardio machines and weights, FunZone for kids, hi-speed Wi-Fi, smart TVs, in-room safes, and doctor on call.\n- **Dining**: Features Bazaar, an all-day multi-cuisine restaurant open 24/7, and Z Bar, a lively bar open from 11 AM to midnight.\n- **Events**: Townhall banquet space accommodates up to 500 guests, ideal for gatherings and business meetings.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-6b58a745416c",
+      "form_trigger": false,
+      "message_duration_ms": 38377.68,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_500ad3520172443caf9b20cc65aaef4c",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_500ad3520172443caf9b20cc65aaef4c"
+      }
+    },
+    {
+      "turn": 2,
+      "source_type": "typed_input",
+      "user_message": "Tell me about the Zone Room.",
+      "bot_message": "Here’s what the Zone Room at Zone by The Park Pathankot offers:\n- **Bed configuration**: Queen size bed.\n- **Amenities**: Smart television, hi-speed Wi-Fi connectivity, in-room mini bar, bathrooms with shower and toiletries, and neat storage spaces.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-ae344d57d630",
+      "form_trigger": false,
+      "message_duration_ms": 12329.18,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite",
+        "Tell me about Bazaar restaurant"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite",
+        "Tell me about Bazaar restaurant"
+      ],
+      "prefetch_batch_id": "pf_aac32201af84406691f780825da8dc5e",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite",
+          "Tell me about Bazaar restaurant"
+        ],
+        "prefetch_batch_id": "pf_aac32201af84406691f780825da8dc5e"
+      }
+    },
+    {
+      "turn": 3,
+      "source_type": "typed_input",
+      "user_message": "Tell me about the Deluxe Room.",
+      "bot_message": "Happy to help! Here are the rooms and current offers at Zone Park Pathankot:\n- **Zone Room** — features a queen size bed, smart television, hi-speed Wi-Fi, in-room mini bar, and bathrooms with shower and toiletries.\n- I don't have details about a Deluxe Room at this property.\nCurrent offers:\n- I don't have any specific offers listed right now.\nIs there a particular room type you'd like to know more about?",
+      "state": "idle",
+      "service_llm_label": "room booking request",
+      "turn_trace_id": "turn-fc02ab030c45",
+      "form_trigger": false,
+      "message_duration_ms": 14415.63,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Townhall banquet",
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Townhall banquet",
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar"
+      ],
+      "prefetch_batch_id": "pf_4d1d7d1a77924318942eed29ef366beb",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Townhall banquet",
+          "Tell me about Bazaar restaurant",
+          "Tell me about Z Bar"
+        ],
+        "prefetch_batch_id": "pf_4d1d7d1a77924318942eed29ef366beb"
+      }
+    },
+    {
+      "turn": 4,
+      "source_type": "typed_input",
+      "user_message": "Tell me about the Suite.",
+      "bot_message": "Of course — here's what the Suite at Zone by The Park Pathankot offers:\n- **Suite** — features a queen size bed and a separate living area with sofa cum bed for added comfort.\n- **Amenities**: HD television, hi-speed Wi-Fi connectivity, in-room mini bar, in-room safe, work desk area, bathrooms with shower and toiletries, and big storage spaces.\nCurrent offers:\n- ⭐ AMEX Stay Offer — 20% off on Best Available Room Rate and 25% off on Suite at Zone by The Park Hotels for American Express Card members.\n- ⭐ Book Direct and Save 20% — save 20% on all room bookings made directly through our website with benefits like early check-in, late check-out, and flexible booking.\nIs there a particular room type you'd like to know more about?",
+      "state": "idle",
+      "service_llm_label": "room booking request",
+      "turn_trace_id": "turn-7fd92afc41a0",
+      "form_trigger": false,
+      "message_duration_ms": 11454.55,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar",
+        "Tell me about Townhall banquet space"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar",
+        "Tell me about Townhall banquet space"
+      ],
+      "prefetch_batch_id": "pf_d30b7d796d784f3c83eb225067b88aec",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about Bazaar restaurant",
+          "Tell me about Z Bar",
+          "Tell me about Townhall banquet space"
+        ],
+        "prefetch_batch_id": "pf_d30b7d796d784f3c83eb225067b88aec"
+      }
+    },
+    {
+      "turn": 5,
+      "source_type": "typed_input",
+      "user_message": "What dining options are available at Zone Park Pathankot?",
+      "bot_message": "Happy to share the dining options at Zone Park Pathankot:\n- **Bazaar** — an all-day dining restaurant offering *multi-cuisine dishes* including local flavors, open 24/7.\n- **Z Bar** — a high-energy bar open from *11:00 AM to 12:00 AM*, perfect for unwinding with signature cocktails.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-ba143c993827",
+      "form_trigger": false,
+      "message_duration_ms": 13382.48,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Fitness Centre",
+        "Do you have a FunZone for kids?",
+        "Is Wi-Fi available at the hotel?"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Fitness Centre",
+        "Do you have a FunZone for kids?",
+        "Is Wi-Fi available at the hotel?"
+      ],
+      "prefetch_batch_id": "pf_322a80ff64134e17b70c6c30805c1879",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Fitness Centre",
+          "Do you have a FunZone for kids?",
+          "Is Wi-Fi available at the hotel?"
+        ],
+        "prefetch_batch_id": "pf_322a80ff64134e17b70c6c30805c1879"
+      }
+    },
+    {
+      "turn": 6,
+      "source_type": "typed_input",
+      "user_message": "Tell me more about Bazaar.",
+      "bot_message": "Sure, here’s more about **Bazaar** at Zone Park Pathankot:\n- It’s an *all-day dining restaurant* serving a variety of multi-cuisine dishes, including local flavors.\n- The restaurant is open *24 hours a day, 7 days a week*, so you can enjoy meals anytime.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-9fbf88008a7f",
+      "form_trigger": false,
+      "message_duration_ms": 38612.24,
+      "generated_chip_count": 1,
+      "generated_chips": [
+        "Tell me about Z Bar"
+      ],
+      "visible_chip_count": 1,
+      "visible_suggestions": [
+        "Tell me about Z Bar"
+      ],
+      "prefetch_batch_id": "pf_1fdc6cc6c2d14e9fa23e51fe33a7e788",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about Z Bar"
+        ],
+        "prefetch_batch_id": "pf_1fdc6cc6c2d14e9fa23e51fe33a7e788"
+      }
+    },
+    {
+      "turn": 7,
+      "source_type": "typed_input",
+      "user_message": "What amenities and facilities are available at the hotel?",
+      "bot_message": "Happy to share the amenities and facilities at Zone by The Park Pathankot:\n- **Fitness Centre** — includes cardio machines, treadmill, and weights for your workout needs.\n- **FunZone for kids** — a dedicated play area with game spots and lever bars.\n- **Wi-Fi** — high-speed connectivity available throughout the property.\n- **In-room amenities** — smart TV, in-room safe, mini bar, work desk area, and bathrooms with shower and toiletries.\n- **Additional services** — doctor on call, dental and shaving kit, iron and ironing board.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-8c6d7071b547",
+      "form_trigger": false,
+      "message_duration_ms": 11767.04,
+      "generated_chip_count": 1,
+      "generated_chips": [
+        "Tell me about the Spa & Wellness"
+      ],
+      "visible_chip_count": 1,
+      "visible_suggestions": [
+        "Tell me about the Spa & Wellness"
+      ],
+      "prefetch_batch_id": "pf_3b4caf1344694a75a9e9a8a7756009e1",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Spa & Wellness"
+        ],
+        "prefetch_batch_id": "pf_3b4caf1344694a75a9e9a8a7756009e1"
+      }
+    },
+    {
+      "turn": 8,
+      "source_type": "typed_input",
+      "user_message": "Tell me about the fitness centre.",
+      "bot_message": "Here’s what the **Fitness Centre** at Zone Park Pathankot offers:\n- It includes *cardio machines, a treadmill, and weights* for your workout needs.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-780c609c10c0",
+      "form_trigger": false,
+      "message_duration_ms": 18895.49,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about FunZone for kids",
+        "Do you have Wi-Fi?",
+        "Is there a doctor on call?"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about FunZone for kids",
+        "Do you have Wi-Fi?",
+        "Is there a doctor on call?"
+      ],
+      "prefetch_batch_id": "pf_6bb52b45b52a4eaba0423fdccad267a8",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about FunZone for kids",
+          "Do you have Wi-Fi?",
+          "Is there a doctor on call?"
+        ],
+        "prefetch_batch_id": "pf_6bb52b45b52a4eaba0423fdccad267a8"
+      }
+    },
+    {
+      "turn": 9,
+      "source_type": "typed_input",
+      "user_message": "What family-friendly features are there?",
+      "bot_message": "Happy to help with family-friendly features at Zone by The Park Pathankot:\n- **FunZone for kids** — a dedicated play area with game spots and lever bars, perfect for keeping children entertained.\n- **Fitness Centre** — while primarily for adults, it offers a safe and well-equipped space for family members to stay active.\n- **In-room amenities** — smart TVs and comfortable rooms that can accommodate families comfortably.\nCurrent offers at this property include:\n⭐ **AMEX Stay Offer** — 20% off on rooms and 25% off on suites for American Express card members.\n⭐ **Book Direct and Save 20%** — save 20% on direct bookings with benefits like early check-in and late check-out.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-29024891698f",
+      "form_trigger": false,
+      "message_duration_ms": 10467.45,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_f6c25781b5d14a68a986f762890f1ab7",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_f6c25781b5d14a68a986f762890f1ab7"
+      }
+    },
+    {
+      "turn": 10,
+      "source_type": "typed_input",
+      "user_message": "What meeting or event spaces are available?",
+      "bot_message": "Here are the meeting and event spaces at Zone by The Park Pathankot:\n- **Townhall** — offers *three banqueting spaces* suitable for gatherings, celebrations, and business meetings, with a capacity of up to *500 guests*.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-749179fb747f",
+      "form_trigger": false,
+      "message_duration_ms": 10697.96,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_569d3b5edfde441189cc57531edc97aa",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_569d3b5edfde441189cc57531edc97aa"
+      }
+    },
+    {
+      "turn": 11,
+      "source_type": "typed_input",
+      "user_message": "Is it suitable for birthday celebrations or social events?",
+      "bot_message": "Birthday celebrations and social events are definitely suitable at Zone by The Park Pathankot.\n- **Townhall** — features *three banqueting spaces* designed for gatherings, celebrations, and business meetings, with a capacity of up to *500 guests*.\n- The versatile spaces make it a great choice for hosting birthday parties or social events of various sizes.\n- Would you like our team to reach out to assist you with this?",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-0b079895e95c",
+      "form_trigger": false,
+      "message_duration_ms": 39137.24,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_afb509a253aa4519b662649a5768bf76",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_afb509a253aa4519b662649a5768bf76"
+      }
+    },
+    {
+      "turn": 12,
+      "source_type": "typed_input",
+      "user_message": "What nearby attractions are around the hotel?",
+      "bot_message": "Happy to share the nearby attractions around Zone by The Park Pathankot:\n- **Nurpur Fort** — a historic fort located near the hotel, offering cultural and architectural interest.\n- **Mukteshwar Temple** — a spiritual site close to the property, ideal for visitors interested in local heritage.\n- **Ranjit Sagar Dam** — a scenic spot nearby, great for nature lovers and sightseeing.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-747fe472d973",
+      "form_trigger": false,
+      "message_duration_ms": 11608.23,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar",
+        "Tell me about the Suite room"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about Bazaar restaurant",
+        "Tell me about Z Bar",
+        "Tell me about the Suite room"
+      ],
+      "prefetch_batch_id": "pf_2b6520878b9a41db8e2fa61292644a62",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about Bazaar restaurant",
+          "Tell me about Z Bar",
+          "Tell me about the Suite room"
+        ],
+        "prefetch_batch_id": "pf_2b6520878b9a41db8e2fa61292644a62"
+      }
+    },
+    {
+      "turn": 13,
+      "source_type": "typed_input",
+      "user_message": "How far is it from the airport and railway station?",
+      "bot_message": "Here’s how far Zone by The Park Pathankot is from key transport points:\n- Distance from the airport: *5.6 km*.\n- Distance from Pathankot cantt railway station: *3 km*.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-238680a5f869",
+      "form_trigger": false,
+      "message_duration_ms": 8661.82,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_1790e52b6005476d896f814461284c31",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_1790e52b6005476d896f814461284c31"
+      }
+    },
+    {
+      "turn": 14,
+      "source_type": "typed_input",
+      "user_message": "Are there any current room offers or packages?",
+      "bot_message": "Of course, here are the current room offers at Zone by The Park Pathankot:\n- ⭐ AMEX Stay Offer — *20% off on Best Available Room Rate* and *25% off on Suite* for American Express Card members, valid only on full AMEX card payments.\n- ⭐ Book Direct and Save 20% — save *20% on all room bookings* made directly through the website, with benefits like early check-in, late check-out, and flexible booking.\nIs there a particular room type you'd like to know more about?",
+      "state": "idle",
+      "service_llm_label": "room booking request",
+      "turn_trace_id": "turn-241fbc4efbf7",
+      "form_trigger": false,
+      "message_duration_ms": 10835.21,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Suite",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Zone Room"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Suite",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Zone Room"
+      ],
+      "prefetch_batch_id": "pf_d118a9ca23eb43648514d7392389d543",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Suite",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Zone Room"
+        ],
+        "prefetch_batch_id": "pf_d118a9ca23eb43648514d7392389d543"
+      }
+    },
+    {
+      "turn": 15,
+      "source_type": "typed_input",
+      "user_message": "Is Wi-Fi complimentary?",
+      "bot_message": "Happy to confirm the Wi-Fi details for you at Zone by The Park Pathankot:\n- **Wi-Fi** is *high-speed* and available throughout the property.\n- It is listed as an included amenity, so you can expect it to be *complimentary* for guests.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-1156476075e1",
+      "form_trigger": false,
+      "message_duration_ms": 12062.84,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite",
+        "Tell me about the Bazaar restaurant"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite",
+        "Tell me about the Bazaar restaurant"
+      ],
+      "prefetch_batch_id": "pf_a0dcf5b1a4034007b7aa435e3a231655",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite",
+          "Tell me about the Bazaar restaurant"
+        ],
+        "prefetch_batch_id": "pf_a0dcf5b1a4034007b7aa435e3a231655"
+      }
+    },
+    {
+      "turn": 16,
+      "source_type": "typed_input",
+      "user_message": "Is parking available?",
+      "bot_message": "Here's what I found about parking at Zone by The Park Pathankot:\n- The information provided does not specifically mention parking availability.\n- Would you like our team to reach out to share that with you?",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-d1dbaa2c95f4",
+      "form_trigger": false,
+      "message_duration_ms": 34615.85,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Zone Room",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Suite"
+      ],
+      "prefetch_batch_id": "pf_6554cd261f6a449896bbd49100f0cee2",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Zone Room",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Suite"
+        ],
+        "prefetch_batch_id": "pf_6554cd261f6a449896bbd49100f0cee2"
+      }
+    },
+    {
+      "turn": 17,
+      "source_type": "typed_input",
+      "user_message": "What are the check-in and check-out timings?",
+      "bot_message": "Here are the check-in and check-out timings for Zone by The Park Pathankot:\n- The specific check-in and check-out times are not listed in the available information.\n- Would you like our team to reach out to share that with you?",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-2c3722d76aca",
+      "form_trigger": false,
+      "message_duration_ms": 11008.49,
+      "generated_chip_count": 2,
+      "generated_chips": [
+        "No, thanks",
+        "Tell me about the room types"
+      ],
+      "visible_chip_count": 2,
+      "visible_suggestions": [
+        "No, thanks",
+        "Tell me about the room types"
+      ],
+      "prefetch_batch_id": "pf_4f588239388a4139a73904c41937603b",
+      "suggestions_payload": {
+        "suggestions": [
+          "No, thanks",
+          "Tell me about the room types"
+        ],
+        "prefetch_batch_id": "pf_4f588239388a4139a73904c41937603b"
+      }
+    },
+    {
+      "turn": 18,
+      "source_type": "typed_input",
+      "user_message": "Is it a good option for business travellers?",
+      "bot_message": "Zone by The Park Pathankot is well-suited for business travelers:\n- **Location**: Positioned as a gateway to Jammu & Kashmir and Himachal Pradesh, it offers convenient access with just 3 km from Pathankot cantt railway station and 5.6 km from the airport.\n- **Business Facilities**: The hotel blends leisure and business amenities, including a fitness centre and high-speed Wi-Fi, which are essential for business guests.\n- **Event Spaces**: It has the Townhall with three banqueting rooms accommodating up to 500 guests, suitable for meetings and corporate events.",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-570fb245c31b",
+      "form_trigger": false,
+      "message_duration_ms": 12342.58,
+      "generated_chip_count": 1,
+      "generated_chips": [
+        "Do you have a fitness centre?"
+      ],
+      "visible_chip_count": 1,
+      "visible_suggestions": [
+        "Do you have a fitness centre?"
+      ],
+      "prefetch_batch_id": "pf_cab01c248ca5441bad79bc7f390054ad",
+      "suggestions_payload": {
+        "suggestions": [
+          "Do you have a fitness centre?"
+        ],
+        "prefetch_batch_id": "pf_cab01c248ca5441bad79bc7f390054ad"
+      }
+    },
+    {
+      "turn": 19,
+      "source_type": "typed_input",
+      "user_message": "What makes Zone Park Pathankot stand out?",
+      "bot_message": "Happy to highlight what makes Zone Park Pathankot stand out:\n- **Location**: Situated on the banks of the Chakki river, just 3 km from Pathankot cantt railway station and 5.6 km from the airport, it serves as a gateway to Jammu & Kashmir and Himachal Pradesh.\n- **Blend of Leisure and Business**: The hotel offers a mix of leisure and business facilities, including a fitness centre with cardio machines and weights, plus high-speed Wi-Fi throughout.\n- **Event Spaces**: The Townhall features three banqueting rooms that can accommodate up to 500 guests, ideal for celebrations, social gatherings, and business meetings.\n- **Amenities**: Additional conveniences include a FunZone for kids, doctor on call, in-room smart TVs, mini bars, and safes.\n- **Current Offers**:\n⭐ **AMEX Stay Offer** — 20% off on Best Available Room Rate and 25% off on suites for American Express card members.\n⭐ **Book Direct and Save 20%** — save 20% on direct bookings with benefits like early check-in and late check-out (subject to availability).",
+      "state": "idle",
+      "service_llm_label": "main",
+      "turn_trace_id": "turn-7070351c662a",
+      "form_trigger": false,
+      "message_duration_ms": 14464.45,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Townhall",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Bazaar restaurant"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Townhall",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Bazaar restaurant"
+      ],
+      "prefetch_batch_id": "pf_9a77ce8950274149a35336a11f8e61c1",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Townhall",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Bazaar restaurant"
+        ],
+        "prefetch_batch_id": "pf_9a77ce8950274149a35336a11f8e61c1"
+      }
+    },
+    {
+      "turn": 20,
+      "source_type": "typed_input",
+      "user_message": "Which room category would best suit a couple?",
+      "bot_message": "Of course — here's what we've got at Zone by The Park Pathankot for couples:\n- **Zone Room** — features a *queen size bed* with smart television, hi-speed Wi-Fi, in-room mini bar, and bathrooms with shower and toiletries, ideal for a comfortable stay.\n- **Deluxe Room** — includes a *queen size bed plus a sofa cum bed*, along with smart television, hi-speed Wi-Fi, in-room mini bar, in-room safe, work desk area, and big storage spaces, offering extra comfort and space.\n- **Suite** — offers a *queen size bed and a separate living area with sofa cum bed*, plus HD television, hi-speed Wi-Fi, in-room mini bar, in-room safe, work desk area, and big storage spaces, perfect for a more spacious and luxurious experience.\nCurrent offers:\n⭐ **AMEX Stay Offer** — 20% off on Best Available Room Rate and 25% off on Suite for American Express Card members.\n⭐ **Book Direct and Save 20%** — save 20% on all room bookings made directly through our website with benefits like early check-in, late check-out, and flexible booking.\nIs there a particular room type you'd like to know more about?",
+      "state": "idle",
+      "service_llm_label": "room booking request",
+      "turn_trace_id": "turn-4093488ab65d",
+      "form_trigger": false,
+      "message_duration_ms": 13885.76,
+      "generated_chip_count": 3,
+      "generated_chips": [
+        "Tell me about the Suite",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Zone Room"
+      ],
+      "visible_chip_count": 3,
+      "visible_suggestions": [
+        "Tell me about the Suite",
+        "Tell me about the Deluxe Room",
+        "Tell me about the Zone Room"
+      ],
+      "prefetch_batch_id": "pf_859f5c05cddc48c69f1f03a093c2a92c",
+      "suggestions_payload": {
+        "suggestions": [
+          "Tell me about the Suite",
+          "Tell me about the Deluxe Room",
+          "Tell me about the Zone Room"
+        ],
+        "prefetch_batch_id": "pf_859f5c05cddc48c69f1f03a093c2a92c"
+      }
+    }
+  ]
+}

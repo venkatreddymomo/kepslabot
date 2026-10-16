@@ -1,0 +1,11 @@
+[
+  ["hi", null, "greeting"],
+  ["order food - 2 chicken burger and one filter coffee", null, "items + prices"],
+  ["yes place it", null, "TICKET 1, external, same turn"],
+  ["what did i order", null, "in the dining lane already - prices + total"],
+  ["the AC in my room is not cooling properly", null, "another team takes the turn - clears the service binding"],
+  ["yes", null, "Engineering ticket"],
+  ["what did i order", null, "THE TEST: binding cleared, must still answer from the CART - prices + total, no invented items"],
+  ["actually cancel my whole order", null, "THE TEST: inside the 5-min window, so it must ACTUALLY cancel - ticket status cancelled"],
+  ["what did i order", null, "must reflect the cancellation, not offer food nobody is cooking"]
+]

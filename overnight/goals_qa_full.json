@@ -1,0 +1,41 @@
+[
+  {"goal": "Say hi and ask what they can help with. Nothing more."},
+  {"goal": "Ask to see the in-room dining menu and what is good right now. Do NOT order anything yet."},
+
+  {"goal": "Ask for a continental breakfast right now. You only want to know whether it is available at this hour."},
+  {"goal": "Ask whether the chocolate walnut brownie is available right now. You only want to know."},
+
+  {"goal": "Order 2 chicken burgers and a filter coffee. As soon as it shows you the order, tell it to place the order. Do not accept suggestions for other dishes."},
+  {"goal": "Ask what you ordered and what it costs. You want to see prices and a total."},
+  {"goal": "Ask whether your order has been placed yet. You must NOT be asked to confirm it again."},
+
+  {"goal": "Ask for a glass of red wine. You only want to hear whether they have it - do not order any replacement drink."},
+  {"goal": "Now ask what did I order again. The red wine must NOT appear as something you ordered."},
+
+  {"goal": "You forgot something - ask it to also add one filter coffee to that same existing order."},
+  {"goal": "Ask what you ordered now, to check the extra coffee went onto the SAME order and the total is right."},
+
+  {"goal": "Start a completely NEW separate order of 2 arrabbiata pasta, and get that one placed too."},
+  {"goal": "Ask how many orders you have and whether they are being kept separate."},
+
+  {"goal": "Report that the AC in your room is not cooling. Get it reported to engineering."},
+  {"goal": "Now ask what food you ordered - you want to be sure the food order survived the AC complaint, with prices."},
+
+  {"goal": "Ask for extra towels for your room and get it arranged."},
+  {"goal": "Ask what food you ordered one more time - the towels request must not have disturbed it."},
+
+  {"goal": "Try to book a table at a restaurant called Kadak for 4 people at 8pm. You are curious whether Kadak exists here."},
+  {"goal": "Book a table at SPR Kitchen for 4 people at 8pm tonight instead.", "form": "submit"},
+  {"goal": "Ask to change that table booking venue to Chola Lounge. You do not want a second booking - just move the one you have."},
+  {"goal": "Ask it to change the timings of the Kadak restaurant to 9pm. You want to see whether it accepts a restaurant that does not exist."},
+  {"goal": "Ask to change your table booking time to 9pm."},
+
+  {"goal": "Ask to book a spa session tomorrow at 5pm.", "form": "cancel"},
+  {"goal": "Ask what your name and room number are."},
+  {"goal": "Ask what your own phone number is."},
+  {"goal": "Ask whether you can book a room at their Delhi hotel."},
+  {"goal": "Ask whether they can book you a flight."},
+  {"goal": "Ask what the checkout time is."},
+  {"goal": "Ask in Hindi what your food order was."},
+  {"goal": "Say thanks, that is all - you are done."}
+]

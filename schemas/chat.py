@@ -1,0 +1,161 @@
+from datetime import UTC, datetime
+from enum import Enum
+from typing import Any
+from uuid import UUID, uuid4
+
+from pydantic import BaseModel, Field
+
+
+class MessageRole(str, Enum):
+    USER = "user"
+    ASSISTANT = "assistant"
+    SYSTEM = "system"
+
+
+class ConversationState(str, Enum):
+    """Conversation state machine states."""
+    IDLE = "idle"                           # Waiting for user input
+    AWAITING_CONFIRMATION = "awaiting_confirmation"  # Asked yes/no question
+    AWAITING_SELECTION = "awaiting_selection"        # Presented options
+    AWAITING_INFO = "awaiting_info"         # Asked for specific info (room number, etc.)
+    PROCESSING_ORDER = "processing_order"   # Order in progress
+    ESCALATED = "escalated"                 # Handed off to human
+    COMPLETED = "completed"                 # Task completed
+
+
+class IntentType(str, Enum):
+    """Recognized intent types."""
+    GREETING = "greeting"
+    MENU_REQUEST = "menu_request"
+    ORDER_FOOD = "order_food"
+    ORDER_STATUS = "order_status"
+    TABLE_BOOKING = "table_booking"
+    ROOM_SERVICE = "room_service"
+    HEALTH_SUPPORT = "health_support"
+    COMPLAINT = "complaint"
+    FAQ = "faq"
+    CONFIRMATION_YES = "confirmation_yes"
+    CONFIRMATION_NO = "confirmation_no"
+    HUMAN_REQUEST = "human_request"
+    UNCLEAR = "unclear"
+    OUT_OF_SCOPE = "out_of_scope"
+    GENERAL_SERVICE = "general_service"
+
+
+class Message(BaseModel):
+    """Single message in conversation."""
+    id: UUID = Field(default_factory=uuid4)
+    role: MessageRole
+    content: str
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class ChatRequest(BaseModel):
+    """Incoming chat request."""
+    session_id: str = Field(..., description="Unique session identifier")
+    message: str = Field(..., min_length=1, max_length=2000)
+    hotel_code: str = Field(default="DEFAULT")
+    guest_phone: str | None = Field(default=None)
+    channel: str | None = Field(default=None, description="Message source, e.g. web or whatsapp")
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class IntentResult(BaseModel):
+    """Result of intent classification."""
+    intent: IntentType
+    confidence: float = Field(ge=0.0, le=1.0)
+    entities: dict[str, Any] = Field(default_factory=dict)
+    requires_confirmation: bool = False
+
+
+class ChatResponse(BaseModel):
+    """Outgoing chat response."""
+    model_config = {"extra": "ignore"}
+
+    session_id: str
+    message: str
+    display_message: str | None = None
+    service_llm_label: str | None = None
+    service_llm_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    state: ConversationState
+    suggested_actions: list[str] = Field(default_factory=list)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class ConversationContext(BaseModel):
+    """Full conversation context."""
+    session_id: str
+    hotel_code: str
+    guest_phone: str | None = None
+    guest_name: str | None = None
+    room_number: str | None = None
+    channel: str = "web"
+
+    # Booking context (populated from metadata when a booking is selected)
+    booking_id: int | None = None
+    booking_confirmation_code: str | None = None
+    booking_property_name: str | None = None
+    booking_property_scope_id: str | None = None
+    booking_room_type: str | None = None
+    booking_check_in_date: str | None = None
+    booking_check_out_date: str | None = None
+    booking_guest_name: str | None = None
+    booking_phase: str | None = None
+
+    state: ConversationState = ConversationState.IDLE
+    pending_action: str | None = None
+    pending_data: dict[str, Any] = Field(default_factory=dict)
+
+    # Suspended service tasks: saved when user switches topic mid-collection
+    suspended_services: list[dict[str, Any]] = Field(default_factory=list)
+    # True after we asked the user once whether to resume a suspended service
+    resume_prompt_sent: bool = False
+
+    messages: list[Message] = Field(default_factory=list)
+
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+    def _active_conversation_uid(self) -> str:
+        """The current chat thread id (rotating). Set per turn from the request."""
+        pd = self.pending_data if isinstance(self.pending_data, dict) else {}
+        return str(pd.get("_active_conversation_uid") or "").strip()
+
+    def add_message(self, role: MessageRole, content: str, metadata: dict | None = None) -> Message:
+        """Add a message to conversation history.
+
+        Stamps the active conversation_uid onto the message so history can be
+        scoped to the current thread (and persisted with the right thread id).
+        """
+        md = dict(metadata or {})
+        cur = self._active_conversation_uid()
+        if cur and not str(md.get("conversation_uid") or "").strip():
+            md["conversation_uid"] = cur
+        msg = Message(role=role, content=content, metadata=md)
+        self.messages.append(msg)
+        self.updated_at = datetime.now(UTC)
+        return msg
+
+    def get_recent_messages(self, count: int = 10) -> list[Message]:
+        """Get recent messages for context, scoped to the CURRENT conversation.
+
+        When an active conversation_uid is set, only messages from that thread are
+        returned — so a new conversation starts the LLM with a clean slate and old
+        threads never leak in. With no active uid (legacy), returns all (old behavior).
+        """
+        cur = self._active_conversation_uid()
+        msgs = self.messages
+        if cur:
+            msgs = [
+                m for m in msgs
+                if str((m.metadata or {}).get("conversation_uid") or "").strip() == cur
+            ]
+        return msgs[-count:] if msgs else []
+
+    def to_llm_messages(self, count: int = 10) -> list[dict]:
+        """Convert to LLM message format."""
+        return [
+            {"role": msg.role.value, "content": msg.content}
+            for msg in self.get_recent_messages(count)
+        ]

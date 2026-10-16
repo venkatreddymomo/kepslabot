@@ -1,0 +1,87 @@
+{
+  "_README": [
+    "In-room dining serving times, stated per DISH instead of parsed out of the menu prose.",
+    "",
+    "WHY THIS FILE EXISTS: the menu writes items in three different formats (food has",
+    "'Type:' + 'Price:', drinks have only 'Price:', some drinks have neither and inherit a",
+    "section price), and seven ALL-CAPS headings are themselves orderable items. No parser",
+    "reads it cleanly - three attempts returned 152, 169 and 352 items. Timings are stated as",
+    "section prose ('All Tandoori Kebabs will be available from 12 noon to 3 pm') that never",
+    "says WHICH dishes it covers. So the answer is written down here once instead of being",
+    "re-derived by a model on every turn.",
+    "",
+    "HOW IT IS READ: an item is available if 'now' falls inside ANY period listed for it.",
+    "AN ITEM NOT LISTED HERE IS AVAILABLE - this file holds exceptions only, and a missing,",
+    "misspelt or malformed entry can therefore never stop a guest ordering food.",
+    "",
+    "THIS FILE ANSWERS 'CAN IT BE ORDERED RIGHT NOW', NEVER 'DO WE SERVE IT'. A dish that is",
+    "closed is still on the menu and must be offered back with its hours, never refused as",
+    "something the hotel does not have."
+  ],
+
+  "sarovar_portico_sriperumbudur": {
+    "timezone": "Asia/Kolkata",
+
+    "periods": {
+      "all_day": [["00:00", "23:59"]],
+      "breakfast": [["07:00", "10:30"]],
+      "tandoor": [["12:00", "15:00"], ["19:00", "23:00"]],
+      "late_night": [["23:00", "07:00"]]
+    },
+
+    "_periods_note": [
+      "all_day is 24h because the property KB says '24-hour room service'. The KB also says",
+      "'(limited menu after 23:00)', which is what late_night is for - but the menu states NO",
+      "window for its MID NIGHT MENU section, so no item is assigned to late_night yet and the",
+      "period is dormant. Assigning the Mid Night Menu items to ['all_day','late_night'] and",
+      "narrowing all_day to the real kitchen hours turns it on. Do that only once the hotel",
+      "confirms both, because it starts refusing food after 23:00."
+    ],
+
+    "items": {
+      "_breakfast_comment": "BREAKFAST section, 'Timing: 7:00 AM - 10:30 AM'. Covers the section's own three combos plus its two sub-sections, INDIAN DELICACIES and WESTERN DELICACIES, which sit under the BREAKFAST heading and inherit its timing.",
+
+      "Continental Breakfast": ["breakfast"],
+      "American Breakfast": ["breakfast"],
+      "Indian Breakfast": ["breakfast"],
+
+      "Idli": ["breakfast"],
+      "Medu Vada": ["breakfast"],
+      "Dosa (Plain or Masala)": ["breakfast"],
+      "Uttappam": ["breakfast"],
+      "Paratha (Aloo or Paneer)": ["breakfast"],
+      "Poori Bhaji": ["breakfast"],
+
+      "Cereal": ["breakfast"],
+      "Freshly Squeezed Juices": ["breakfast"],
+      "Seasonal Sliced Fruit Platter": ["breakfast"],
+      "Yogurt": ["breakfast"],
+      "Smoothie Bowl": ["breakfast"],
+      "Bircher Muesli": ["breakfast"],
+      "Baker's Basket": ["breakfast"],
+      "Egg to Order": ["breakfast"],
+      "Pancake / Waffle / French Toast": ["breakfast"],
+
+      "_tandoor_kebabs_comment": "INDIAN SELECTION > APPETIZERS, 'Note: All Tandoori Kebabs will be available from 12 noon to 3 pm and 7 pm to 11 pm.' That note sits directly above this section and it is the only appetizer section there; all six are tandoor/grill items. NEEDS HOTEL SIGN-OFF - the menu never marks which dishes are kebabs.",
+
+      "Mushroom Galouti": ["tandoor"],
+      "Jaitooni Paneer Tikka": ["tandoor"],
+      "Ajwaini Jhinga": ["tandoor"],
+      "Kasundi Macchi Tikka": ["tandoor"],
+      "Tandoori Murgh": ["tandoor"],
+      "Zaffrani Murgh Tikka": ["tandoor"],
+
+      "_tandoor_breads_comment": "BREAD, 'All Tandoori Breads available from 12 noon-3 pm & 7 pm-11 pm.' Only the three TANDOOR breads are restricted here. Lachha Paratha, Phulka and Kerala Paratha are tawa breads and are deliberately LEFT OUT so they are never wrongly refused. NEEDS HOTEL SIGN-OFF.",
+
+      "Naan": ["tandoor"],
+      "Tandoori Roti": ["tandoor"],
+      "Kulcha": ["tandoor"],
+
+      "_all_day_comment": "LISTED ON PURPOSE, THOUGH UNRESTRICTED. Leaving an all-day dish out of this file normally says 'no restriction' loudly enough. These three do not get that benefit: they sit in the BREAD section beside three tandoor breads that ARE restricted, and 'Kerala Paratha' and 'Lachha Paratha' share a word with the breakfast-only 'Paratha (Aloo or Paneer)'. Left unlisted, the bot tarred them with their neighbours' hours - it told a guest 'Kerala Paratha is served from 7:00 AM to 10:30 AM' (those are the breakfast paratha's hours) and 'Phulka is not currently available as a menu item' (it is on the menu). Naming them here earns each one an explicit AVAILABLE ALL DAY line in the menu, right where the confusion happens.",
+
+      "Lachha Paratha": ["all_day"],
+      "Phulka": ["all_day"],
+      "Kerala Paratha": ["all_day"]
+    }
+  }
+}

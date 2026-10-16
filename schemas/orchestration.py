@@ -1,0 +1,244 @@
+from __future__ import annotations
+
+from typing import Any, Literal
+
+from pydantic import BaseModel, Field, field_validator
+
+
+_ALLOWED_ACTIONS = {
+    "respond_only",
+    "collect_info",
+    "dispatch_handler",
+    "create_ticket",
+    "resume_pending",
+    "cancel_pending",
+}
+
+
+class TicketDecision(BaseModel):
+    """Ticket intent emitted by LLM orchestration."""
+
+    required: bool = False
+    ready_to_create: bool = False
+    generic_request: bool = False
+    phase_applicable: bool | None = None
+    approval_required: bool = False
+    reason: str = ""
+    issue: str = ""
+    category: str = ""
+    sub_category: str = ""
+    priority: str = ""
+    department_id: str = ""
+    department_name: str = ""
+    evidence: list[str] = Field(default_factory=list)
+
+    @field_validator("category", "sub_category", "priority", mode="before")
+    @classmethod
+    def _normalize_label(cls, value: Any) -> str:
+        return str(value or "").strip().lower().replace(" ", "_")
+
+    @field_validator(
+        "reason", "issue", "department_id", "department_name", mode="before"
+    )
+    @classmethod
+    def _coerce_ticket_str(cls, value: Any) -> str:
+        # LLMs frequently emit department_id (and occasionally other fields) as a
+        # raw number, e.g. department_id=16. Pydantic v2 will NOT coerce int->str,
+        # so a numeric id would reject the entire decision and trip the orchestrator
+        # fallback. Coerce defensively so a clean reply is never thrown away.
+        return str(value if value is not None else "").strip()
+
+    @field_validator("evidence", mode="before")
+    @classmethod
+    def _normalize_evidence(cls, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for item in value:
+            text = str(item or "").strip()
+            if not text:
+                continue
+            compact = " ".join(text.split())
+            key = compact.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            normalized.append(compact[:280])
+            if len(normalized) >= 4:
+                break
+        return normalized
+
+
+class SuggestionChip(BaseModel):
+    """Structured post-response suggestion chip used internally by the chip pipeline."""
+
+    text: str = ""
+    turn_trace_id: str = ""
+    origin_responder: Literal["main", "service"] = "main"
+    origin_service_id: str = ""
+    target_service_id: str = ""
+    active_property_ids: list[str] = Field(default_factory=list)
+    selected_book_ids: list[str] = Field(default_factory=list)
+    evidence_excerpt: str = ""
+    evidence_fingerprint: str = ""
+
+    @field_validator(
+        "text",
+        "turn_trace_id",
+        "evidence_excerpt",
+        "evidence_fingerprint",
+        mode="before",
+    )
+    @classmethod
+    def _normalize_text_fields(cls, value: Any) -> str:
+        return " ".join(str(value or "").strip().split())
+
+    @field_validator("origin_service_id", "target_service_id", mode="before")
+    @classmethod
+    def _normalize_service_ids(cls, value: Any) -> str:
+        return str(value or "").strip().lower().replace(" ", "_")
+
+    @field_validator("active_property_ids", "selected_book_ids", mode="before")
+    @classmethod
+    def _normalize_identifier_lists(cls, value: Any) -> list[str]:
+        if isinstance(value, str) and value.strip():
+            return [value.strip()]
+        if not isinstance(value, list):
+            return []
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for item in value:
+            text = str(item or "").strip()
+            if not text or text in seen:
+                continue
+            seen.add(text)
+            normalized.append(text)
+            if len(normalized) >= 20:
+                break
+        return normalized
+
+
+class OrchestrationDecision(BaseModel):
+    """
+    Validated contract for orchestration output.
+    This is used by both the top-level orchestration LLM and service-level LLM.
+    """
+
+    normalized_query: str = ""
+    intent: str = "faq"
+    confidence: float = Field(default=0.7, ge=0.0, le=1.0)
+    action: Literal[
+        "respond_only",
+        "collect_info",
+        "dispatch_handler",
+        "create_ticket",
+        "resume_pending",
+        "cancel_pending",
+    ] = "respond_only"
+    target_service_id: str = ""
+    response_text: str = ""
+    pending_action: str | None = None
+    pending_data_updates: dict[str, Any] = Field(default_factory=dict)
+    missing_fields: list[str] = Field(default_factory=list)
+    answered_current_query: bool = True
+    blocking_fields: list[str] = Field(default_factory=list)
+    deferrable_fields: list[str] = Field(default_factory=list)
+    followup_question: str = ""
+    suggested_actions: list[str] = Field(default_factory=list)
+    use_handler: bool = False
+    handler_intent: str = ""
+    interrupt_pending: bool = False
+    resume_pending: bool = False
+    cancel_pending: bool = False
+    requires_human_handoff: bool = False
+    selected_property_name: str = ""
+    selected_property_ids: list[str] = Field(default_factory=list)
+    ticket: TicketDecision = Field(default_factory=TicketDecision)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+    @field_validator("intent", "handler_intent", "target_service_id", mode="before")
+    @classmethod
+    def _normalize_identifier(cls, value: Any) -> str:
+        return str(value or "").strip().lower().replace(" ", "_")
+
+    @field_validator("pending_action", mode="before")
+    @classmethod
+    def _normalize_pending_action(cls, value: Any) -> str | None:
+        text = str(value or "").strip().lower().replace(" ", "_")
+        return text or None
+
+    @field_validator("missing_fields", mode="before")
+    @classmethod
+    def _normalize_missing_fields(cls, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for item in value:
+            key = str(item or "").strip().lower().replace(" ", "_")
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            normalized.append(key)
+        return normalized[:12]
+
+    @field_validator("blocking_fields", "deferrable_fields", mode="before")
+    @classmethod
+    def _normalize_field_groups(cls, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for item in value:
+            key = str(item or "").strip().lower().replace(" ", "_")
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            normalized.append(key)
+        return normalized[:12]
+
+    @field_validator("followup_question", mode="before")
+    @classmethod
+    def _normalize_followup_question(cls, value: Any) -> str:
+        return str(value or "").strip()
+
+    @field_validator("suggested_actions", mode="before")
+    @classmethod
+    def _normalize_suggested_actions(cls, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        result: list[str] = []
+        seen: set[str] = set()
+        for item in value:
+            text = str(item or "").strip()
+            if not text:
+                continue
+            key = text.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            result.append(text)
+            if len(result) >= 6:
+                break
+        return result
+
+    @field_validator("selected_property_name", mode="before")
+    @classmethod
+    def _normalize_selected_property_name(cls, value: Any) -> str:
+        return str(value or "").strip()
+
+    @field_validator("selected_property_ids", mode="before")
+    @classmethod
+    def _normalize_selected_property_ids(cls, value: Any) -> list[str]:
+        if isinstance(value, str) and value.strip():
+            return [value.strip()]
+        if not isinstance(value, list):
+            return []
+        return [str(v).strip() for v in value if str(v).strip()][:12]
+
+    @field_validator("action", mode="before")
+    @classmethod
+    def _normalize_action(cls, value: Any) -> str:
+        action = str(value or "").strip().lower().replace(" ", "_")
+        return action if action in _ALLOWED_ACTIONS else "respond_only"

@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 207 43% 21%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 43% 21%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 43% 21%;
+
+    --primary: 21 100% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 24% 96%;
+    --secondary-foreground: 207 43% 21%;
+
+    --muted: 207 24% 96%;
+    --muted-foreground: 207 20% 36%;
+
+    --accent: 21 100% 96%;
+    --accent-foreground: 207 43% 21%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 207 20% 88%;
+    --input: 207 20% 88%;
+    --ring: 21 100% 54%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 207 24% 98%;
+    --sidebar-foreground: 207 43% 21%;
+    --sidebar-primary: 21 100% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 21 100% 96%;
+    --sidebar-accent-foreground: 207 43% 21%;
+    --sidebar-border: 207 20% 88%;
+    --sidebar-ring: 21 100% 54%;
+  }
+
+  .dark {
+    --background: 237 36% 11%;
+    --foreground: 210 20% 96%;
+
+    --card: 207 43% 21%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 207 43% 21%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 21 100% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 31% 26%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 207 31% 26%;
+    --muted-foreground: 207 18% 68%;
+
+    --accent: 207 31% 26%;
+    --accent-foreground: 210 20% 96%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 96%;
+
+    --border: 207 25% 29%;
+    --input: 207 25% 29%;
+    --ring: 21 100% 54%;
+
+    --sidebar-background: 237 36% 11%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 21 100% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 207 31% 26%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 207 25% 29%;
+    --sidebar-ring: 21 100% 54%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbar on chip scroll rows (WebKit) */
+.chip-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Phone: 16px form text inside the chat widget.
+   iOS Safari auto-zooms the page whenever a focused field renders under 16px,
+   which shoves the widget sideways mid-typing and leaves the guest pinching
+   back out. Scoped to #chat-root and to phone widths, so the 14px scale the
+   rest of the app uses is untouched. */
+@media (max-width: 640px) {
+  #chat-root input,
+  #chat-root select,
+  #chat-root textarea {
+    font-size: 16px;
+  }
+}

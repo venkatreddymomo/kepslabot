@@ -1,0 +1,67 @@
+ZONE - PEOPLE TO CONFIGURE                                       2026-09-18
+
+
+LEVEL 1     Nidhi Pandey
+            Sr. Marketing Manager
+            reservations@zonebythepark.com
+            +91 9953041877
+            Not in prod yet.
+
+LEVEL 2     Tanay
+            Director Operations
+            director.operations@zonebythepark.com
+            +91 96430 04404
+            Already in prod, id 6480.  Email field is blank.
+
+
+NOTIFICATIONS       Email only.
+
+SLA                 20 minutes.  Breach alert 5 minutes after that.
+
+
+DEPARTMENTS         Banquet                 38
+                    Food and Beverages      39
+                    reservations            48
+                    complaints              49
+
+
+PROPERTIES - all 24
+
+    FMS     RI      PROPERTY
+    6117    8539    Zone Connect Calangute, Goa
+    6118    8540    Zone Connect By The Park, Parra Goa
+    6119    8541    Zone Connect By The Park, Saket Delhi
+    6121    7256    Zone By The Park Kolkata
+    6123    7728    Zone by The Park Hotel, Jaipur
+    6124    8490    Zone Connect Hotel, Coimbatore
+    6125    8531    Zone by The Park, Chennai
+    6126    8535    Zone by The Park, Coimbatore
+    6127    8538    Zone by The Park, Jammu
+    6128    8557    Zone By The Park, Gopalpur
+    6129    8929    Zone Connect By The Park, Mussoorie
+    6130    9308    Zone Connect by The Park, Lansdowne
+    6151    9773    Zone Niathu By The Park, Dimapur
+    6180    10135   Zone Palace By The Park, Phalodi, Rajasthan
+    6254    8542    Zone by The Park, Pathankot
+    6279    10485   Zone Connect By The Park, Patna
+    6329    10619   Zone by The Park New Market Kolkata
+    6539    10793   Zone Connect by The Park Mount Siniolchu, Gangtok
+    6554    10815   Zone by The Park, Darjeeling
+    6612    10949   Zone by The Park, Digha
+    6613    10950   Zone Connect by The Park, Jaisalmer
+    6614    10951   Zone Connect by The Park, Katra
+    6615    10952   Zone Connect by The Park, Port Blair
+    6616    10953   Zone Connect by The Park, Udaipur
+
+
+NOTES
+
+    Tickets currently go to our test accounts - Sairaj (5557), Jabeen (10141).
+
+    Prod has another "Nidhi" on digitalmarketing@zonebythepark.com (id 10145).
+    That is not her.
+
+    Zone by The Park, Coimbatore (6126) has no escalation set up.
+    The other 23 have it.
+
+    Zone Connect Hotel, Coimbatore (6124) has every staff entry twice.

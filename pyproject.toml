@@ -1,0 +1,56 @@
+# Tooling configuration for the KePSLA bot/admin app.
+#
+# This file ONLY carries linter/formatter/test settings — there is no
+# [build-system] or [project] table, so it does not change how the app is
+# installed or run. Nothing here reformats existing code on its own; the tools
+# act only when explicitly invoked (see the commands in docs/REFACTOR_NOTES.md).
+#
+# Install the dev tools with:  pip install ruff black pre-commit
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+# Vendored sub-apps and generated artifacts are out of scope — they are treated
+# as third-party and never linted/reformatted here.
+extend-exclude = [
+    "Kepsla-hotal-kb-scraper-main",
+    "ocrbadfinalfr",
+    "node_modules",
+    "admin_ui",
+    "graphify-out",
+    "prompts_backup",
+    "prompts/_backups",
+    "backups",
+    "logs",
+    "data",
+]
+
+[tool.ruff.lint]
+# Start intentionally conservative so adopting the linter does not bury the team
+# in thousands of pre-existing findings. Expand this set over time.
+select = ["E9", "F63", "F7", "F82", "F401", "F811", "I"]
+# F401 (unused import) / I (import sorting) are safe, high-signal wins.
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["api", "core", "services", "handlers", "llm", "models", "schemas", "bootstrap", "config", "integrations"]
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+extend-exclude = '''
+/(
+    Kepsla-hotal-kb-scraper-main
+  | ocrbadfinalfr
+  | node_modules
+  | admin_ui
+  | graphify-out
+  | prompts_backup
+  | backups
+)/
+'''
+
+[tool.pytest.ini_options]
+# Matches the current invocation (`pytest tests/`) without changing discovery
+# or asyncio behavior — the suite uses explicit @pytest.mark.asyncio markers.
+testpaths = ["tests"]

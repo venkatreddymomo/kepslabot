@@ -1,0 +1,113 @@
+{
+  "instay": [
+    {
+      "session": "smoke-instay-670d85b8db",
+      "message": "i need to clean my room",
+      "reply": "I\u2019m sorry, but I can\u2019t help with cleaning or housekeeping requests here. Please contact the front desk or housekeeping team at the hotel once you\u2019re there.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-instay-b631e8a713",
+      "message": "i have an issue with my bed",
+      "reply": "I\u2019m sorry about that \u2014 I can\u2019t help fix room issues in this pre-booking chat.\nIf you need support at the hotel, please contact the front desk or housekeeping team once you\u2019re there.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-instay-cebba2fd98",
+      "message": "i want to book a spa appointment",
+      "reply": "Certainly \u2014 **Vitalia Spa** is open from **9:00 AM - 8:00 PM**, and treatments run from **Rs 5,000 - Rs 8,000 + taxes**.\nIf you\u2019d like, I can share the spa\u2019s treatment range too.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-instay-d21aba9bd1",
+      "message": "book a table for dinner tonight",
+      "reply": "I can\u2019t book a table here, but I can help with the dining options.\nAt **Cafe C**, dinner is available as part of its all-day dining hours, **7:30 AM - 10:30 PM (22:30)**.\nThere\u2019s also **Co-Bar** for drinks and **Plunge** by the pool if you\u2019re after something more relaxed.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-instay-187138a2a1",
+      "message": "i want room service",
+      "reply": "Cafe C offers **24-hour room service**. It\u2019s available at **Zone Connect by The Park, Calangute Goa**.\nIf you\u2019d like, I can also share a quick overview of the hotel\u2019s dining options.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    }
+  ],
+  "allowed": [
+    {
+      "session": "smoke-allow-55e033e968",
+      "kind": "room_booking",
+      "message": "i want to book a room",
+      "reply": "Great choice! You can complete your booking for **zone_by_the_park_chennai_orr** via the website link below, or our team will get back to assist you.",
+      "meta": {
+        "orchestration_action": "dispatch_handler",
+        "target_service_id": "room_booking_request",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-allow-6e29f9e154",
+      "kind": "info",
+      "message": "what spa services do you have",
+      "reply": "Sure \u2014 at **Vitalia Spa** you can choose from the spa menu, including **Swedish**, **Balinese**, and **deep tissue** treatments.\n**Hours:** 9:00 AM - 8:00 PM\n**Price range:** Rs 5,000 - Rs 8,000 + taxes\nIf you'd like, I can also help with the hotel itself.",
+      "meta": {
+        "orchestration_action": "respond_only",
+        "target_service_id": "",
+        "render_type": null,
+        "form_trigger": null,
+        "missing_fields": []
+      },
+      "http": 200
+    },
+    {
+      "session": "smoke-allow-f73d28be62",
+      "kind": "support_ok",
+      "message": "i want to talk to someone about my booking",
+      "reply": "I can raise this with our team.",
+      "meta": {
+        "orchestration_action": "collect_info",
+        "target_service_id": "support_request",
+        "render_type": null,
+        "form_trigger": true,
+        "missing_fields": []
+      },
+      "http": 200
+    }
+  ]
+}

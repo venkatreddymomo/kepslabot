@@ -1,0 +1,149 @@
+{
+  "ws_doctor_flow": [
+    {
+      "msg": "I'm exploring Mussoorie \u2014 tell me about the hotel there and what makes it special.",
+      "reply": "Here\u2019s a quick look at Zone Connect Park Mussoorie and what makes it special:\n- **Zone Connect Park Mussoorie** is a *4-star hotel* located just a short walk from The Mall Road, Mussoorie, offering vibrant interiors and ",
+      "form_trigger": false,
+      "form_field_ids": [],
+      "issue_default": "",
+      "img_hint_source": "active_property_focus",
+      "img_pid": 284,
+      "images": [
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 2",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 3",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 4",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 5",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 6",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 7",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 8",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 9",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 10",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 11",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 12",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 13",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Dining",
+          "prop": "Zone Connect Park Mussoorie"
+        }
+      ]
+    },
+    {
+      "msg": "do you have doctors on call?",
+      "reply": "- We don't have information about doctors on call at Zone Connect Park Mussoorie.\n- Would you like our team to reach out to share that with you?",
+      "form_trigger": false,
+      "form_field_ids": [],
+      "issue_default": "",
+      "img_hint_source": "active_property_focus",
+      "img_pid": 284,
+      "images": [
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 2",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 3",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 4",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 5",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 6",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 7",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 8",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 9",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 10",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 11",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 12",
+          "prop": "Zone Connect Park Mussoorie"
+        },
+        {
+          "title": "Zone Connect by The Park Mussoorie - Image 13",
+          "prop": "Zone Connect Park Mussoorie"
+        }
+      ]
+    },
+    {
+      "msg": "yes",
+      "reply": "Please review the details below and submit so our team can assist.",
+      "form_trigger": true,
+      "form_field_ids": [
+        "full_name",
+        "phone",
+        "email",
+        "issue_details"
+      ],
+      "issue_default": "I would like information about doctors on call at Zone Connect Park Mussoorie.",
+      "img_hint_source": null,
+      "img_pid": null,
+      "images": []
+    }
+  ]
+}
