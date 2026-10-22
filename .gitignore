@@ -148,3 +148,23 @@ tools/_kb_verify/
 tools/_mango_dev_fix/
 tools/_three_facts_verify/
 tools/_tmp_*
+
+# Internal documentation and generated reports are excluded from the public repo.
+# Runtime prompt Markdown under prompts/ and the OCR metadata file remain tracked.
+/*.md
+docs/
+**/README.md
+Kepsla-hotal-kb-scraper-main/*.md
+Kepsla-hotal-kb-scraper-main/graphify-out/*.md
+overnight/*.md
+tools/*report.md
+prompts/models/*/_TUNING_SPEC.md
+
+# Internal/generated non-Markdown artifacts
+/WebSocket_VCH_Compatibility_Analysis.pdf
+/ZONE_*.txt
+/zone-embed-code.txt
+overnight/*_dump.txt
+Kepsla-hotal-kb-scraper-main/graphify-out/
+tools/comparison_raw.json
+tools/*_report.json
